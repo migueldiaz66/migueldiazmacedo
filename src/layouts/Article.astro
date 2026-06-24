@@ -1,0 +1,111 @@
+---
+import Base from './Base.astro';
+import { topicBySlug } from '../config/topics';
+
+export interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  topicSlug: string;
+  path: string;
+}
+
+const { title, description, pubDate, updatedDate, topicSlug, path } = Astro.props;
+const topic = topicBySlug(topicSlug);
+const accent = topic?.accent;
+
+const fmt = (d: Date) =>
+  new Intl.DateTimeFormat('es-MX', { year: 'numeric', month: 'long', day: 'numeric' }).format(d);
+---
+<Base title={`${title} — migueldiazmacedo`} description={description} accent={accent} path={path}>
+  <article class="wrap prose article">
+    <p class="eyebrow">
+      <a href={`/${topicSlug}/`} style="color:inherit;text-decoration:none">{topic?.label}</a>
+    </p>
+    <h1>{title}</h1>
+    <p class="lede muted">{description}</p>
+    <p class="meta small mono muted">
+      {fmt(pubDate)}{updatedDate ? ` · act. ${fmt(updatedDate)}` : ''}
+    </p>
+
+    <div class="chain" aria-hidden="true" style="margin:1.8rem 0 2.6rem;max-width:340px">
+      <span class="node"></span><span class="seg"></span>
+      <span class="node hollow"></span><span class="seg"></span>
+      <span class="node"></span>
+    </div>
+
+    <div class="body">
+      <slot />
+    </div>
+
+    <hr class="divider" />
+    <p class="small muted">
+      <a href={`/${topicSlug}/`}>← Volver a {topic?.label}</a>
+    </p>
+  </article>
+
+  <style>
+    .article { padding-top: 3.5rem; }
+    .lede {
+      font-size: var(--step-1);
+      line-height: 1.45;
+      margin: 0.2em 0 1em;
+    }
+    .meta { margin: 0; }
+
+    /* reading body */
+    .body :global(p) { margin: 1.15em 0; }
+    .body :global(h2) {
+      padding-top: 0.4em;
+      border-top: 1px solid var(--line);
+    }
+    .body :global(ul),
+    .body :global(ol) { padding-left: 1.3em; }
+    .body :global(li) { margin: 0.4em 0; }
+    .body :global(strong) { font-weight: 650; }
+    .body :global(code) {
+      font-family: var(--mono);
+      font-size: 0.9em;
+      background: var(--seal-dim);
+      padding: 0.1em 0.4em;
+      border-radius: 3px;
+    }
+    .body :global(blockquote) {
+      margin: 1.4em 0;
+      padding: 0.2em 0 0.2em 1.2em;
+      border-left: 3px solid var(--accent);
+      color: var(--muted);
+    }
+    /* tables — important for the complementos matrices */
+    .body :global(table) {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.6em 0;
+      font-size: var(--step--1);
+    }
+    .body :global(th),
+    .body :global(td) {
+      text-align: left;
+      padding: 0.55em 0.7em;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    .body :global(th) {
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 0.85em;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--muted);
+    }
+    .body :global(table) { display: block; overflow-x: auto; }
+
+    /* references section reads as data */
+    .body :global(hr) {
+      border: 0;
+      border-top: 1px solid var(--line);
+      margin: 2.5em 0;
+    }
+  </style>
+</Base>

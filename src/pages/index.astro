@@ -1,0 +1,121 @@
+---
+import Base from '../layouts/Base.astro';
+import { publishedTopics } from '../config/topics';
+import { getCollection } from 'astro:content';
+
+const topics = publishedTopics();
+
+// Pull the most recent published article from each published topic.
+const latest = await Promise.all(
+  topics.map(async (t) => {
+    const entries = await getCollection(t.slug as 'fiscal', (e) => !e.data.draft);
+    entries.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+    return { topic: t, count: entries.length, recent: entries[0] };
+  })
+);
+---
+<Base
+  title="Miguel Díaz Macedo — escritos sobre cumplimiento fiscal, manufactura y otros temas"
+  description="Escritos de Miguel Díaz Macedo: cumplimiento fiscal y control continuo de transacciones, y —próximamente— otros temas."
+  path="/"
+>
+  <section class="hero wrap">
+    <p class="eyebrow">Notas de trabajo y oficio</p>
+    <h1 class="hero-title">
+      Escribo sobre cómo los sistemas
+      <span class="hl">registran, validan y controlan</span>
+      lo que ocurre.
+    </h1>
+    <p class="hero-sub prose">
+      Casi tres décadas construyendo software, hoy en cumplimiento fiscal.
+      Empiezo por el tema que conozco de cerca —la facturación electrónica y
+      el control continuo de transacciones en México— y con el tiempo sumaré
+      otros oficios e intereses.
+    </p>
+
+    <div class="chain-labelled" aria-hidden="true">
+      <span class="lbl">emisor</span>
+      <span class="arrow"></span>
+      <span class="lbl">PAC</span>
+      <span class="arrow"></span>
+      <span class="lbl">SAT</span>
+    </div>
+  </section>
+
+  <section class="wrap topics">
+    <h2 class="topics-h">Temas</h2>
+    <ul class="topic-list">
+      {latest.map(({ topic, count, recent }) => (
+        <li class="topic-card" style={`--accent:${topic.accent}`}>
+          <a href={`/${topic.slug}/`} class="topic-link">
+            <span class="topic-node" aria-hidden="true"></span>
+            <span class="topic-text">
+              <span class="topic-title">{topic.title}</span>
+              <span class="topic-blurb muted">{topic.blurb}</span>
+              <span class="topic-meta small mono muted">
+                {count} {count === 1 ? 'artículo' : 'artículos'}
+                {recent ? ` · último: ${recent.data.title}` : ''}
+              </span>
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <style>
+    .hero { padding: clamp(3rem, 9vw, 7rem) 0 clamp(2.5rem, 6vw, 4rem); }
+    .hero-title {
+      font-size: var(--step-4);
+      max-width: 18ch;
+      margin: 0 0 0.6em;
+    }
+    .hl { color: var(--accent); }
+    .hero-sub {
+      font-size: var(--step-1);
+      line-height: 1.5;
+      color: var(--muted);
+      margin: 0 0 2.5rem;
+    }
+
+    .topics { padding-bottom: 2rem; }
+    .topics-h {
+      font-family: var(--mono);
+      font-size: var(--step--1);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      font-weight: 500;
+      border-top: 1px solid var(--line);
+      padding-top: 1.4rem;
+      margin: 0 0 1.4rem;
+    }
+    .topic-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+    .topic-card { border-bottom: 1px solid var(--line); }
+    .topic-card:first-child { border-top: 1px solid var(--line); }
+    .topic-link {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.1rem;
+      align-items: start;
+      padding: 1.5rem 0.3rem;
+      text-decoration: none;
+      color: var(--ink);
+      transition: background 0.18s ease, padding-left 0.18s ease;
+    }
+    .topic-link:hover {
+      background: color-mix(in srgb, var(--accent) 5%, transparent);
+      padding-left: 0.9rem;
+    }
+    .topic-node {
+      width: 12px; height: 12px; margin-top: 0.45em;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent);
+    }
+    .topic-text { display: grid; gap: 0.3rem; }
+    .topic-title { font-size: var(--step-1); font-weight: 650; letter-spacing: -0.01em; }
+    .topic-blurb { font-size: var(--step-0); }
+    .topic-meta { margin-top: 0.2rem; }
+  </style>
+</Base>

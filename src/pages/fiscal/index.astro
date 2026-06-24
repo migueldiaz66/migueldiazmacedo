@@ -1,0 +1,72 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { topicBySlug } from '../../config/topics';
+
+const topic = topicBySlug('fiscal')!;
+const entries = (await getCollection('fiscal', (e) => !e.data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const fmt = (d: Date) =>
+  new Intl.DateTimeFormat('es-MX', { year: 'numeric', month: 'short' }).format(d);
+---
+<Base
+  title={`${topic.title} — migueldiazmacedo`}
+  description={topic.blurb}
+  accent={topic.accent}
+  path="/fiscal/"
+>
+  <section class="wrap intro">
+    <p class="eyebrow">{topic.label}</p>
+    <h1>{topic.title}</h1>
+    <p class="prose lede muted">{topic.blurb}</p>
+  </section>
+
+  <section class="wrap">
+    {entries.length === 0 ? (
+      <p class="muted">Aún no hay artículos publicados en este tema.</p>
+    ) : (
+      <ul class="post-list">
+        {entries.map((e) => (
+          <li class="post-row">
+            <a href={`/fiscal/${e.slug}/`} class="post-link">
+              <span class="post-date small mono muted">{fmt(e.data.pubDate)}</span>
+              <span class="post-main">
+                <span class="post-title">{e.data.title}</span>
+                <span class="post-desc muted">{e.data.description}</span>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </section>
+
+  <style>
+    .intro { padding: 3.5rem 0 1.5rem; }
+    .lede { font-size: var(--step-1); line-height: 1.45; }
+    .post-list { list-style: none; margin: 0; padding: 0; }
+    .post-row { border-top: 1px solid var(--line); }
+    .post-row:last-child { border-bottom: 1px solid var(--line); }
+    .post-link {
+      display: grid;
+      grid-template-columns: 7rem 1fr;
+      gap: 1.2rem;
+      padding: 1.4rem 0.3rem;
+      text-decoration: none;
+      color: var(--ink);
+      transition: background 0.18s ease, padding-left 0.18s ease;
+    }
+    .post-link:hover {
+      background: color-mix(in srgb, var(--accent) 5%, transparent);
+      padding-left: 0.9rem;
+    }
+    .post-date { padding-top: 0.35em; }
+    .post-main { display: grid; gap: 0.3rem; }
+    .post-title { font-size: var(--step-1); font-weight: 650; letter-spacing: -0.01em; }
+    .post-desc { font-size: var(--step-0); }
+    @media (max-width: 540px) {
+      .post-link { grid-template-columns: 1fr; gap: 0.3rem; }
+    }
+  </style>
+</Base>

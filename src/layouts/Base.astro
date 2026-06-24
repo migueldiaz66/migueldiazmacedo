@@ -1,0 +1,155 @@
+---
+import '../styles/global.css';
+import { publishedTopics } from '../config/topics';
+
+export interface Props {
+  title: string;
+  description: string;
+  accent?: string;
+  /* canonical path, e.g. "/fiscal/cfdi-evolucion" */
+  path?: string;
+}
+
+const { title, description, accent, path = '' } = Astro.props;
+const topics = publishedTopics();
+const site = 'https://migueldiazmacedo.com';
+const canonical = site + path;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+
+    <!-- Fonts: humanist sans for reading, mono for the data layer -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    {accent && <style set:html={`:root{--accent:${accent}}`} />}
+  </head>
+  <body>
+    <a class="skip" href="#main">Saltar al contenido</a>
+
+    <header class="site-head">
+      <div class="wrap head-inner">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true"></span>
+          migueldiazmacedo
+        </a>
+        <nav aria-label="Temas">
+          <ul>
+            {topics.map((t) => (
+              <li>
+                <a href={`/${t.slug}/`}>{t.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-foot">
+      <div class="wrap foot-inner">
+        <div class="chain solid" aria-hidden="true">
+          <span class="node hollow"></span>
+          <span class="seg"></span>
+          <span class="node"></span>
+          <span class="seg"></span>
+          <span class="node hollow"></span>
+        </div>
+        <p class="small muted">
+          © {new Date().getFullYear()} Miguel Díaz Macedo · Ciudad de México
+        </p>
+      </div>
+    </footer>
+
+    <style>
+      .skip {
+        position: absolute;
+        left: -999px;
+        top: 0;
+        background: var(--ink);
+        color: var(--paper);
+        padding: 0.6rem 1rem;
+        z-index: 10;
+      }
+      .skip:focus { left: 0.5rem; top: 0.5rem; }
+
+      .site-head {
+        border-bottom: 1px solid var(--line);
+        background: color-mix(in srgb, var(--paper) 88%, white);
+        position: sticky;
+        top: 0;
+        backdrop-filter: saturate(1.1) blur(6px);
+        z-index: 5;
+      }
+      .head-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        min-height: 64px;
+        flex-wrap: wrap;
+      }
+      .brand {
+        font-family: var(--mono);
+        font-weight: 500;
+        font-size: var(--step-0);
+        color: var(--ink);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7ch;
+        letter-spacing: -0.02em;
+      }
+      .brand-mark {
+        width: 11px; height: 11px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 3px var(--seal-dim);
+      }
+      nav ul {
+        display: flex;
+        gap: 1.4rem;
+        list-style: none;
+        margin: 0; padding: 0;
+        flex-wrap: wrap;
+      }
+      nav a {
+        font-family: var(--mono);
+        font-size: var(--step--1);
+        color: var(--muted);
+        text-decoration: none;
+        padding: 0.2rem 0;
+        border-bottom: 2px solid transparent;
+      }
+      nav a:hover { color: var(--ink); border-bottom-color: var(--accent); }
+
+      .site-foot {
+        border-top: 1px solid var(--line);
+        margin-top: 5rem;
+        padding: 2.5rem 0 3.5rem;
+      }
+      .foot-inner { display: grid; gap: 1.2rem; }
+      .foot-inner .chain { max-width: 220px; }
+    </style>
+  </body>
+</html>
