@@ -7,6 +7,10 @@ const articleSchema = z.object({
   pubDate: z.coerce.date(),
   updatedDate: z.coerce.date().optional(),
   draft: z.boolean().default(false),
+  // optional cover image for the card layout (path under /public) + its alt
+  // text. When absent, the index renders an on-brand generated cover panel.
+  cover: z.string().optional(),
+  coverAlt: z.string().optional(),
   // optional language tag for future bilingual versions
   lang: z.enum(['es', 'en']).default('es'),
   // optional list of source references is kept in the body, not frontmatter
