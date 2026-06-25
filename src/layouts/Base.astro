@@ -6,14 +6,48 @@ export interface Props {
   title: string;
   description: string;
   accent?: string;
-  /* canonical path, e.g. "/fiscal/cfdi-evolucion" */
+  /* canonical path, e.g. "/fiscal/cfdi-evolucion/" */
   path?: string;
+  /* 'article' for blog posts; defaults to 'website' */
+  type?: 'website' | 'article';
+  /* optional social/share image (path under /public or absolute URL) */
+  image?: string;
+  /* article dates, used for og:article meta and structured data */
+  pubDate?: Date;
+  updatedDate?: Date;
 }
 
-const { title, description, accent, path = '' } = Astro.props;
+const { title, description, accent, path = '', type = 'website', image, pubDate, updatedDate } = Astro.props;
 const topics = publishedTopics();
 const site = 'https://migueldiazmacedo.com';
 const canonical = site + path;
+const author = 'Miguel Díaz Macedo';
+const ogTitle = title.replace(/ — migueldiazmacedo$/, '');
+const ogImage = image ? new URL(image, site).href : undefined;
+
+const jsonLd = type === 'article'
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: ogTitle,
+      description,
+      url: canonical,
+      mainEntityOfPage: canonical,
+      ...(ogImage ? { image: ogImage } : {}),
+      ...(pubDate ? { datePublished: pubDate.toISOString() } : {}),
+      ...(updatedDate ? { dateModified: updatedDate.toISOString() } : {}),
+      author: { '@type': 'Person', name: author },
+      publisher: { '@type': 'Person', name: author },
+      inLanguage: 'es',
+    }
+  : {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'migueldiazmacedo',
+      url: site,
+      inLanguage: 'es',
+      author: { '@type': 'Person', name: author },
+    };
 ---
 <!doctype html>
 <html lang="es">
@@ -25,11 +59,26 @@ const canonical = site + path;
     <link rel="canonical" href={canonical} />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:site_name" content="migueldiazmacedo" />
+    <meta property="og:locale" content="es_MX" />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    {type === 'article' && pubDate && (
+      <meta property="article:published_time" content={pubDate.toISOString()} />
+    )}
+    {type === 'article' && updatedDate && (
+      <meta property="article:modified_time" content={updatedDate.toISOString()} />
+    )}
+    <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={description} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
+
+    <!-- Structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <!-- Fonts: humanist sans for reading, mono for the data layer -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

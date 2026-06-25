@@ -9,16 +9,26 @@ export interface Props {
   updatedDate?: Date;
   topicSlug: string;
   path: string;
+  image?: string;
 }
 
-const { title, description, pubDate, updatedDate, topicSlug, path } = Astro.props;
+const { title, description, pubDate, updatedDate, topicSlug, path, image } = Astro.props;
 const topic = topicBySlug(topicSlug);
 const accent = topic?.accent;
 
 const fmt = (d: Date) =>
   new Intl.DateTimeFormat('es-MX', { year: 'numeric', month: 'long', day: 'numeric' }).format(d);
 ---
-<Base title={`${title} — migueldiazmacedo`} description={description} accent={accent} path={path}>
+<Base
+  title={`${title} — migueldiazmacedo`}
+  description={description}
+  accent={accent}
+  path={path}
+  type="article"
+  pubDate={pubDate}
+  updatedDate={updatedDate}
+  image={image}
+>
   <article class="wrap prose article">
     <p class="eyebrow">
       <a href={`/${topicSlug}/`} style="color:inherit;text-decoration:none">{topic?.label}</a>

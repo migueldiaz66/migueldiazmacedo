@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
-const path = `/fiscal/${entry.slug}`;
+const path = `/fiscal/${entry.slug}/`;
 ---
 <Article
   title={entry.data.title}
@@ -21,6 +21,7 @@ const path = `/fiscal/${entry.slug}`;
   updatedDate={entry.data.updatedDate}
   topicSlug="fiscal"
   path={path}
+  image={entry.data.cover}
 >
   <Content />
 </Article>
