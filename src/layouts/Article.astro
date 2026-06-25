@@ -12,9 +12,10 @@ export interface Props {
   image?: string;
   seoTitle?: string;
   faq?: { q: string; a: string }[];
+  noindex?: boolean;
 }
 
-const { title, description, pubDate, updatedDate, topicSlug, path, image, seoTitle, faq } = Astro.props;
+const { title, description, pubDate, updatedDate, topicSlug, path, image, seoTitle, faq, noindex } = Astro.props;
 const topic = topicBySlug(topicSlug);
 const accent = topic?.accent;
 
@@ -22,7 +23,11 @@ const accent = topic?.accent;
 const headTitle = seoTitle ?? `${title} — migueldiazmacedo`;
 
 const fmt = (d: Date) =>
-  new Intl.DateTimeFormat('es-MX', { year: 'numeric', month: 'long', day: 'numeric' }).format(d);
+  new Intl.DateTimeFormat('es-MX', {
+    year: 'numeric', month: 'long', day: 'numeric',
+    hour: '2-digit', minute: '2-digit', hour12: false,
+    timeZone: 'America/Mexico_City',
+  }).format(d);
 ---
 <Base
   title={headTitle}
@@ -33,6 +38,7 @@ const fmt = (d: Date) =>
   pubDate={pubDate}
   updatedDate={updatedDate}
   image={image}
+  noindex={noindex}
 >
   <article class="wrap prose article">
     <p class="eyebrow">

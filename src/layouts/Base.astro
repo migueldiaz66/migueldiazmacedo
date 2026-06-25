@@ -15,9 +15,11 @@ export interface Props {
   /* article dates, used for og:article meta and structured data */
   pubDate?: Date;
   updatedDate?: Date;
+  /* when true, emit robots noindex (for draft previews) */
+  noindex?: boolean;
 }
 
-const { title, description, accent, path = '', type = 'website', image, pubDate, updatedDate } = Astro.props;
+const { title, description, accent, path = '', type = 'website', image, pubDate, updatedDate, noindex = false } = Astro.props;
 const topics = publishedTopics();
 const site = 'https://migueldiazmacedo.com';
 const canonical = site + path;
@@ -78,6 +80,7 @@ const jsonLd = type === 'article'
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
 
     <!-- Open Graph -->
     <meta property="og:type" content={type} />
