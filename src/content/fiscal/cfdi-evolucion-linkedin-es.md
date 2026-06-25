@@ -1,6 +1,6 @@
 ---
 title: "CFDI: cómo México convirtió la factura en un proceso de control en tiempo real"
-description: "Versión condensada para LinkedIn del recorrido histórico-normativo del CFDI (2004–2023); enlaza al blog."
+description: "Artículo para LinkedIn: recorrido condensado de la evolución del CFDI (2004–2023), con enlace al blog para las referencias del DOF."
 pubDate: 2026-06-24
 draft: true
 lang: es
@@ -29,6 +29,6 @@ El patrón de 20 años es consistente: la revisión fiscal pasó de ocurrir much
 
 Cada etapa respondió a una carencia de la anterior. Entender esa lógica es lo que permite anticipar hacia dónde sigue. El recorrido completo, con el fundamento normativo de cada hito y las referencias al DOF (Diario Oficial de la Federación), está en el blog 👇
 
-[ENLACE AL BLOG]
+https://migueldiazmacedo.com/fiscal/cfdi-evolucion/
 
 #CFDI #FacturaciónElectrónica #SAT #CTC #México
