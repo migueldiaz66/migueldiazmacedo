@@ -22,6 +22,8 @@ const topics = publishedTopics();
 const site = 'https://migueldiazmacedo.com';
 const canonical = site + path;
 const author = 'Miguel Díaz Macedo';
+// Lightweight reference to the full Person entity defined on /acerca/.
+const authorRef = { '@type': 'Person', name: author, url: site + '/acerca/' };
 const ogTitle = title.replace(/ — migueldiazmacedo$/, '');
 const ogImage = image ? new URL(image, site).href : undefined;
 
@@ -36,8 +38,8 @@ const jsonLd = type === 'article'
       ...(ogImage ? { image: ogImage } : {}),
       ...(pubDate ? { datePublished: pubDate.toISOString() } : {}),
       ...(updatedDate ? { dateModified: updatedDate.toISOString() } : {}),
-      author: { '@type': 'Person', name: author },
-      publisher: { '@type': 'Person', name: author },
+      author: authorRef,
+      publisher: authorRef,
       inLanguage: 'es',
     }
   : {
@@ -46,7 +48,7 @@ const jsonLd = type === 'article'
       name: 'migueldiazmacedo',
       url: site,
       inLanguage: 'es',
-      author: { '@type': 'Person', name: author },
+      author: authorRef,
     };
 ---
 <!doctype html>
@@ -99,13 +101,14 @@ const jsonLd = type === 'article'
           <span class="brand-mark" aria-hidden="true"></span>
           migueldiazmacedo
         </a>
-        <nav aria-label="Temas">
+        <nav aria-label="Navegación">
           <ul>
             {topics.map((t) => (
               <li>
                 <a href={`/${t.slug}/`}>{t.label}</a>
               </li>
             ))}
+            <li><a href="/acerca/">Acerca</a></li>
           </ul>
         </nav>
       </div>

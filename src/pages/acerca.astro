@@ -1,0 +1,102 @@
+---
+import Base from '../layouts/Base.astro';
+
+const site = 'https://migueldiazmacedo.com';
+
+// Full author entity. The blog articles reference this profile by URL,
+// so search engines and AI can resolve "who wrote this" with credentials.
+const personLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Miguel Díaz Macedo',
+  url: site + '/acerca/',
+  email: 'miguel.diazmacedo@gmail.com',
+  jobTitle: 'Software Development Manager, Tax Compliance Technology',
+  worksFor: { '@type': 'Organization', name: 'SOVOS' },
+  alumniOf: {
+    '@type': 'CollegeOrUniversity',
+    name: 'Universidad Nacional Autónoma de México',
+  },
+  knowsAbout: [
+    'Facturación electrónica',
+    'Comprobante Fiscal Digital por Internet (CFDI)',
+    'Control continuo de transacciones (CTC)',
+    'Cumplimiento fiscal',
+    'Arquitectura de software',
+  ],
+  description:
+    'Líder de ingeniería de tecnología de cumplimiento fiscal en SOVOS para México y Latinoamérica. Casi 30 años en TI y formación de biólogo por la UNAM.',
+  sameAs: [
+    'https://www.linkedin.com/in/jes%C3%BAs-d%C3%ADaz-5b3835343/',
+    'https://github.com/migueldiaz66',
+  ],
+};
+---
+<Base
+  title="Acerca de — migueldiazmacedo"
+  description="Miguel Díaz Macedo: líder de ingeniería de tecnología de cumplimiento fiscal en SOVOS para México y Latinoamérica. Casi 30 años en TI y formación de biólogo por la UNAM."
+  path="/acerca/"
+>
+  <article class="wrap prose about">
+    <p class="eyebrow">Acerca de</p>
+    <h1>Miguel Díaz Macedo</h1>
+    <p class="lede muted">
+      Lidero la ingeniería de tecnología de cumplimiento fiscal en SOVOS para
+      México y Latinoamérica. Casi 30 años en TI, del código a la dirección, y
+      formación de biólogo por la UNAM.
+    </p>
+
+    <div class="chain" aria-hidden="true" style="margin:1.8rem 0 2.6rem;max-width:340px">
+      <span class="node"></span><span class="seg"></span>
+      <span class="node hollow"></span><span class="seg"></span>
+      <span class="node"></span>
+    </div>
+
+    <p>
+      Llevo casi tres décadas en tecnología de información, de programador a
+      líder de desarrollo, cubriendo el ciclo completo: requisitos, arquitectura,
+      desarrollo, pruebas, despliegue y operación.
+    </p>
+
+    <p>
+      Hoy dirijo el equipo de ingeniería de tecnología de cumplimiento fiscal de
+      SOVOS para México y Latinoamérica; mi trabajo diario es construir y operar
+      los sistemas detrás de la facturación electrónica y el control continuo de
+      transacciones (CTC). Antes operé la infraestructura de misión crítica de la
+      Secretaría de Hacienda y Crédito Público, la plataforma de e-commerce y
+      punto de venta de Liverpool, y sistemas de emergencias para el C5 de Nuevo
+      León.
+    </p>
+
+    <p>
+      Mi formación es de biólogo (Facultad de Ciencias, UNAM), con trabajo
+      publicado en neurociencias antes de dedicarme de lleno a la computación. De
+      ahí viene la forma en que escribo aquí: cada afirmación se contrasta contra
+      la fuente primaria. En lo fiscal, eso significa el Diario Oficial de la
+      Federación, no las cronologías de divulgación que se contradicen entre sí.
+    </p>
+
+    <p>
+      Este sitio son notas de trabajo y oficio: cómo los sistemas registran,
+      validan y controlan lo que ocurre. Empiezo por lo que conozco de cerca —el
+      control fiscal en tiempo real en México— y con el tiempo sumaré otros temas.
+      No vendo nada ni hablo por mi empleador; lo que está aquí es mío y busca ser
+      exacto, no promocional.
+    </p>
+
+    <p class="contact small mono muted">
+      Contacto: <a href="mailto:miguel.diazmacedo@gmail.com">miguel.diazmacedo@gmail.com</a>
+      · <a href="https://www.linkedin.com/in/jes%C3%BAs-d%C3%ADaz-5b3835343/" rel="me">LinkedIn</a>
+      · <a href="https://github.com/migueldiaz66" rel="me">GitHub</a>
+    </p>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
+
+  <style>
+    .about { padding-top: 3.5rem; }
+    .about .lede { font-size: var(--step-1); line-height: 1.45; margin: 0.2em 0 1em; }
+    .about p { margin: 1.15em 0; }
+    .contact { margin-top: 2.5rem; }
+  </style>
+</Base>
