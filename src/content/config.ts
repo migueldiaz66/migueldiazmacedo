@@ -18,6 +18,8 @@ const articleSchema = z.object({
   lang: z.enum(['es', 'en']).default('es'),
   // optional list of source references is kept in the body, not frontmatter
   tags: z.array(z.string()).default([]),
+  // optional FAQ: renders a visible block and emits FAQPage structured data
+  faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
 });
 
 // Each topic is its own collection. Add new topics here as they grow.

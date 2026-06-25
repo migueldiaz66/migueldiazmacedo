@@ -11,9 +11,10 @@ export interface Props {
   path: string;
   image?: string;
   seoTitle?: string;
+  faq?: { q: string; a: string }[];
 }
 
-const { title, description, pubDate, updatedDate, topicSlug, path, image, seoTitle } = Astro.props;
+const { title, description, pubDate, updatedDate, topicSlug, path, image, seoTitle, faq } = Astro.props;
 const topic = topicBySlug(topicSlug);
 const accent = topic?.accent;
 
@@ -52,6 +53,32 @@ const fmt = (d: Date) =>
     <div class="body">
       <slot />
     </div>
+
+    {faq && faq.length > 0 && (
+      <section class="faq" aria-labelledby="faq-h">
+        <h2 id="faq-h">Preguntas frecuentes</h2>
+        {faq.map((item) => (
+          <div class="faq-item">
+            <h3 class="faq-q">{item.q}</h3>
+            <p class="faq-a">{item.a}</p>
+          </div>
+        ))}
+      </section>
+    )}
+    {faq && faq.length > 0 && (
+      <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faq.map((item) => ({
+            '@type': 'Question',
+            name: item.q,
+            acceptedAnswer: { '@type': 'Answer', text: item.a },
+          })),
+        })}
+      />
+    )}
 
     <hr class="divider" />
     <p class="small muted">
@@ -121,5 +148,13 @@ const fmt = (d: Date) =>
       border-top: 1px solid var(--line);
       margin: 2.5em 0;
     }
+
+    /* FAQ — atomic Q&A, citable by AI and search */
+    .faq { margin-top: 3.5rem; }
+    .faq > h2 { padding-top: 0.4em; border-top: 1px solid var(--line); }
+    .faq-item { border-top: 1px solid var(--line); }
+    .faq-item:first-of-type { border-top: 0; }
+    .faq-q { font-size: var(--step-1); margin: 1.4em 0 0.3em; }
+    .faq-a { margin: 0 0 1.4em; }
   </style>
 </Base>

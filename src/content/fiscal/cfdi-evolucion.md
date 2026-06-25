@@ -5,6 +5,21 @@ description: "Entre 2004 y 2023 México convirtió la factura en papel en una tr
 pubDate: 2026-06-24
 lang: es
 tags: ["CFDI", "facturación electrónica", "SAT", "CTC", "México"]
+faq:
+  - q: "¿Cuándo nació el CFDI?"
+    a: "El CFDI (Comprobante Fiscal Digital por Internet) entró en vigor el 1 de enero de 2011. Su base legal es la reforma al Código Fiscal de la Federación publicada en el DOF el 7 de diciembre de 2009, que obliga a que un proveedor autorizado de certificación (PAC) valide y selle cada comprobante antes de que tenga efectos fiscales. No nació en 2004 ni en 2005: eso fue el CFD, su antecesor."
+  - q: "¿Existió el CFDI 1.0 o el CFDI 2.0?"
+    a: "No. Las versiones tempranas 1.0, 2.0 y 2.2 pertenecen al CFD, el esquema anterior. El CFDI inició en la versión 3.0 hacia 2010-2011 y siguió con 3.2, 3.3 (2017) y 4.0 (2022). Muchas cronologías de divulgación confunden ambos sistemas; la única fuente confiable de la versión y su vigencia es el Anexo 20 publicado en el DOF para cada periodo."
+  - q: "¿Cuál es la diferencia entre CFD y CFDI?"
+    a: "En el CFD (2004-2010) el contribuyente sellaba el comprobante con su propio certificado y lo reportaba al SAT después, en un reporte mensual. En el CFDI (desde 2011) un tercero autorizado (PAC) valida y sella cada comprobante en el momento de emitirlo, antes de que tenga efectos. El cambio de fondo es cuándo ocurre el control: pasa de posterior a en tiempo real."
+  - q: "¿Cuándo fue obligatorio el CFDI 4.0?"
+    a: "El CFDI 4.0 entró en vigor de forma opcional el 1 de enero de 2022 y fue obligatorio de manera general a partir del 1 de abril de 2023, tras varias prórrogas del periodo de convivencia con la versión 3.3. La obligatoriedad final se confirma en la RMF 2023, publicada en el DOF el 27 de diciembre de 2022."
+  - q: "¿Qué cambió con el CFDI 4.0?"
+    a: "El CFDI 4.0 exige que el nombre, el régimen fiscal y el código postal del receptor coincidan exactamente con su constancia de situación fiscal ante el SAT, endurece la cancelación con un catálogo de motivos y refuerza la materialidad. Eso permite al SAT cruzar emisor contra receptor de forma automática en el momento del timbrado."
+  - q: "¿Qué es el Anexo 20?"
+    a: "El Anexo 20 es el estándar técnico que define la estructura XML del comprobante, primero del CFD y luego del CFDI. Se publica en el DOF y es la referencia oficial de cada versión: por ejemplo, el Anexo 20 de la versión 3.3 se publicó el 28 de julio de 2017 y el de la versión 4.0 el 13 de enero de 2022."
+  - q: "¿Qué son los complementos del CFDI?"
+    a: "Los complementos son bloques de información que se incorporan al comprobante para sectores u operaciones específicas, como nómina, comercio exterior, combustibles, recepción de pagos o carta porte. Cada complemento tiene su propio anexo técnico y su propia versión, que evoluciona de forma independiente al CFDI base; por eso la mayoría sobrevivió el salto de 3.3 a 4.0 sin cambiar."
 ---
 
 Entre 2004 y 2023, la factura en México pasó de ser un papel impreso en un establecimiento autorizado a ser una transacción que un tercero valida ante el Servicio de Administración Tributaria (SAT) en el instante mismo de emitirse. En esas casi dos décadas el país construyó, pieza por pieza, uno de los esquemas de control continuo de transacciones (CTC, *continuous transaction controls*) más antiguos del mundo. Este texto reconstruye esa evolución —los sucesivos esquemas de comprobación, las versiones del Comprobante Fiscal Digital por Internet (CFDI) y los complementos que lo extendieron— con un mismo criterio en cada etapa: qué introdujo, con qué fundamento normativo, y qué problema de fiscalización resolvía.
