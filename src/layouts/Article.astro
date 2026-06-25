@@ -10,17 +10,21 @@ export interface Props {
   topicSlug: string;
   path: string;
   image?: string;
+  seoTitle?: string;
 }
 
-const { title, description, pubDate, updatedDate, topicSlug, path, image } = Astro.props;
+const { title, description, pubDate, updatedDate, topicSlug, path, image, seoTitle } = Astro.props;
 const topic = topicBySlug(topicSlug);
 const accent = topic?.accent;
+
+// <title>: short SEO title if given (kept <70), else the full title + brand.
+const headTitle = seoTitle ?? `${title} — migueldiazmacedo`;
 
 const fmt = (d: Date) =>
   new Intl.DateTimeFormat('es-MX', { year: 'numeric', month: 'long', day: 'numeric' }).format(d);
 ---
 <Base
-  title={`${title} — migueldiazmacedo`}
+  title={headTitle}
   description={description}
   accent={accent}
   path={path}

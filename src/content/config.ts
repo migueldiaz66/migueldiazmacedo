@@ -3,6 +3,9 @@ import { defineCollection, z } from 'astro:content';
 // Shared article schema across all topic blogs.
 const articleSchema = z.object({
   title: z.string(),
+  // optional shorter title for the <title> tag (SEO, <70 chars); the long
+  // `title` stays as the visible H1. Falls back to `title` when absent.
+  seoTitle: z.string().optional(),
   description: z.string(),
   pubDate: z.coerce.date(),
   updatedDate: z.coerce.date().optional(),

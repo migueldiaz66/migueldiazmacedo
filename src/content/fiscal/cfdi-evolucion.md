@@ -1,5 +1,6 @@
 ---
 title: "CFDI: cómo México convirtió la factura en un proceso de control en tiempo real (2004–2023)"
+seoTitle: "CFDI: evolución del control fiscal en México (2004–2023)"
 description: "Entre 2004 y 2023 México convirtió la factura en papel en una transacción que el SAT valida antes de que tenga efectos. Reconstrucción histórica de cómo se construyó ese modelo, esquema por esquema, con fundamento en el DOF."
 pubDate: 2026-06-24
 lang: es
