@@ -34,7 +34,7 @@ Vale la pena fijar la decisión de fondo, porque la siguiente versión la invier
 
 ## CFDI (2010–2011): la autoridad entra al flujo mediante el PAC
 
-El 7 de diciembre de 2009 se publica en el DOF la modificación a la RMF que fija la entrada en vigor del CFDI a partir del 1 de enero de 2011, y durante 2010 se oficializa el modelo con su Anexo 20 correspondiente [6].
+El 7 de diciembre de 2009 se publica en el DOF la reforma al CFF que establece el CFDI y fija la entrada en vigor de las reformas a los artículos 29 y 29-A a partir del 1 de enero de 2011; durante 2010 el SAT oficializa el detalle técnico con el Anexo 20 correspondiente [6].
 
 La pieza que define el modelo es el PAC. El artículo 29 del CFF establece que el contribuyente debe remitir el comprobante a un PAC autorizado por el SAT para que valide, asigne un folio fiscal único (UUID, *Universally Unique Identifier*) e incorpore el sello digital del SAT antes de que el comprobante tenga efectos fiscales [7]. Sin ese timbrado, el comprobante no existe para la autoridad.
 
@@ -156,7 +156,7 @@ Entender esa lógica —qué carencia resolvía cada etapa y cómo cada una prep
 
 [5] Diferencias operativas entre CFD y CFDI (solicitud de folios/series y reporte mensual obligatorio en CFD frente a timbrado por PAC en CFDI). Documentación técnica del esquema CFD hacia 2010.
 
-[6] Primera Resolución de Modificaciones a la RMF para 2010 y su Anexo 1-A, DOF 07/12/2009; oficialización del esquema CFDI con entrada en vigor a partir del 01/01/2011. (Confirmar el código DOF exacto de la publicación que oficializa el CFDI antes de publicar.)
+[6] Decreto por el que se reforman, adicionan y derogan diversas disposiciones de las Leyes del Impuesto sobre la Renta, del Impuesto a los Depósitos en Efectivo y del Impuesto al Valor Agregado, del Código Fiscal de la Federación y del Decreto por el que se establecen las obligaciones que podrán denominarse en Unidades de Inversión, DOF 07/12/2009. Reforma los artículos 29 a 29-D del CFF y establece el Comprobante Fiscal Digital por Internet (CFDI) certificado por proveedor autorizado; las reformas a los artículos 29 y 29-A entran en vigor el 1 de enero de 2011. https://www.dof.gob.mx/nota_detalle.php?codigo=5123035&fecha=07/12/2009
 
 [7] Código Fiscal de la Federación, arts. 29 y 29-A. Certificación por proveedor autorizado (PAC): validación, asignación de folio fiscal (UUID) e incorporación del sello digital del SAT.
 
@@ -176,4 +176,4 @@ Entender esa lógica —qué carencia resolvía cada etapa y cómo cada una prep
 
 [15] Catálogo de complementos del CFDI y sus versiones. SAT, "Complementos de factura": https://www.sat.gob.mx/minisitio/Factura/emite_complementosdefactura.htm. Cada complemento tiene su propio anexo técnico; las versiones cambian de forma independiente y deben verificarse contra el portal del SAT antes de usarse.
 
-*Nota: los enlaces al DOF de [2], [3], [4], [9], [10] y [11] están verificados. La referencia [6] (oficialización del CFDI con vigor en 2011) requiere confirmar el código exacto del DOF antes de publicar.*
+*Nota: los enlaces al DOF de [2], [3], [4], [6], [9], [10] y [11] están verificados.*
