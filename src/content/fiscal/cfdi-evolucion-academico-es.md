@@ -44,7 +44,7 @@ Electronic invoicing in Mexico constitutes one of the oldest continuous transact
 
 ## 1. Introducción
 
-En México la factura no es un documento que el contribuyente emite y guarda. Es una transacción que un tercero autorizado valida contra la infraestructura del Servicio de Administración Tributaria (SAT) antes de que tenga validez fiscal. Ese modelo —control continuo de transacciones, o CTC por sus siglas en inglés (*continuous transaction controls*)— se construyó por etapas a lo largo de casi veinte años.
+Entre 2004 y 2023, la factura en México pasó de ser un papel impreso en un establecimiento autorizado a ser una transacción que un tercero valida ante el Servicio de Administración Tributaria (SAT) en el instante mismo de emitirse. En esas casi dos décadas, el país desarrolló uno de los esquemas de control continuo de transacciones (CTC, *continuous transaction controls*) más antiguos del mundo.
 
 Este artículo reconstruye esa evolución —los sucesivos esquemas de comprobación, las versiones del CFDI y los complementos que lo extendieron— con un mismo criterio analítico en cada etapa: qué introdujo, con qué fundamento normativo, y qué problema de fiscalización resolvía. No se trata de una investigación empírica con datos primarios, sino de un artículo de reflexión que ordena e interpreta la trayectoria normativa del modelo a partir de sus fuentes originales.
 

@@ -1,12 +1,12 @@
 ---
 title: "CFDI: cómo México convirtió la factura en un proceso de control en tiempo real (2004–2023)"
-description: "La factura mexicana no se emite y se guarda: se valida ante el SAT antes de tener efectos. Reconstrucción de cómo se construyó ese modelo de control en tiempo real, esquema por esquema, con fundamento en el DOF."
+description: "Entre 2004 y 2023 México convirtió la factura en papel en una transacción que el SAT valida antes de que tenga efectos. Reconstrucción histórica de cómo se construyó ese modelo, esquema por esquema, con fundamento en el DOF."
 pubDate: 2026-06-24
 lang: es
 tags: ["CFDI", "facturación electrónica", "SAT", "CTC", "México"]
 ---
 
-En México la factura no es un documento que el contribuyente emite y guarda. Es una transacción que un tercero autorizado valida contra la infraestructura del Servicio de Administración Tributaria (SAT) antes de que tenga validez fiscal. Ese modelo —control continuo de transacciones, o CTC por sus siglas en inglés (*continuous transaction controls*)— se construyó por etapas a lo largo de casi veinte años. Este texto reconstruye esa evolución —los sucesivos esquemas de comprobación, las versiones del CFDI y los complementos que lo extendieron— con un mismo criterio en cada etapa: qué introdujo, con qué fundamento normativo, y qué problema de fiscalización resolvía.
+Entre 2004 y 2023, la factura en México pasó de ser un papel impreso en un establecimiento autorizado a ser una transacción que un tercero valida ante el Servicio de Administración Tributaria (SAT) en el instante mismo de emitirse. En esas casi dos décadas el país construyó, pieza por pieza, uno de los esquemas de control continuo de transacciones (CTC, *continuous transaction controls*) más antiguos del mundo. Este texto reconstruye esa evolución —los sucesivos esquemas de comprobación, las versiones del Comprobante Fiscal Digital por Internet (CFDI) y los complementos que lo extendieron— con un mismo criterio en cada etapa: qué introdujo, con qué fundamento normativo, y qué problema de fiscalización resolvía.
 
 El criterio de orden es cronológico y cada afirmación se referencia a su publicación en el Diario Oficial de la Federación (DOF) o al ordenamiento aplicable. Las referencias van numeradas al final.
 
@@ -28,9 +28,9 @@ La autoridad no intervenía al emitir cada comprobante. El control se ejercía d
 
 Hacia el final de su vigencia el esquema admitió una variante: el contribuyente podía emitir CFD a través de un tercero, el PACFD (Proveedor Autorizado de Comprobantes Fiscales Digitales), en lugar de hacerlo enteramente por su cuenta. El PACFD es el antecesor directo del Proveedor Autorizado de Certificación (PAC) que llegaría con el CFDI, pero con una diferencia esencial: no certificaba la operación en el momento de emitirla. El modelo de control seguía siendo posterior, por reporte.
 
-Para quien construía sistemas, esto ya exigía criptografía asimétrica (claves RSA de 1024 bits según el Anexo 20 de 2004) y apego a un estándar XML, pero la operación era local: no había una llamada a un tercero como condición de validez en el momento de emitir [3].
+Con todo, la operación seguía siendo local: el contribuyente generaba y sellaba el comprobante por su cuenta, con sus propias credenciales, sin que ningún tercero tuviera que aprobarlo en el momento de emitirlo para que fuera válido [3].
 
-Vale la pena fijar la decisión de arquitectura de fondo, porque la siguiente versión la invierte. En el esquema CFD, lo que se distribuyó al usuario final fue la generación de las claves: cada contribuyente las creaba en su propio equipo. Lo que no existía era un tercero que validara la operación en el momento de emitirla. Esa limitación es la que llevó a rearquitecturar el esquema por completo: el Comprobante Fiscal Digital por Internet (CFDI) movió la validación al momento mismo de la emisión y la puso en manos de un actor externo y obligatorio. Las soluciones que hasta entonces emitían y reportaban en lote tuvieron que rediseñarse para integrar esa certificación en tiempo real, y ese rediseño es el que da forma al modelo vigente.
+Vale la pena fijar la decisión de fondo, porque la siguiente versión la invierte. En el esquema CFD todo ocurría del lado del contribuyente: generaba sus propias credenciales en su equipo, sellaba cada comprobante con un certificado propio y lo reportaba al SAT al mes siguiente. Ese diseño deja la validación en manos de quien tiene el incentivo para evadir: el emisor sella los comprobantes que decide y el SAT solo se entera al recibir el reporte del mes siguiente, cuando la operación ya ocurrió y el comprobante ya surtió efectos. No hay forma de impedir un comprobante apócrifo en el momento de emitirlo, ni de garantizar que lo reportado coincida con lo realmente emitido. Por eso lo que faltaba era un tercero que validara la operación en el momento de emitirla, independiente del emisor y previo a que el comprobante tuviera efectos. Esa limitación es la que llevó a rediseñar el esquema por completo: el CFDI movió la validación al instante mismo de la emisión y la puso en manos de un actor externo y obligatorio. Ese giro es el que da forma al modelo que sigue vigente.
 
 ## CFDI (2010–2011): la autoridad entra al flujo mediante el PAC
 
@@ -38,10 +38,10 @@ El 7 de diciembre de 2009 se publica en el DOF la modificación a la RMF que fij
 
 La pieza que define el modelo es el PAC. El artículo 29 del CFF establece que el contribuyente debe remitir el comprobante a un PAC autorizado por el SAT para que valide, asigne un folio fiscal único (UUID, *Universally Unique Identifier*) e incorpore el sello digital del SAT antes de que el comprobante tenga efectos fiscales [7]. Sin ese timbrado, el comprobante no existe para la autoridad.
 
-Esto cambia el momento en que la autoridad ejerce el control. En el esquema CFD, el SAT veía la operación después de ocurrida, a través del reporte mensual en lote; con el CFDI, la validación ocurre en el instante de la emisión, antes de que el comprobante exista para efectos fiscales. La autoridad, a través de los certificadores (PAC), queda insertada en el flujo mismo de la operación. Consecuencias técnicas directas: la validez ahora depende de una llamada exitosa a un servicio externo en tiempo de emisión; el tiempo de respuesta del servicio —la latencia— se vuelve una condición del cumplimiento: si el PAC tarda o no responde, no puedes facturar; la disponibilidad del PAC se vuelve una dependencia operativa. En conjunto, emitir una factura deja de ser una operación local y pasa a ser una transacción multiparte y bidireccional:
+Esto cambia el momento en que la autoridad ejerce el control. En el esquema CFD, el SAT veía la operación después de ocurrida, a través del reporte mensual en lote; con el CFDI, la validación ocurre en el instante de la emisión, antes de que el comprobante exista para efectos fiscales. La autoridad, a través de los certificadores (PAC), queda insertada en el flujo mismo de la operación. En la práctica, esto quiere decir que ya no se puede facturar sin la intervención del PAC: si el certificador no está disponible o no responde a tiempo, la factura no puede emitirse. Emitir, que antes dependía solo del contribuyente, pasa a depender también de un tercero. En conjunto, emitir una factura deja de ser algo que el contribuyente hace por su cuenta y se vuelve un intercambio en el que participan tres partes —emisor, PAC y SAT— y la información va y regresa:
 
-Ida (dirección 1): emisor → PAC → SAT,
-Vuelta (dirección 2): SAT → PAC → emisor.
+De ida: emisor → PAC → SAT, para validar y timbrar el comprobante.
+De vuelta: SAT → PAC → emisor, ya con el sello del SAT que lo hace válido.
 
 En esta transición el SAT abrió además un esquema nuevo para los contribuyentes más pequeños: el CBB (Código de Barras Bidimensional), una opción para quienes tenían ingresos anuales de hasta cuatro millones de pesos. Consistía en una factura impresa con un código bidimensional que el SAT entregaba al asignar un rango de folios, imprimible con recursos propios sin pasar por un impresor autorizado [8]. El matiz importa: el CBB no era factura electrónica, sino papel con un dispositivo de seguridad; no tenía las propiedades de autenticidad, integridad y no repudio que da el XML sellado [8].
 
@@ -61,7 +61,7 @@ La secuencia más defendible es que el CFDI continuó la numeración heredada de
 
 El problema es que muchas cronologías mezclan ambos esquemas. Algunas fuentes etiquetan como "versión 1.0" al CFD de 2005 y como "versión 2.0" al CFDI de 2010, fundiendo la genealogía de los dos sistemas en una sola lista [10]. Otras afirman que la 3.2 "fue la primera versión para facturar en línea", lo que contradice tanto a las que sitúan el inicio en 3.0 como a las que lo sitúan antes [10]. Hay además discrepancia sobre fechas de obligatoriedad: para la 3.3, unas fuentes señalan julio de 2017 (publicación) y otras enero de 2018 (obligatoriedad efectiva), que son hitos distintos confundidos como uno solo [10].
 
-La lección práctica para quien documente o construya sobre esto es directa: la única fuente confiable de la versión y su vigencia es el Anexo 20 publicado en el DOF para cada periodo, no las cronologías de divulgación. En este texto se usa la secuencia CFD (1.0–2.2) → CFDI (3.0, 3.2, 3.3, 4.0) por ser la más consistente con los Anexos 20, y se marca como aproximada cualquier frontera que las fuentes no permitan fijar con certeza.
+La lección práctica es directa: la única fuente confiable de la versión y su vigencia es el Anexo 20 publicado en el DOF para cada periodo, no las cronologías de divulgación. En este texto se usa la secuencia CFD (1.0–2.2) → CFDI (3.0, 3.2, 3.3, 4.0) por ser la más consistente con los Anexos 20, y se marca como aproximada cualquier frontera que las fuentes no permitan fijar con certeza.
 
 ## CFDI 3.3 (2017): estandarización y validación de datos
 
@@ -75,7 +75,7 @@ Tres cambios definen su carácter:
 
 A esto se suma el esquema de cancelación con aceptación del receptor, previsto en el artículo 29-A del CFF y reglamentado en la RMF: no se puede cancelar unilateralmente un comprobante que el receptor ya utilizó [13].
 
-El cambio de fondo es de objetivo: hasta entonces el SAT recolectaba comprobantes; con la 3.3 recolecta datos estructurados y validados, aptos para análisis automatizado y cruce masivo. Del lado de la implementación, fue la migración más costosa de la serie: mantenimiento de catálogos, replicación de reglas de validación previas al envío al PAC, y la lógica propia del complemento de pagos.
+El cambio de fondo es de objetivo: hasta entonces el SAT recolectaba comprobantes; con la 3.3 recolecta datos estructurados y validados, aptos para análisis automatizado y cruce masivo. Para quienes emitían facturas, fue además el cambio más laborioso de toda la serie: implicó adoptar los catálogos del SAT, ajustarse a validaciones más estrictas y sumar el manejo del complemento de pagos.
 
 ## CFDI 4.0 (2022–2023): verificación por contraste
 
@@ -85,15 +85,15 @@ La versión vigente entra en vigor el 1 de enero de 2022 de forma opcional. Tras
 - **Cancelación con catálogo de motivos.** El esquema de cancelación se endurece y exige especificar la causa conforme a catálogo [14].
 - **Énfasis en materialidad.** Se refuerza el criterio de que el comprobante ampare una operación real.
 
-El efecto técnico es que la validación deja de ser solo de forma y pasa a ser de contraste: al exigir coincidencia exacta de los datos del receptor con el padrón, el SAT puede cruzar emisor contra receptor de manera automática y detectar inconsistencias en el momento del timbrado.
+El efecto es que la validación deja de ser solo de forma y pasa a ser de contraste: al exigir coincidencia exacta de los datos del receptor con el padrón, el SAT puede cruzar emisor contra receptor de manera automática y detectar inconsistencias en el momento del timbrado.
 
 ## La otra dimensión: extensibilidad por complementos
 
 El relato hasta aquí sigue la versión del CFDI como comprobante base, pero el estándar se diseñó con capacidad de extensibilidad: incorporar información especializada sin alterar su estructura general. Ese segundo eje de evolución opera en paralelo a las versiones y es igual de relevante para entender el modelo: los complementos. Un complemento es un bloque de información estructurada que se incorpora al comprobante para cubrir las necesidades de un sector o una operación específica —nómina, comercio exterior, combustibles, pagos, transporte de mercancías— y que queda protegido por el mismo sello digital: los datos del complemento se incluyen en la cadena original que se sella, de modo que quedan certificados junto con el resto del comprobante y no pueden alterarse sin invalidar el sello.
 
-La decisión de arquitectura es la que importa históricamente: en lugar de rehacer el estándar cada vez que un sector entraba bajo control fiscal, el SAT lo extendió mediante módulos acoplados al comprobante base. Cada complemento tiene su propio anexo técnico y su propia versión, que evoluciona de forma independiente a la del CFDI. Por eso la mayoría de los complementos sobrevivieron sin cambios el salto de 3.x a 4.0: están desacoplados del comprobante. Para quien construye sistemas, esto significa que la superficie de cumplimiento no es una sola (el Anexo 20), sino una matriz: el estándar base más el conjunto de anexos de cada complemento aplicable, cada uno con su propio versionado y sus propias reglas de validación.
+La decisión de arquitectura es la que importa históricamente: en lugar de rehacer el estándar cada vez que un sector entraba bajo control fiscal, el SAT lo extendió mediante módulos acoplados al comprobante base. Cada complemento tiene su propio anexo técnico y su propia versión, que evoluciona de forma independiente a la del CFDI. Por eso la mayoría de los complementos sobrevivieron sin cambios el salto de 3.x a 4.0: están desacoplados del comprobante. En la práctica, esto significa que cumplir no se reduce a un solo estándar (el Anexo 20): a él se suma el anexo de cada complemento que aplique, cada uno con su propia versión y sus propias reglas. Quien emite facturas debe atender todos los que le correspondan.
 
-A continuación, una fotografía de los principales complementos en cada régimen. Las versiones corresponden a un corte temporal y cambian con el tiempo, de forma independiente entre sí y respecto al CFDI base; mantenerse al día con esas actualizaciones es una carga operativa constante para quien emite, y por eso deben verificarse contra el portal del SAT antes de usarse [15].
+A continuación, una fotografía de los principales complementos en cada régimen. Las versiones corresponden a un corte temporal y cambian con el tiempo, de forma independiente entre sí y respecto al CFDI base; mantenerse al día con esas actualizaciones exige atención constante de quien emite facturas, y por eso deben verificarse contra el portal del SAT antes de usarse [15].
 
 **Régimen CFDI 3.x (hasta 2023)**
 
@@ -125,7 +125,7 @@ El patrón confirma lo dicho: el comprobante base saltó de 3.3 a 4.0, pero la m
 
 ## Lectura del arco completo
 
-Con las versiones del comprobante por un lado y los complementos por el otro, ya está sobre la mesa el cuadro completo de la evolución de la facturación electrónica en México. Vale cerrar leyéndolo como un todo. La secuencia de veinte años es consistente en una dirección: cada versión acercó el control al momento de la transacción y trasladó más carga de validación a los sistemas del emisor, mientras los complementos extendían ese control a un sector tras otro sin rehacer el estándar.
+Con las versiones del comprobante por un lado y los complementos por el otro, ya está sobre la mesa el cuadro completo de la evolución de la facturación electrónica en México. Vale cerrar leyéndolo como un todo. La secuencia de veinte años es consistente en una dirección: cada versión acercó el control al momento de la transacción y puso más exigencias de validación del lado de quien emite, mientras los complementos extendían ese control a un sector tras otro sin rehacer el estándar.
 
 | Etapa | Año | Cambio de control |
 |---|---|---|
@@ -140,7 +140,7 @@ Con las versiones del comprobante por un lado y los complementos por el otro, ya
 
 Leída completa, la evolución no fue una sucesión de cambios técnicos inconexos, sino el despliegue sostenido de una sola idea: convertir la factura en el instrumento con el que el Estado observa el registro fiscal de las operaciones en tiempo real. Cada etapa respondió a una carencia de la anterior —el papel no daba trazabilidad, el CFD no daba certificación inmediata, la 3.3 no daba datos comparables, la 4.0 cerró el contraste contra el padrón— y los complementos extendieron esa misma lógica a cada sector que se quería fiscalizar.
 
-Entender esa lógica —qué carencia resolvía cada etapa y cómo cada una preparó la siguiente— es lo que permite anticipar hacia dónde sigue. Las próximas entregas de esta serie abordan los retos técnicos y de cumplimiento que este modelo plantea hoy.
+Entender esa lógica —qué carencia resolvía cada etapa y cómo cada una preparó la siguiente— es lo que permite anticipar hacia dónde sigue. Las próximas entregas de esta serie abordan los retos que este modelo plantea hoy, tanto para la autoridad como para quienes emiten facturas.
 
 ---
 
