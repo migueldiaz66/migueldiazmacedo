@@ -34,7 +34,8 @@ const author = 'Miguel Díaz Macedo';
 // Lightweight reference to the full Person entity defined on /acerca/.
 const authorRef = { '@type': 'Person', name: author, url: site + '/acerca/' };
 const ogTitle = title.replace(/ — migueldiazmacedo$/, '');
-const ogImage = image ? new URL(image, site).href : undefined;
+// og:image: la portada propia de la página o, si no tiene, la imagen de marca.
+const ogImage = new URL(image ?? '/og-default.png', site).href;
 
 const jsonLd = type === 'article'
   ? {
