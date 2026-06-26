@@ -20,6 +20,9 @@ const articleSchema = z.object({
   tags: z.array(z.string()).default([]),
   // optional FAQ: renders a visible block and emits FAQPage structured data
   faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
+  // optional knowledge-graph entities (keys into src/config/entities.ts);
+  // emitted as schema.org `about` nodes with sameAs in the article JSON-LD
+  entities: z.array(z.string()).default([]),
 });
 
 // Each topic is its own collection. Add new topics here as they grow.

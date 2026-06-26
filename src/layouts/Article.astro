@@ -1,6 +1,7 @@
 ---
 import Base from './Base.astro';
 import { topicBySlug } from '../config/topics';
+import { resolveEntities } from '../config/entities';
 
 export interface Props {
   title: string;
@@ -13,11 +14,15 @@ export interface Props {
   seoTitle?: string;
   faq?: { q: string; a: string }[];
   noindex?: boolean;
+  entities?: string[];
+  tags?: string[];
 }
 
-const { title, description, pubDate, updatedDate, topicSlug, path, image, seoTitle, faq, noindex } = Astro.props;
+const { title, description, pubDate, updatedDate, topicSlug, path, image, seoTitle, faq, noindex, entities, tags } = Astro.props;
 const topic = topicBySlug(topicSlug);
 const accent = topic?.accent;
+const about = resolveEntities(entities);
+const keywords = tags && tags.length ? tags.join(', ') : undefined;
 
 // <title>: short SEO title if given (kept <70), else the full title + brand.
 const headTitle = seoTitle ?? `${title} — migueldiazmacedo`;
@@ -39,6 +44,9 @@ const fmt = (d: Date) =>
   updatedDate={updatedDate}
   image={image}
   noindex={noindex}
+  about={about}
+  keywords={keywords}
+  articleSection={topic?.label}
 >
   <article class="wrap prose article">
     <p class="eyebrow">

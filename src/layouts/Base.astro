@@ -17,9 +17,14 @@ export interface Props {
   updatedDate?: Date;
   /* when true, emit robots noindex (for draft previews) */
   noindex?: boolean;
+  /* schema.org `about` nodes (knowledge-graph entities) for articles */
+  about?: { '@type': string; name: string; sameAs: string[] }[];
+  /* comma-separated keywords and the article's section/category */
+  keywords?: string;
+  articleSection?: string;
 }
 
-const { title, description, accent, path = '', type = 'website', image, pubDate, updatedDate, noindex = false } = Astro.props;
+const { title, description, accent, path = '', type = 'website', image, pubDate, updatedDate, noindex = false, about, keywords, articleSection } = Astro.props;
 const topics = publishedTopics();
 const site = 'https://migueldiazmacedo.com';
 const canonical = site + path;
@@ -40,6 +45,9 @@ const jsonLd = type === 'article'
       ...(ogImage ? { image: ogImage } : {}),
       ...(pubDate ? { datePublished: pubDate.toISOString() } : {}),
       ...(updatedDate ? { dateModified: updatedDate.toISOString() } : {}),
+      ...(about && about.length ? { about } : {}),
+      ...(keywords ? { keywords } : {}),
+      ...(articleSection ? { articleSection } : {}),
       author: authorRef,
       publisher: authorRef,
       inLanguage: 'es',

@@ -5,6 +5,7 @@ description: "Entre 2004 y 2023, México llevó la factura en papel hacia una tr
 pubDate: 2026-06-24T21:00:00-06:00
 lang: es
 tags: ["CFDI", "facturación electrónica", "SAT", "CTC", "México"]
+entities: ["cfdi", "sat", "factura-electronica"]
 faq:
   - q: "¿Cuándo nació el CFDI?"
     a: "El CFDI (Comprobante Fiscal Digital por Internet) entró en vigor el 1 de enero de 2011. Su base legal es la reforma al Código Fiscal de la Federación publicada en el DOF el 7 de diciembre de 2009, que obliga a que un proveedor autorizado de certificación (PAC) valide y selle cada comprobante antes de que tenga efectos fiscales. No nació en 2004 ni en 2005: eso fue el CFD, su antecesor."

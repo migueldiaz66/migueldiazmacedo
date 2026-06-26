@@ -6,6 +6,7 @@ pubDate: 2026-06-30T21:00:00-06:00
 draft: true
 lang: es
 tags: ["CFDI", "facturación electrónica", "SAT", "CTC", "México"]
+entities: ["cfdi", "sat", "factura-electronica"]
 faq:
   - q: "¿Cuántos tipos de CFDI existen?"
     a: "Cinco: Ingreso (I), Egreso (E), Traslado (T), Nómina (N) y Pago (P). El tipo determina para qué sirve el comprobante y qué procesos le aplican; está definido en el catálogo c_TipoDeComprobante del Anexo 20 del SAT."
