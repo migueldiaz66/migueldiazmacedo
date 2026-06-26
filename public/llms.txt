@@ -7,6 +7,7 @@ Blog técnico de oficio: cómo los sistemas registran, validan y controlan las o
 ## Artículos
 
 - [CFDI: evolución del control fiscal en México (2004–2023)](https://migueldiazmacedo.com/fiscal/cfdi-evolucion/): reconstrucción histórica de cómo México pasó de la factura en papel al CFDI con validación en tiempo real por un Proveedor Autorizado de Certificación (PAC), esquema por esquema (CFD, CFDI 3.3, 4.0 y complementos), con fundamento en el DOF. Incluye preguntas frecuentes.
+- [El ciclo de vida del CFDI 4.0: tipos, actores, procesos y estados](https://migueldiazmacedo.com/fiscal/cfdi-ciclo-de-vida/): anatomía del proceso del CFDI 4.0 —los cinco tipos de comprobante, los cuatro actores (emisor, PAC, SAT y receptor), los procesos por los que pasa y por qué su estado es relativo al lente que lo observa. Incluye glosario, preguntas frecuentes y referencias a fuentes primarias.
 
 ## Temas
 

@@ -2,8 +2,10 @@
 title: "El ciclo de vida del CFDI 4.0: tipos, actores, procesos y estados"
 seoTitle: "Ciclo de vida del CFDI 4.0: anatomía del proceso"
 description: "Anatomía del proceso del CFDI 4.0: los cinco tipos de comprobante, los cuatro actores que lo manejan, los procesos por los que pasa y por qué su estado es relativo al lente que lo observa."
-pubDate: 2026-06-30T21:00:00-06:00
-draft: true
+pubDate: 2026-06-26T21:00:00-06:00
+cover: /covers/cfdi-ciclo-de-vida.png
+coverAlt: "El ciclo de vida del CFDI 4.0 y la cadena de sus cuatro actores: emisor, PAC, SAT y receptor."
+draft: false
 lang: es
 tags: ["CFDI", "facturación electrónica", "SAT", "CTC", "México"]
 entities: ["cfdi", "sat", "factura-electronica"]
