@@ -39,9 +39,9 @@ const ogImage = image ? new URL(image, site).href : undefined;
 const jsonLd = type === 'article'
   ? {
       '@context': 'https://schema.org',
-      // Doble tipo: Article (tipo amplio que reconocen buscadores y parsers) +
-      // TechArticle (subtipo más preciso para contenido técnico).
-      '@type': ['Article', 'TechArticle'],
+      // TechArticle (subtipo de Article) describe con precisión el contenido
+      // técnico; ya hereda Article, así que listar ambos sería redundante.
+      '@type': 'TechArticle',
       headline: ogTitle,
       description,
       url: canonical,
