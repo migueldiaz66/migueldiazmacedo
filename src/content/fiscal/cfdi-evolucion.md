@@ -3,6 +3,8 @@ title: "CFDI: cómo México convirtió la factura en un proceso de control en ti
 seoTitle: "CFDI: evolución del control fiscal en México (2004–2023)"
 description: "Entre 2004 y 2023, México llevó la factura en papel hacia una transacción electrónica que el SAT valida antes de que tenga efectos. Reconstrucción histórica de cómo se construyó ese modelo, esquema por esquema, con fundamento en el DOF."
 pubDate: 2026-06-24T21:00:00-06:00
+cover: /covers/cfdi-evolucion.png
+coverAlt: "Línea de tiempo de la evolución del CFDI en México: 2004 (CFD), 2011 (CFDI con PAC), 2017 (CFDI 3.3) y 2023 (CFDI 4.0)."
 lang: es
 tags: ["CFDI", "facturación electrónica", "SAT", "CTC", "México"]
 entities: ["cfdi", "sat", "factura-electronica"]
