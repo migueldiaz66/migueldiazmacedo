@@ -176,8 +176,9 @@ hr.divider {
 .mono { font-family: var(--mono); }
 .small { font-size: var(--step--1); }
 
-/* in-text citation links -> references list. Subtle by default; the jump
-   lands below the sticky header thanks to scroll-margin on the targets. */
-a[href^="#ref-"] { text-decoration: none; font-weight: 500; }
-a[href^="#ref-"]:hover { text-decoration: underline; }
-[id^="ref-"] { scroll-margin-top: 5rem; }
+/* in-text citation links -> references list, y notas al pie (marcador alfabético).
+   Subtle by default; the jump lands below the sticky header thanks to
+   scroll-margin on the targets. */
+a[href^="#ref-"], a[href^="#nota-"] { text-decoration: none; font-weight: 500; }
+a[href^="#ref-"]:hover, a[href^="#nota-"]:hover { text-decoration: underline; }
+[id^="ref-"], [id^="nota-"] { scroll-margin-top: 5rem; }

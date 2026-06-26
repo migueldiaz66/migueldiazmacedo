@@ -159,6 +159,25 @@ export const GLOSSARY: GlossaryTerm[] = [
       'https://es.wikipedia.org/wiki/Factura_electr%C3%B3nica',
     ],
   },
+  {
+    key: 'rfc',
+    abbr: 'RFC',
+    name: 'Registro Federal de Contribuyentes',
+    definition:
+      'La clave única que identifica a cada contribuyente —persona física o moral— ante el SAT. En el CFDI 4.0, el RFC del receptor, junto con su nombre y código postal, debe coincidir con su constancia de situación fiscal; si no, el comprobante no se timbra.',
+  },
+  {
+    key: 'carta-porte',
+    name: 'Carta Porte',
+    definition:
+      'Complemento del CFDI que ampara el traslado de mercancías por territorio nacional y acredita su legal tenencia o estancia. Lo emite el dueño que traslada mercancía propia (CFDI de Traslado) o el transportista que cobra el flete (CFDI de Ingreso).',
+  },
+  {
+    key: 'nota-de-credito',
+    name: 'Nota de crédito',
+    definition:
+      'CFDI de tipo Egreso que documenta devoluciones, descuentos o bonificaciones sobre una venta ya facturada: resta su monto sin cancelar el comprobante de Ingreso. Coloquialmente, "factura de egreso".',
+  },
 ];
 
 // Subconjunto por claves, en el orden del catálogo (filtra claves desconocidas).
