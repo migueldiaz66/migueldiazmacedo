@@ -37,7 +37,9 @@ const ogImage = image ? new URL(image, site).href : undefined;
 const jsonLd = type === 'article'
   ? {
       '@context': 'https://schema.org',
-      '@type': 'BlogPosting',
+      // Doble tipo: Article (tipo amplio que reconocen buscadores y parsers) +
+      // TechArticle (subtipo más preciso para contenido técnico).
+      '@type': ['Article', 'TechArticle'],
       headline: ogTitle,
       description,
       url: canonical,

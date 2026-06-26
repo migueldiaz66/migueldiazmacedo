@@ -1,0 +1,21 @@
+# Miguel Díaz Macedo
+
+> Notas técnicas sobre facturación electrónica, CFDI y control continuo de transacciones (CTC) en México y Latinoamérica, por Miguel Díaz Macedo —líder de ingeniería de tecnología de cumplimiento fiscal en SOVOS, formación de biólogo (UNAM) y casi 30 años en TI.
+
+Blog técnico de oficio: cómo los sistemas registran, validan y controlan las operaciones fiscales. Cada afirmación se apoya, en la medida de lo posible, en fuentes oficiales (Diario Oficial de la Federación, Código Fiscal de la Federación, Resolución Miscelánea Fiscal, Anexo 20 del SAT) o en referencias indexadas confiables. El contenido es independiente y no representa a su empleador.
+
+## Artículos
+
+- [CFDI: evolución del control fiscal en México (2004–2023)](https://migueldiazmacedo.com/fiscal/cfdi-evolucion/): reconstrucción histórica de cómo México pasó de la factura en papel al CFDI con validación en tiempo real por un Proveedor Autorizado de Certificación (PAC), esquema por esquema (CFD, CFDI 3.3, 4.0 y complementos), con fundamento en el DOF. Incluye preguntas frecuentes.
+
+## Temas
+
+- [Fiscal / CTC](https://migueldiazmacedo.com/fiscal/): índice de artículos sobre cumplimiento fiscal y control continuo de transacciones.
+
+## Autor
+
+- [Acerca de Miguel Díaz Macedo](https://migueldiazmacedo.com/acerca/): trayectoria, credenciales y método de trabajo (rigor de fuente primaria, sin conflicto de interés).
+
+## Optional
+
+- [Sitemap](https://migueldiazmacedo.com/sitemap-index.xml): mapa completo del sitio.
