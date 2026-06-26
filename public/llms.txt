@@ -16,6 +16,10 @@ Blog técnico de oficio: cómo los sistemas registran, validan y controlan las o
 
 - [Acerca de Miguel Díaz Macedo](https://migueldiazmacedo.com/acerca/): trayectoria, credenciales y método de trabajo (rigor de fuente primaria, sin conflicto de interés).
 
+## Recursos
+
+- [Glosario de facturación electrónica y CFDI](https://migueldiazmacedo.com/glosario/): definiciones de los términos clave (CFDI, PAC, CSD, UUID, timbrado, complemento, addenda, CTC, REP, PPD…), con enlaces al grafo de conocimiento.
+
 ## Optional
 
 - [Sitemap](https://migueldiazmacedo.com/sitemap-index.xml): mapa completo del sitio.

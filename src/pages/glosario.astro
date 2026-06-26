@@ -1,0 +1,102 @@
+---
+import Base from '../layouts/Base.astro';
+import { GLOSSARY } from '../config/glossary';
+
+const site = 'https://migueldiazmacedo.com';
+const url = site + '/glosario/';
+
+const slugify = (s: string) =>
+  s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+// Orden alfabético por encabezado (sigla si existe, si no el nombre).
+const terms = [...GLOSSARY]
+  .map((t) => {
+    const head = t.abbr ?? t.name;
+    const ref = t.sameAs?.find((u) => u.includes('wikipedia')) ?? t.sameAs?.[0];
+    return { ...t, head, slug: slugify(head), ref };
+  })
+  .sort((a, b) => a.head.localeCompare(b.head, 'es', { sensitivity: 'base' }));
+
+const termSet = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTermSet',
+  name: 'Glosario de facturación electrónica y CFDI',
+  description:
+    'Definiciones de los términos clave de la facturación electrónica, el CFDI y el control continuo de transacciones en México.',
+  url,
+  inLanguage: 'es',
+  hasDefinedTerm: terms.map((t) => ({
+    '@type': 'DefinedTerm',
+    name: t.abbr ? `${t.name} (${t.abbr})` : t.name,
+    ...(t.abbr ? { termCode: t.abbr } : {}),
+    description: t.definition,
+    inDefinedTermSet: url,
+    ...(t.sameAs ? { sameAs: t.sameAs } : {}),
+  })),
+};
+---
+<Base
+  title="Glosario de facturación electrónica y CFDI — migueldiazmacedo"
+  description="Definiciones de los términos clave de la facturación electrónica y el CFDI en México: CFDI, PAC, CSD, UUID, timbrado, complemento, CTC y más."
+  path="/glosario/"
+>
+  <article class="wrap prose glosario">
+    <p class="eyebrow">Glosario</p>
+    <h1>Glosario de facturación electrónica y CFDI</h1>
+    <p class="lede muted">
+      Definiciones breves del vocabulario que usan los artículos: el CFDI y el
+      control fiscal en tiempo real en México.
+    </p>
+
+    <div class="chain" aria-hidden="true" style="margin:1.8rem 0 2.6rem;max-width:340px">
+      <span class="node"></span><span class="seg"></span>
+      <span class="node hollow"></span><span class="seg"></span>
+      <span class="node"></span>
+    </div>
+
+    <dl class="terms">
+      {terms.map((t) => (
+        <div class="term" id={`term-${t.slug}`}>
+          <dt>
+            <span class="t-head">{t.head}</span>
+            {t.abbr && <span class="t-name mono muted">{t.name}</span>}
+          </dt>
+          <dd>
+            {t.definition}
+            {t.ref && (
+              <>
+                {' '}
+                <a class="t-ref mono" href={t.ref} rel="external nofollow" target="_blank">↗</a>
+              </>
+            )}
+          </dd>
+        </div>
+      ))}
+    </dl>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(termSet)} />
+
+  <style>
+    .glosario { padding-top: 3.5rem; }
+    .glosario .lede { font-size: var(--step-1); line-height: 1.45; margin: 0.2em 0 1em; }
+    .terms { margin: 0; }
+    .term {
+      border-top: 1px solid var(--line);
+      padding: 1.1em 0;
+      scroll-margin-top: 5rem;
+    }
+    .term:first-of-type { border-top: 0; }
+    .term dt {
+      display: flex;
+      align-items: baseline;
+      gap: 0.8ch;
+      flex-wrap: wrap;
+    }
+    .t-head { font-weight: 650; font-size: var(--step-1); letter-spacing: -0.01em; }
+    .t-name { font-size: var(--step--1); }
+    .term dd { margin: 0.35em 0 0; line-height: 1.55; }
+    .t-ref { color: var(--accent); text-decoration: none; }
+  </style>
+</Base>
