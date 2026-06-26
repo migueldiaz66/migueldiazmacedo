@@ -23,6 +23,15 @@ const articleSchema = z.object({
   // optional knowledge-graph entities (keys into src/config/entities.ts);
   // emitted as schema.org `about` nodes with sameAs in the article JSON-LD
   entities: z.array(z.string()).default([]),
+  // glosario contextual del artículo: claves hacia src/config/glossary.ts ->
+  // sección visible + DefinedTermSet en la propia página del artículo
+  glossary: z.array(z.string()).default([]),
+  // referencias estructuradas: fuente única de la sección visible "Referencias"
+  // y del `citation` (JSON-LD). El orden = el número [N] de las citas en el cuerpo.
+  citations: z
+    .array(z.object({ text: z.string(), urls: z.array(z.string()).default([]) }))
+    .default([]),
+  citationsNote: z.string().optional(),
 });
 
 // Each topic is its own collection. Add new topics here as they grow.

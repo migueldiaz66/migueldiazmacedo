@@ -2,6 +2,7 @@
 import Base from './Base.astro';
 import { topicBySlug } from '../config/topics';
 import { resolveEntities } from '../config/entities';
+import { glossaryByKeys } from '../config/glossary';
 
 export interface Props {
   title: string;
@@ -16,13 +17,26 @@ export interface Props {
   noindex?: boolean;
   entities?: string[];
   tags?: string[];
+  citations?: { text: string; urls: string[] }[];
+  citationsNote?: string;
+  glossary?: string[];
 }
 
-const { title, description, pubDate, updatedDate, topicSlug, path, image, seoTitle, faq, noindex, entities, tags } = Astro.props;
+const { title, description, pubDate, updatedDate, topicSlug, path, image, seoTitle, faq, noindex, entities, tags, citations, citationsNote, glossary } = Astro.props;
 const topic = topicBySlug(topicSlug);
 const accent = topic?.accent;
 const about = resolveEntities(entities);
 const keywords = tags && tags.length ? tags.join(', ') : undefined;
+// Glosario contextual del artículo (subconjunto del catálogo), orden alfabético.
+const glossaryTerms = glossaryByKeys(glossary ?? []).sort((a, b) =>
+  (a.abbr ?? a.name).localeCompare(b.abbr ?? b.name, 'es', { sensitivity: 'base' })
+);
+// Mismo arreglo de referencias -> nodos schema.org `citation`.
+const citation = (citations ?? []).map((c) => ({
+  '@type': 'CreativeWork',
+  name: c.text,
+  ...(c.urls && c.urls.length ? { url: c.urls.length === 1 ? c.urls[0] : c.urls } : {}),
+}));
 
 // <title>: short SEO title if given (kept <70), else the full title + brand.
 const headTitle = seoTitle ?? `${title} — migueldiazmacedo`;
@@ -47,6 +61,7 @@ const fmt = (d: Date) =>
   about={about}
   keywords={keywords}
   articleSection={topic?.label}
+  citation={citation}
 >
   <article class="wrap prose article">
     <p class="eyebrow">
@@ -67,6 +82,58 @@ const fmt = (d: Date) =>
     <div class="body">
       <slot />
     </div>
+
+    {citations && citations.length > 0 && (
+      <section class="refs" aria-labelledby="refs-h">
+        <h2 id="refs-h">Referencias</h2>
+        {citations.map((c, i) => (
+          <p class="ref" id={`ref-${i + 1}`}>
+            <span class="ref-n mono">[{i + 1}]</span> {c.text}
+            {c.urls && c.urls.map((u) => (
+              <>{' '}<a class="ref-url" href={u} rel="external nofollow">{u}</a></>
+            ))}
+          </p>
+        ))}
+        {citationsNote && (
+          <p class="ref-note small muted"><em>{citationsNote}</em></p>
+        )}
+      </section>
+    )}
+
+    {glossaryTerms.length > 0 && (
+      <section class="article-glossary" aria-labelledby="gloss-h">
+        <h2 id="gloss-h">Glosario</h2>
+        <dl class="g-terms">
+          {glossaryTerms.map((t) => (
+            <div class="g-term" id={`gloss-${t.key}`}>
+              <dt>
+                <span class="g-head">{t.abbr ?? t.name}</span>
+                {t.abbr && <span class="g-name mono muted">{t.name}</span>}
+              </dt>
+              <dd>{t.definition}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    )}
+    {glossaryTerms.length > 0 && (
+      <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'DefinedTermSet',
+          name: `Glosario — ${title}`,
+          inLanguage: 'es',
+          hasDefinedTerm: glossaryTerms.map((t) => ({
+            '@type': 'DefinedTerm',
+            name: t.abbr ? `${t.name} (${t.abbr})` : t.name,
+            ...(t.abbr ? { termCode: t.abbr } : {}),
+            description: t.definition,
+            ...(t.sameAs ? { sameAs: t.sameAs } : {}),
+          })),
+        })}
+      />
+    )}
 
     {faq && faq.length > 0 && (
       <section class="faq" aria-labelledby="faq-h">
@@ -162,6 +229,29 @@ const fmt = (d: Date) =>
       border-top: 1px solid var(--line);
       margin: 2.5em 0;
     }
+
+    /* References — single source for the visible list and schema citation */
+    .refs { margin-top: 3rem; }
+    .refs > h2 { padding-top: 0.4em; border-top: 1px solid var(--line); }
+    .ref { font-size: var(--step--1); line-height: 1.55; margin: 0.85em 0; }
+    .ref-n { color: var(--muted); margin-right: 0.2ch; }
+    .ref-url { word-break: break-all; }
+    .ref-note { margin-top: 1.5em; }
+
+    /* Per-article glossary — definitions live on the article's own page */
+    .article-glossary { margin-top: 3rem; }
+    .article-glossary > h2 { padding-top: 0.4em; border-top: 1px solid var(--line); }
+    .g-terms { margin: 0; }
+    .g-term {
+      border-top: 1px solid var(--line);
+      padding: 0.9em 0;
+      scroll-margin-top: 5rem;
+    }
+    .g-term:first-of-type { border-top: 0; }
+    .g-term dt { display: flex; align-items: baseline; gap: 0.8ch; flex-wrap: wrap; }
+    .g-head { font-weight: 650; }
+    .g-name { font-size: var(--step--1); }
+    .g-term dd { margin: 0.3em 0 0; font-size: var(--step--1); line-height: 1.55; }
 
     /* FAQ — atomic Q&A, citable by AI and search */
     .faq { margin-top: 3.5rem; }

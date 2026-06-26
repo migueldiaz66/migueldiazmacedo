@@ -7,6 +7,20 @@ draft: true
 lang: es
 tags: ["CFDI", "facturación electrónica", "SAT", "CTC", "México"]
 entities: ["cfdi", "sat", "factura-electronica"]
+glossary: ["cfdi", "sat", "pac", "csd", "timbrado", "uuid", "tfd", "sello-digital", "complemento", "addenda", "rep", "ppd", "pue", "anexo-20", "ctc", "factura-electronica"]
+citations:
+  - text: 'SAT, Anexo 20 — Guía de llenado de los Comprobantes Fiscales Digitales por Internet (CFDI) versión 4.0. Estructura del comprobante, catálogo de tipos (c_TipoDeComprobante: I, E, T, N, P), complementos y nodo Addenda.'
+    urls: ['http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf']
+  - text: 'Código Fiscal de la Federación, arts. 29 y 29-A. Emisión del CFDI y certificación por un Proveedor Autorizado de Certificación (PAC): validación, folio fiscal e incorporación del sello del SAT.'
+    urls: ['https://www.diputados.gob.mx/LeyesBiblio/pdf/CFF.pdf']
+  - text: 'SAT, Complemento para recepción de pagos (Recibo Electrónico de Pago, REP). Obligatorio en el esquema de Pago en Parcialidades o Diferido (PPD); versión 2.0 vigente para CFDI 4.0.'
+    urls: ['https://www.sat.gob.mx/consultas/92764/comprobante-de-recepcion-de-pagos']
+  - text: 'SAT, Servicio de cancelación de facturas. Catálogo de motivos de cancelación (01 a 04) y esquema de cancelación con aceptación del receptor.'
+    urls: ['http://omawww.sat.gob.mx/factura/Paginas/documentos/cancelacion/servicio_cancelacion.pdf']
+  - text: 'Resolución Miscelánea Fiscal, regla 2.7.1.39 (renumerada 2.7.1.35 en versiones recientes). Cancelación sin aceptación del receptor en comprobantes de hasta $1,000 y otros supuestos, con sus excepciones.'
+    urls: ['https://www.sat.gob.mx/articulo/62770/regla-2.7.1.39']
+  - text: 'Código Fiscal de la Federación, art. 30. Conservación de la contabilidad y la documentación —incluidos los CFDI— por cinco años.'
+    urls: ['https://www.diputados.gob.mx/LeyesBiblio/pdf/CFF.pdf']
 faq:
   - q: "¿Cuántos tipos de CFDI existen?"
     a: "Cinco: Ingreso (I), Egreso (E), Traslado (T), Nómina (N) y Pago (P). El tipo determina para qué sirve el comprobante y qué procesos le aplican; está definido en el catálogo c_TipoDeComprobante del Anexo 20 del SAT."
@@ -103,19 +117,3 @@ No hay que forzar un consenso entre estas máquinas: hay que **declarar la persp
 ## Lo que sigue
 
 Este fue el mapa. Las próximas entregas recorren cada proceso por separado —la emisión y qué es realmente un XML; el timbrado y cómo se sella electrónicamente un documento; la recepción y validación; la cancelación y la sustitución; los pagos; los egresos— con el detalle que aquí apenas se esbozó.
-
----
-
-## Referencias
-
-<span id="ref-1">[1]</span> SAT, Anexo 20 — Guía de llenado de los Comprobantes Fiscales Digitales por Internet (CFDI) versión 4.0. Estructura del comprobante, catálogo de tipos (c_TipoDeComprobante: I, E, T, N, P), complementos y nodo Addenda. http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf
-
-<span id="ref-2">[2]</span> Código Fiscal de la Federación, arts. 29 y 29-A. Emisión del CFDI y certificación por un Proveedor Autorizado de Certificación (PAC): validación, folio fiscal e incorporación del sello del SAT. https://www.diputados.gob.mx/LeyesBiblio/pdf/CFF.pdf
-
-<span id="ref-3">[3]</span> SAT, Complemento para recepción de pagos (Recibo Electrónico de Pago, REP). Obligatorio en el esquema de Pago en Parcialidades o Diferido (PPD); versión 2.0 vigente para CFDI 4.0. https://www.sat.gob.mx/consultas/92764/comprobante-de-recepcion-de-pagos
-
-<span id="ref-4">[4]</span> SAT, Servicio de cancelación de facturas. Catálogo de motivos de cancelación (01 a 04) y esquema de cancelación con aceptación del receptor. http://omawww.sat.gob.mx/factura/Paginas/documentos/cancelacion/servicio_cancelacion.pdf
-
-<span id="ref-5">[5]</span> Resolución Miscelánea Fiscal, regla 2.7.1.39 (renumerada 2.7.1.35 en versiones recientes). Cancelación sin aceptación del receptor en comprobantes de hasta $1,000 y otros supuestos, con sus excepciones. https://www.sat.gob.mx/articulo/62770/regla-2.7.1.39
-
-<span id="ref-6">[6]</span> Código Fiscal de la Federación, art. 30. Conservación de la contabilidad y la documentación —incluidos los CFDI— por cinco años. https://www.diputados.gob.mx/LeyesBiblio/pdf/CFF.pdf

@@ -22,9 +22,11 @@ export interface Props {
   /* comma-separated keywords and the article's section/category */
   keywords?: string;
   articleSection?: string;
+  /* schema.org `citation` nodes (works cited by the article) */
+  citation?: { '@type': string; name: string; url?: string | string[] }[];
 }
 
-const { title, description, accent, path = '', type = 'website', image, pubDate, updatedDate, noindex = false, about, keywords, articleSection } = Astro.props;
+const { title, description, accent, path = '', type = 'website', image, pubDate, updatedDate, noindex = false, about, keywords, articleSection, citation } = Astro.props;
 const topics = publishedTopics();
 const site = 'https://migueldiazmacedo.com';
 const canonical = site + path;
@@ -50,6 +52,7 @@ const jsonLd = type === 'article'
       ...(about && about.length ? { about } : {}),
       ...(keywords ? { keywords } : {}),
       ...(articleSection ? { articleSection } : {}),
+      ...(citation && citation.length ? { citation } : {}),
       author: authorRef,
       publisher: authorRef,
       inLanguage: 'es',

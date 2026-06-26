@@ -8,6 +8,39 @@ coverAlt: "Línea de tiempo de la evolución del CFDI en México: 2004 (CFD), 20
 lang: es
 tags: ["CFDI", "facturación electrónica", "SAT", "CTC", "México"]
 entities: ["cfdi", "sat", "factura-electronica"]
+glossary: ["cfd", "cfdi", "sat", "pac", "csd", "e-firma", "sello-digital", "timbrado", "uuid", "anexo-20", "rmf", "dof", "complemento", "rep", "ctc", "factura-electronica"]
+citations:
+  - text: 'Trayectoria general de la facturación electrónica en México (cronología de versiones y obligatoriedad). Síntesis de fuentes secundarias del sector; cada hito específico se verifica contra el DOF en las referencias siguientes.'
+    urls: []
+  - text: 'Decreto de reformas al Código Fiscal de la Federación, DOF 05/01/2004. Régimen de documentos digitales, sello digital y firma electrónica avanzada (CFF, arts. 17-C a 17-J).'
+    urls: ['https://dof.gob.mx/nota_detalle.php?codigo=676424&fecha=05/01/2004']
+  - text: 'Anexo 20 de la Resolución Miscelánea Fiscal para 2004, DOF. Primer estándar técnico del comprobante fiscal digital (estructura XML, codificación, sello digital en Base64).'
+    urls: ['https://dof.gob.mx/nota_detalle_popup.php?codigo=671350']
+  - text: 'SAT, Manual de Usuario de la Aplicación: Solicitud de Certificado Digital (SOLCEDI). Generación local del par de llaves y del requerimiento (.req/.sdg) para FIEL y CSD. Y SAT, "Consulta folios y envía reportes mensuales de comprobantes fiscales digitales (CFD)" (esquema SICOFI; reporte mensual obligatorio bajo el modelo CFD).'
+    urls: ['http://omawww.sat.gob.mx/informacion_fiscal/factura_electronica/Documents/cfdi/Manual_SOLCEDI.pdf', 'https://www.sat.gob.mx/aplicacion/45174/consulta-folios-y-envia-reportes-mensuales-de-comprobantes-fiscales-digitales']
+  - text: 'Diferencias operativas entre CFD y CFDI (solicitud de folios/series y reporte mensual obligatorio en CFD frente a timbrado por PAC en CFDI). Documentación técnica del esquema CFD hacia 2010.'
+    urls: []
+  - text: 'Decreto por el que se reforman, adicionan y derogan diversas disposiciones de las Leyes del Impuesto sobre la Renta, del Impuesto a los Depósitos en Efectivo y del Impuesto al Valor Agregado, del Código Fiscal de la Federación y del Decreto por el que se establecen las obligaciones que podrán denominarse en Unidades de Inversión, DOF 07/12/2009. Reforma los artículos 29 a 29-D del CFF y establece el Comprobante Fiscal Digital por Internet (CFDI) certificado por proveedor autorizado; las reformas a los artículos 29 y 29-A entran en vigor el 1 de enero de 2011.'
+    urls: ['https://www.dof.gob.mx/nota_detalle.php?codigo=5123035&fecha=07/12/2009']
+  - text: 'Código Fiscal de la Federación, arts. 29 y 29-A. Certificación por proveedor autorizado (PAC): validación, asignación de folio fiscal (UUID) e incorporación del sello digital del SAT.'
+    urls: []
+  - text: 'Comprobantes fiscales impresos con Código de Barras Bidimensional (CBB): aplicable a contribuyentes con ingresos anuales hasta $4,000,000; folios y CBB asignados por el SAT, impresión por medios propios. Fundamento: art. 29-B, fracción I del CFF y Regla I.2.8.1.1 de la RMF 2012; en 2011, arts. 29 y 29-A, fracción VIII del CFF y Regla I.2.9.3.3 de la RMF 2011. El CBB carece de las propiedades de autenticidad, integridad y no repudio del comprobante electrónico sellado.'
+    urls: []
+  - text: 'Resolución Miscelánea Fiscal para 2014, DOF 30/12/2013. Obligatoriedad general del CFDI desde 2014 —con facilidad de migración para contribuyentes de menores ingresos hasta el 31/03/2014— e incorporación del recibo de nómina al esquema CFDI.'
+    urls: ['https://dof.gob.mx/nota_detalle.php?codigo=5328461&fecha=30/12/2013']
+  - text: 'Entrada en vigor del CFDI 4.0 (01/01/2022 opcional) y obligatoriedad a partir del 01/04/2023, tras prórrogas del periodo de convivencia con la 3.3 (confirmada en la RMF 2023, DOF 27/12/2022). Especificación técnica: Anexo 20 versión 4.0, DOF 13/01/2022.'
+    urls: ['https://www.dof.gob.mx/nota_detalle.php?codigo=5640565&fecha=13/01/2022', 'https://www.dof.gob.mx/nota_detalle_popup.php?codigo=5710350']
+  - text: 'Anexo 20 de la Segunda Resolución de Modificaciones a la RMF para 2017, DOF 28/07/2017. Estándar de la versión 3.3 (catálogos, validaciones, complemento de pagos).'
+    urls: ['https://dof.gob.mx/nota_detalle.php?codigo=5492254&fecha=28/07/2017']
+  - text: 'Complemento para Recepción de Pagos y su obligatoriedad a partir del 01/09/2018 (resoluciones de modificación a la RMF 2017 y disposiciones relacionadas).'
+    urls: []
+  - text: 'Código Fiscal de la Federación, art. 29-A (cancelación con aceptación del receptor); reglas de la RMF aplicables.'
+    urls: []
+  - text: 'Sobre la disputa en la numeración de versiones (fuentes secundarias en contradicción): distintos sitios de divulgación etiquetan de forma incompatible las versiones tempranas (CFD 2005 como "1.0", CFDI 2010 como "2.0", la 3.2 como "primera versión en línea") y confunden publicación con obligatoriedad. Fuente primaria recomendada para fijar versión y vigencia: el Anexo 20 publicado en el DOF para cada periodo.'
+    urls: ['http://omawww.sat.gob.mx/tramitesyservicios/Paginas/anexo_20_version3-3.htm']
+  - text: 'Catálogo de complementos del CFDI y sus versiones. SAT, "Complementos de factura". Cada complemento tiene su propio anexo técnico; las versiones cambian de forma independiente y deben verificarse contra el portal del SAT antes de usarse.'
+    urls: ['https://www.sat.gob.mx/minisitio/Factura/emite_complementosdefactura.htm']
+citationsNote: 'Los enlaces al DOF de [2], [3], [4], [6], [9], [10] y [11] están verificados.'
 faq:
   - q: "¿Cuándo nació el CFDI?"
     a: "El CFDI (Comprobante Fiscal Digital por Internet) entró en vigor el 1 de enero de 2011. Su base legal es la reforma al Código Fiscal de la Federación publicada en el DOF el 7 de diciembre de 2009, que obliga a que un proveedor autorizado de certificación (PAC) valide y selle cada comprobante antes de que tenga efectos fiscales. No nació en 2004 ni en 2005: eso fue el CFD, su antecesor."
@@ -160,39 +193,3 @@ Con las versiones del comprobante por un lado y los complementos por el otro, ya
 Leída completa, la evolución no fue una sucesión de cambios técnicos inconexos, sino el despliegue sostenido de una sola idea: convertir la factura en el instrumento con el que el Estado observa el registro fiscal de las operaciones en tiempo real. Cada etapa respondió a una carencia de la anterior —el papel no daba trazabilidad, el CFD no daba certificación inmediata, la 3.3 no daba datos comparables, la 4.0 cerró el contraste contra el padrón— y los complementos extendieron esa misma lógica a cada sector que se quería fiscalizar.
 
 Entender esa lógica —qué carencia resolvía cada etapa y cómo cada una preparó la siguiente— es lo que permite anticipar hacia dónde sigue. Las próximas entregas de esta serie abordan los retos que este modelo plantea hoy, tanto para la autoridad como para quienes emiten facturas.
-
----
-
-## Referencias
-
-<span id="ref-1">[1]</span> Trayectoria general de la facturación electrónica en México (cronología de versiones y obligatoriedad). Síntesis de fuentes secundarias del sector; cada hito específico se verifica contra el DOF en las referencias siguientes.
-
-<span id="ref-2">[2]</span> Decreto de reformas al Código Fiscal de la Federación, DOF 05/01/2004. Régimen de documentos digitales, sello digital y firma electrónica avanzada (CFF, arts. 17-C a 17-J). https://dof.gob.mx/nota_detalle.php?codigo=676424&fecha=05/01/2004
-
-<span id="ref-3">[3]</span> Anexo 20 de la Resolución Miscelánea Fiscal para 2004, DOF. Primer estándar técnico del comprobante fiscal digital (estructura XML, codificación, sello digital en Base64). https://dof.gob.mx/nota_detalle_popup.php?codigo=671350
-
-<span id="ref-4">[4]</span> SAT, Manual de Usuario de la Aplicación: Solicitud de Certificado Digital (SOLCEDI). Generación local del par de llaves y del requerimiento (.req/.sdg) para FIEL y CSD. http://omawww.sat.gob.mx/informacion_fiscal/factura_electronica/Documents/cfdi/Manual_SOLCEDI.pdf — y SAT, "Consulta folios y envía reportes mensuales de comprobantes fiscales digitales (CFD)" (esquema SICOFI; reporte mensual obligatorio bajo el modelo CFD). https://www.sat.gob.mx/aplicacion/45174/consulta-folios-y-envia-reportes-mensuales-de-comprobantes-fiscales-digitales
-
-<span id="ref-5">[5]</span> Diferencias operativas entre CFD y CFDI (solicitud de folios/series y reporte mensual obligatorio en CFD frente a timbrado por PAC en CFDI). Documentación técnica del esquema CFD hacia 2010.
-
-<span id="ref-6">[6]</span> Decreto por el que se reforman, adicionan y derogan diversas disposiciones de las Leyes del Impuesto sobre la Renta, del Impuesto a los Depósitos en Efectivo y del Impuesto al Valor Agregado, del Código Fiscal de la Federación y del Decreto por el que se establecen las obligaciones que podrán denominarse en Unidades de Inversión, DOF 07/12/2009. Reforma los artículos 29 a 29-D del CFF y establece el Comprobante Fiscal Digital por Internet (CFDI) certificado por proveedor autorizado; las reformas a los artículos 29 y 29-A entran en vigor el 1 de enero de 2011. https://www.dof.gob.mx/nota_detalle.php?codigo=5123035&fecha=07/12/2009
-
-<span id="ref-7">[7]</span> Código Fiscal de la Federación, arts. 29 y 29-A. Certificación por proveedor autorizado (PAC): validación, asignación de folio fiscal (UUID) e incorporación del sello digital del SAT.
-
-<span id="ref-8">[8]</span> Comprobantes fiscales impresos con Código de Barras Bidimensional (CBB): aplicable a contribuyentes con ingresos anuales hasta $4,000,000; folios y CBB asignados por el SAT, impresión por medios propios. Fundamento: art. 29-B, fracción I del CFF y Regla I.2.8.1.1 de la RMF 2012; en 2011, arts. 29 y 29-A, fracción VIII del CFF y Regla I.2.9.3.3 de la RMF 2011. El CBB carece de las propiedades de autenticidad, integridad y no repudio del comprobante electrónico sellado.
-
-<span id="ref-9">[9]</span> Resolución Miscelánea Fiscal para 2014, DOF 30/12/2013. Obligatoriedad general del CFDI desde 2014 —con facilidad de migración para contribuyentes de menores ingresos hasta el 31/03/2014— e incorporación del recibo de nómina al esquema CFDI. https://dof.gob.mx/nota_detalle.php?codigo=5328461&fecha=30/12/2013
-
-<span id="ref-10">[10]</span> Entrada en vigor del CFDI 4.0 (01/01/2022 opcional) y obligatoriedad a partir del 01/04/2023, tras prórrogas del periodo de convivencia con la 3.3 (confirmada en la RMF 2023, DOF 27/12/2022). Especificación técnica: Anexo 20 versión 4.0, DOF 13/01/2022. https://www.dof.gob.mx/nota_detalle.php?codigo=5640565&fecha=13/01/2022 — y RMF 2023: https://www.dof.gob.mx/nota_detalle_popup.php?codigo=5710350
-
-<span id="ref-11">[11]</span> Anexo 20 de la Segunda Resolución de Modificaciones a la RMF para 2017, DOF 28/07/2017. Estándar de la versión 3.3 (catálogos, validaciones, complemento de pagos). https://dof.gob.mx/nota_detalle.php?codigo=5492254&fecha=28/07/2017
-
-<span id="ref-12">[12]</span> Complemento para Recepción de Pagos y su obligatoriedad a partir del 01/09/2018 (resoluciones de modificación a la RMF 2017 y disposiciones relacionadas).
-
-<span id="ref-13">[13]</span> Código Fiscal de la Federación, art. 29-A (cancelación con aceptación del receptor); reglas de la RMF aplicables.
-
-<span id="ref-14">[14]</span> Sobre la disputa en la numeración de versiones (fuentes secundarias en contradicción): distintos sitios de divulgación etiquetan de forma incompatible las versiones tempranas (CFD 2005 como "1.0", CFDI 2010 como "2.0", la 3.2 como "primera versión en línea") y confunden publicación con obligatoriedad. Fuente primaria recomendada para fijar versión y vigencia: el Anexo 20 publicado en el DOF para cada periodo. http://omawww.sat.gob.mx/tramitesyservicios/Paginas/anexo_20_version3-3.htm
-
-<span id="ref-15">[15]</span> Catálogo de complementos del CFDI y sus versiones. SAT, "Complementos de factura": https://www.sat.gob.mx/minisitio/Factura/emite_complementosdefactura.htm. Cada complemento tiene su propio anexo técnico; las versiones cambian de forma independiente y deben verificarse contra el portal del SAT antes de usarse.
-
-*Nota: los enlaces al DOF de [2], [3], [4], [6], [9], [10] y [11] están verificados.*
