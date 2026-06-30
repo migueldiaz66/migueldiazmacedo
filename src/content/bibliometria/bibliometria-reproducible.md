@@ -1,11 +1,11 @@
 ---
 title: "Bibliometría reproducible: automatizar el análisis de science mapping en una sola corrida"
 seoTitle: "Bibliometría reproducible con R y bibliometrix"
-description: "CorpusBiblioExtractor recorre las 42 secciones de biblioshiny sobre un corpus de Web of Science de forma determinista. El valor está en la re-corrida."
+description: "Automatiza el science mapping de biblioshiny sobre un corpus de Web of Science: de días de exportar a mano a ~13 minutos, determinista y reproducible."
 pubDate: 2026-06-30T21:00:00-06:00
 draft: false
 lang: es
-tags: ["Bibliometría", "Reproducibilidad", "R", "Science mapping"]
+tags: ["Bibliometría", "Reproducibilidad", "R", "Science mapping", "bibliometrix", "biblioshiny", "Web of Science", "CorpusBiblioExtractor"]
 cover: /covers/bibliometria-reproducible.png
 coverAlt: "Portada del artículo: 'Bibliometría reproducible', con el motivo corpus → red → mapa en violeta sobre fondo papel."
 entities: ["bibliometria", "cienciometria", "r-lenguaje", "web-of-science"]
@@ -37,7 +37,7 @@ faq:
   - q: "¿Necesito saber programar en R para usarlo?"
     a: "No para lo básico: una orden prepara el entorno y otra corre el análisis completo. Saber R ayuda para personalizar, pero no es indispensable para ejecutarlo."
   - q: "¿Cuánto tarda?"
-    a: "Sobre un corpus de unos 470 documentos, recorrer las 42 secciones toma alrededor de 13 minutos. El escalado es sub-lineal: un corpus diez veces mayor no tarda diez veces más."
+    a: "Sobre un corpus de unos 473 documentos, recorrer las 42 secciones (159 escenarios) toma alrededor de 13 minutos. El escalado es sub-lineal: un corpus diez veces mayor no tarda diez veces más."
   - q: "¿Está soportada oficialmente?"
     a: "No. Es una herramienta beta, bloqueada a versiones específicas (R 4.6.1, bibliometrix 5.4.1) y ofrecida sin soporte; su deuda técnica está documentada en el repositorio."
   - q: "¿Qué licencia tiene?"
@@ -58,31 +58,43 @@ La intuición de fondo es simple. En un estudio bibliométrico, el primer análi
 
 Por eso la herramienta no automatiza "hacer el análisis": automatiza **poder repetirlo**. Si la primera corrida y la décima entregan exactamente los mismos resultados a partir del mismo corpus, la iteración deja de ser semanas de exportar a mano y se vuelve cuestión de minutos.
 
+|  | A mano en biblioshiny | CorpusBiblioExtractor |
+|---|---|---|
+| Esfuerzo por corrida | días (clic y exportación manual de cientos de archivos) | un comando |
+| Tiempo (~473 docs) | — | ~13 min (159 escenarios) |
+| Reproducible idéntico | difícil / improbable | sí (`set.seed` + `renv`) |
+| Ante un cambio de corpus | repetir todo desde cero | re-correr |
+
+La primera corrida te ahorra una tarde; cada cambio de corpus después te ahorra una semana.
+
 ## Qué hace
 
-Con una sola orden, CorpusBiblioExtractor toma un corpus y recorre las **42 secciones** de análisis de biblioshiny —con sus combinaciones de configuración— llamando **directo** a las funciones de bibliometrix, sin pasar por la interfaz gráfica.
+Con una sola orden, CorpusBiblioExtractor toma un corpus y recorre las **42 secciones** de análisis de biblioshiny —que, con sus combinaciones de configuración, se despliegan en **159 escenarios**— llamando **directo** a las funciones de bibliometrix, sin pasar por la interfaz gráfica.
 
 | Flujo | Detalle |
 |---|---|
 | **Entrada** | Una exportación en formato **BibTeX** de **Web of Science** [\[4\]](#ref-4) (la base bibliográfica de Clarivate). Es el único formato de entrada admitido. |
 | **Salidas** | Tablas en Excel (`.xlsx`), figuras en PNG, **redes interactivas** en HTML, diagramas de Sankey, archivos de red en formato **Pajek** (`.net`) y un **visor HTML autónomo** que reúne todo. |
 
-El recorrido se planea como un producto cartesiano de secciones × configuraciones: en lugar de elegir a mano qué análisis correr, los corre **todos**.
+El recorrido se planea como el **producto cartesiano** de las secciones por los selectores de *Main Configuration* (campo, método, n-gramas…): en lugar de elegir a mano qué análisis correr, los corre **todos**.
+
+## Cómo sabe qué correr: leo el fuente, no mantengo una lista
+
+En lugar de codificar a mano qué análisis y qué opciones existen, CorpusBiblioExtractor **parsea el árbol de sintaxis (AST)** del propio `ui.R` de la biblioshiny instalada (`system.file("biblioshiny", package = "bibliometrix")`) y deriva de ahí el menú completo: las 42 secciones, los selectores de *Main Configuration* (campo, método, n-gramas…), sus condicionales y qué resultados produce cada vista.
+
+¿La consecuencia? Cuando biblioshiny cambia de versión, no edito una especificación a mano: **la vuelvo a extraer del fuente instalado**. La fuente de verdad de qué se puede correr es el código de biblioshiny, no mis notas.
 
 ## Cómo logra ser reproducible
 
-Esta es la parte que más me importa, y la que conecta con el resto de lo que escribo: los sistemas que valen son los que **registran, validan y controlan** lo que hacen. Aquí eso se traduce en cuatro decisiones:
+Esta es la parte que más me importa. Aquí, hacer el análisis reproducible se traduce en cuatro decisiones:
 
 - **Determinismo.** Donde hay azar —por ejemplo, en el acomodo de una red— se fija la semilla (`set.seed`), de modo que el resultado sea idéntico en cada corrida.
-- **Versiones congeladas.** Las 123 dependencias quedan ancladas con `renv` a versiones exactas (R 4.6.1, bibliometrix 5.4.1), para que el entorno de hoy sea el mismo dentro de un año. No depende de Python, pandoc ni Rtools.
+- **Versiones congeladas.** Las 125 dependencias quedan ancladas con `renv` a versiones exactas (R 4.6.1, bibliometrix 5.4.1), para que el entorno de hoy sea el mismo dentro de un año. No depende de Python, pandoc ni Rtools.
 - **Reanudable.** Cada corrida deja *manifiestos* que permiten retomarla donde se quedó, sin rehacer lo ya hecho.
 - **Verificación de versión.** Avisa si tu R o tu bibliometrix difieren de las versiones probadas, en vez de fallar en silencio.
-
-Hay además un detalle de ingeniería del que estoy satisfecho: la herramienta **lee el propio código** de biblioshiny —analiza su árbol de sintaxis— para extraer, de forma automática, la lista de análisis y opciones disponibles. Así, la especificación de "qué se puede correr" no se mantiene a mano: se deriva de la fuente.
-
 ## Rendimiento y alcance
 
-Sobre un corpus de unos **470 documentos**, recorrer las 42 secciones toma alrededor de **13 minutos**. El escalado es sub-lineal: multiplicar el corpus por diez no multiplica por diez el tiempo, sino por algo cercano a 2.5.
+Sobre un corpus de unos **473 documentos**, recorrer las 42 secciones (159 escenarios) toma alrededor de **13 minutos**. El escalado es sub-lineal: multiplicar el corpus por diez no multiplica por diez el tiempo, sino por algo cercano a 2.5.
 
 Y, por honestidad, los límites —todos documentados en el repositorio—:
 
@@ -106,6 +118,10 @@ O desde R:
 library(CorpusBiblioExtractor)
 cbe_run(bib = "ruta/a/tu_corpus.bib")
 ```
+
+## El mismo oficio, otro dominio
+
+Aunque parezcan mundos distintos, el cumplimiento fiscal del que escribo en la [otra línea de este blog](/fiscal/) —el CFDI y el control continuo de transacciones— y la bibliometría reproducible comparten ADN: **registrar, validar y controlar** lo que ocurre, de forma verificable y auditable. El CFDI controla transacciones en tiempo real, con trazabilidad; la bibliometría reproducible vuelve auditable y re-ejecutable el registro de la producción científica. CorpusBiblioExtractor es, en el fondo, **trazabilidad aplicada a un corpus**.
 
 ## Origen y atribución
 
