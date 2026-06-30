@@ -8,10 +8,12 @@ Blog técnico de oficio: cómo los sistemas registran, validan y controlan las o
 
 - [CFDI: evolución del control fiscal en México (2004–2023)](https://migueldiazmacedo.com/fiscal/cfdi-evolucion/): reconstrucción histórica de cómo México pasó de la factura en papel al CFDI con validación en tiempo real por un Proveedor Autorizado de Certificación (PAC), esquema por esquema (CFD, CFDI 3.3, 4.0 y complementos), con fundamento en el DOF. Incluye preguntas frecuentes.
 - [El ciclo de vida del CFDI 4.0: tipos, actores, procesos y estados](https://migueldiazmacedo.com/fiscal/cfdi-ciclo-de-vida/): anatomía del proceso del CFDI 4.0 —los cinco tipos de comprobante, los cuatro actores (emisor, PAC, SAT y receptor), los procesos por los que pasa y por qué su estado es relativo al lente que lo observa. Incluye glosario, preguntas frecuentes y referencias a fuentes primarias.
+- [Bibliometría reproducible: automatizar el análisis de science mapping en una sola corrida](https://migueldiazmacedo.com/bibliometria/bibliometria-reproducible/): cómo CorpusBiblioExtractor —herramienta en R creada por el autor de este blog— recorre las 42 secciones de biblioshiny sobre un corpus de Web of Science de forma determinista y reproducible. Incluye glosario y preguntas frecuentes.
 
 ## Temas
 
 - [Fiscal / CTC](https://migueldiazmacedo.com/fiscal/): índice de artículos sobre cumplimiento fiscal y control continuo de transacciones.
+- [Bibliometría](https://migueldiazmacedo.com/bibliometria/): análisis cuantitativo y reproducible de la literatura científica —corpus, redes y science mapping—.
 
 ## Autor
 

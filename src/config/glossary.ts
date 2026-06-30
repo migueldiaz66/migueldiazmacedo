@@ -17,6 +17,9 @@ export type GlossaryTerm = {
   abbr?: string;       // sigla/acrónimo, si aplica (sirve de termCode)
   definition: string;
   sameAs?: string[];   // URIs verificadas, si existen
+  hidden?: boolean;    // término de una línea aún escondida: NO se lista en
+                       // /glosario/ (público), pero sí en el glosario del artículo.
+                       // Quitar la marca al publicar la línea.
 };
 
 export const GLOSSARY: GlossaryTerm[] = [
@@ -177,6 +180,70 @@ export const GLOSSARY: GlossaryTerm[] = [
     name: 'Nota de crédito',
     definition:
       'CFDI de tipo Egreso que documenta devoluciones, descuentos o bonificaciones sobre una venta ya facturada: resta su monto sin cancelar el comprobante de Ingreso. Coloquialmente, "factura de egreso".',
+  },
+
+  // --- Bibliometría (línea escondida; hidden:true para no exponerlos aún en
+  // /glosario/ público). Quitar `hidden` al publicar la línea. ---
+  {
+    key: 'bibliometria',
+    name: 'Bibliometría',
+    definition:
+      'Análisis cuantitativo de la literatura científica: a partir de los metadatos de las publicaciones, mide qué se publica, quién cita a quién y cómo se agrupan los temas y los autores de un campo.',
+  },
+  {
+    key: 'science-mapping',
+    name: 'Science mapping (mapeo científico)',
+    definition:
+      'Rama de la bibliometría que reconstruye la estructura de un campo —sus temas, sus comunidades de autores y cómo se relacionan— mediante redes de co-citación, acoplamiento bibliográfico y co-ocurrencia de palabras.',
+  },
+  {
+    key: 'bibliometrix',
+    name: 'bibliometrix',
+    definition:
+      'Paquete del lenguaje R para análisis bibliométrico y science mapping, creado por Massimo Aria y Corrado Cuccurullo. Es la herramienta de referencia del campo.',
+  },
+  {
+    key: 'biblioshiny',
+    name: 'biblioshiny',
+    definition:
+      'La interfaz gráfica de bibliometrix: permite hacer el análisis bibliométrico desde el navegador, sin escribir código. Su flujo es manual, basado en menús y exportaciones.',
+  },
+  {
+    key: 'corpus',
+    name: 'Corpus (bibliográfico)',
+    definition:
+      'El conjunto de registros de publicaciones —con sus metadatos: autores, citas, palabras clave, año— sobre el que se realiza un análisis bibliométrico.',
+  },
+  {
+    key: 'bibtex',
+    name: 'BibTeX',
+    definition:
+      'Formato de texto para describir referencias bibliográficas. Es uno de los formatos en que las bases de datos exportan los registros de publicaciones.',
+  },
+  {
+    key: 'web-of-science',
+    name: 'Web of Science',
+    abbr: 'WoS',
+    definition:
+      'Base de datos bibliográfica de publicaciones científicas y sus citas, operada por Clarivate. Es la fuente de datos que admite CorpusBiblioExtractor.',
+  },
+  {
+    key: 'pajek',
+    name: 'Pajek',
+    definition:
+      'Programa y formato de archivo (.net) para representar y analizar redes grandes. Las redes bibliométricas pueden exportarse en ese formato para estudiarlas en otras herramientas.',
+  },
+  {
+    key: 'reproducibilidad',
+    name: 'Reproducibilidad',
+    definition:
+      'Propiedad de un análisis que, a partir de los mismos datos, entrega exactamente los mismos resultados cada vez que se ejecuta. Exige fijar el azar y congelar las versiones de las herramientas.',
+  },
+  {
+    key: 'co-citacion',
+    name: 'Co-citación',
+    definition:
+      'Relación entre dos documentos (o autores) citados juntos por un tercero: cuanto más se les cita en conjunto, más cercanos se consideran. Es una de las bases del science mapping.',
   },
 ];
 

@@ -1,0 +1,166 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { topicBySlug } from '../../config/topics';
+
+const topic = topicBySlug('bibliometria')!;
+const entries = (await getCollection('bibliometria', (e) => !e.data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const fmt = (d: Date) =>
+  new Intl.DateTimeFormat('es-MX', { year: 'numeric', month: 'short' }).format(d);
+
+// Kicker de la portada: la etiqueta principal del propio artículo; si no tiene
+// etiquetas, cae al nombre del tema. Nunca un texto fijo.
+const kicker = (e: (typeof entries)[number]) =>
+  (e.data.tags[0] ?? topic.label).toUpperCase();
+---
+<Base
+  title={`${topic.title} — migueldiazmacedo`}
+  description="Análisis bibliométrico y de science mapping reproducible: corpus de publicaciones, redes de co-citación y mapas de la estructura de un campo científico, con herramientas en R."
+  accent={topic.accent}
+  path="/bibliometria/"
+  noindex={true}
+>
+  <section class="wrap intro">
+    <p class="eyebrow">{topic.label}</p>
+    <h1>{topic.title}</h1>
+    <p class="prose lede muted">{topic.blurb}</p>
+  </section>
+
+  <section class="wrap">
+    {entries.length === 0 ? (
+      <p class="muted">Aún no hay artículos publicados en este tema.</p>
+    ) : (
+      <ul class="card-grid">
+        {entries.map((e) => (
+          <li class="card">
+            <a href={`/bibliometria/${e.slug}/`} class="card-link">
+              {e.data.cover ? (
+                <img
+                  class="cover-img"
+                  src={e.data.cover}
+                  alt={e.data.coverAlt ?? ''}
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : (
+                <span class="cover" aria-hidden="true">
+                  <span class="cover-tag mono">{kicker(e)}</span>
+                  <span class="cover-chain chain-labelled">
+                    <span class="lbl">corpus</span>
+                    <span class="arrow"></span>
+                    <span class="lbl">red</span>
+                    <span class="arrow"></span>
+                    <span class="lbl">mapa</span>
+                  </span>
+                </span>
+              )}
+              <span class="card-body">
+                <span class="card-date small mono muted">{fmt(e.data.pubDate)}</span>
+                <span class="card-title">{e.data.title}</span>
+                <span class="card-desc muted">{e.data.description}</span>
+                <span class="card-cta mono small">Leer artículo →</span>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </section>
+
+  <style>
+    .intro { padding: 3.5rem 0 2rem; }
+    .lede { font-size: var(--step-1); line-height: 1.45; }
+
+    .card-grid {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1.6rem;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: color-mix(in srgb, var(--paper) 60%, white);
+      overflow: hidden;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px -16px color-mix(in srgb, var(--accent) 55%, transparent);
+      border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+    }
+
+    .card-link {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      height: 100%;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    /* cover slot: imagen real (cover:) o, en su ausencia, panel on-brand */
+    .cover-img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-bottom: 1px solid var(--line);
+    }
+    .cover {
+      aspect-ratio: 16 / 9;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem 1.1rem;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(135deg,
+          color-mix(in srgb, var(--accent) 11%, var(--paper)),
+          color-mix(in srgb, var(--accent) 3%, var(--paper)));
+      position: relative;
+    }
+    .cover::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(color-mix(in srgb, var(--accent) 6%, transparent) 1px, transparent 1px);
+      background-size: 100% 13px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .cover-tag {
+      font-size: var(--step--1);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      position: relative;
+    }
+    .cover-chain { position: relative; }
+    .cover-chain.chain-labelled { font-size: 0.78rem; }
+
+    .card-body {
+      display: grid;
+      align-content: start;
+      gap: 0.55rem;
+      padding: 1.1rem 1.2rem 1.3rem;
+    }
+    .card-title {
+      font-size: var(--step-1);
+      font-weight: 650;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .card-desc { font-size: var(--step--1); line-height: 1.5; }
+    .card-cta { color: var(--accent); margin-top: 0.3rem; }
+
+    @media (max-width: 540px) {
+      .card-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+    }
+  </style>
+</Base>

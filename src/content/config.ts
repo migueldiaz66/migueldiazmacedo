@@ -38,5 +38,6 @@ const articleSchema = z.object({
 const fiscal = defineCollection({ type: 'content', schema: articleSchema });
 const filatelia = defineCollection({ type: 'content', schema: articleSchema });
 const making = defineCollection({ type: 'content', schema: articleSchema });
+const bibliometria = defineCollection({ type: 'content', schema: articleSchema });
 
-export const collections = { fiscal, filatelia, making };
+export const collections = { fiscal, filatelia, making, bibliometria };

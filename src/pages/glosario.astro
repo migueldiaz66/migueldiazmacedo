@@ -10,7 +10,8 @@ const slugify = (s: string) =>
     .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 // Orden alfabético por encabezado (sigla si existe, si no el nombre).
-const terms = [...GLOSSARY]
+// Excluye términos ocultos (de líneas aún escondidas) del glosario público.
+const terms = GLOSSARY.filter((t) => !t.hidden)
   .map((t) => {
     const head = t.abbr ?? t.name;
     const ref = t.sameAs?.find((u) => u.includes('wikipedia')) ?? t.sameAs?.[0];

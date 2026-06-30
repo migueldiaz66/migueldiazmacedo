@@ -39,6 +39,14 @@ export const TOPICS: Topic[] = [
     published: false,
     accent: '#3a4a7a',
   },
+  {
+    slug: 'bibliometria',
+    label: 'Bibliometría',
+    title: 'Bibliometría y análisis de la literatura científica',
+    blurb: 'Análisis cuantitativo y reproducible de la literatura científica: corpus, redes y science mapping.',
+    published: true,
+    accent: '#6a3d9a',
+  },
 ];
 
 export const publishedTopics = () => TOPICS.filter((t) => t.published);
