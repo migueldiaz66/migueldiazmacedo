@@ -28,6 +28,22 @@ export const ENTITIES: Record<string, Entity> = {
       'https://es.wikipedia.org/wiki/Factura_electr%C3%B3nica',
     ],
   },
+  bibliometria: {
+    name: 'Bibliometría',
+    sameAs: ['https://es.wikipedia.org/wiki/Bibliometr%C3%ADa'],
+  },
+  cienciometria: {
+    name: 'Cienciometría',
+    sameAs: ['https://es.wikipedia.org/wiki/Cienciometr%C3%ADa'],
+  },
+  'r-lenguaje': {
+    name: 'R (lenguaje de programación)',
+    sameAs: ['https://es.wikipedia.org/wiki/R_(lenguaje_de_programaci%C3%B3n)'],
+  },
+  'web-of-science': {
+    name: 'Web of Science',
+    sameAs: ['https://es.wikipedia.org/wiki/Web_of_Science'],
+  },
 };
 
 // Resolve frontmatter keys into schema.org `about` nodes; unknown keys drop.

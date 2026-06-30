@@ -189,6 +189,7 @@ export const GLOSSARY: GlossaryTerm[] = [
     name: 'Bibliometría',
     definition:
       'Análisis cuantitativo de la literatura científica: a partir de los metadatos de las publicaciones, mide qué se publica, quién cita a quién y cómo se agrupan los temas y los autores de un campo.',
+    sameAs: ['https://es.wikipedia.org/wiki/Bibliometr%C3%ADa'],
   },
   {
     key: 'science-mapping',
@@ -219,6 +220,7 @@ export const GLOSSARY: GlossaryTerm[] = [
     name: 'BibTeX',
     definition:
       'Formato de texto para describir referencias bibliográficas. Es uno de los formatos en que las bases de datos exportan los registros de publicaciones.',
+    sameAs: ['https://es.wikipedia.org/wiki/BibTeX'],
   },
   {
     key: 'web-of-science',
@@ -226,24 +228,28 @@ export const GLOSSARY: GlossaryTerm[] = [
     abbr: 'WoS',
     definition:
       'Base de datos bibliográfica de publicaciones científicas y sus citas, operada por Clarivate. Es la fuente de datos que admite CorpusBiblioExtractor.',
+    sameAs: ['https://es.wikipedia.org/wiki/Web_of_Science'],
   },
   {
     key: 'pajek',
     name: 'Pajek',
     definition:
       'Programa y formato de archivo (.net) para representar y analizar redes grandes. Las redes bibliométricas pueden exportarse en ese formato para estudiarlas en otras herramientas.',
+    sameAs: ['https://en.wikipedia.org/wiki/Pajek'],
   },
   {
     key: 'reproducibilidad',
     name: 'Reproducibilidad',
     definition:
       'Propiedad de un análisis que, a partir de los mismos datos, entrega exactamente los mismos resultados cada vez que se ejecuta. Exige fijar el azar y congelar las versiones de las herramientas.',
+    sameAs: ['https://es.wikipedia.org/wiki/Reproducibilidad'],
   },
   {
     key: 'co-citacion',
     name: 'Co-citación',
     definition:
       'Relación entre dos documentos (o autores) citados juntos por un tercero: cuanto más se les cita en conjunto, más cercanos se consideran. Es una de las bases del science mapping.',
+    sameAs: ['https://en.wikipedia.org/wiki/Co-citation'],
   },
 ];
 

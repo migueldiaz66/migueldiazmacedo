@@ -6,7 +6,9 @@ pubDate: 2026-06-30T21:00:00-06:00
 draft: false
 lang: es
 tags: ["Bibliometría", "Reproducibilidad", "R", "Science mapping"]
-entities: []
+cover: /covers/bibliometria-reproducible.png
+coverAlt: "Portada del artículo: 'Bibliometría reproducible', con el motivo corpus → red → mapa en violeta sobre fondo papel."
+entities: ["bibliometria", "cienciometria", "r-lenguaje", "web-of-science"]
 glossary: ["bibliometria", "science-mapping", "bibliometrix", "biblioshiny", "corpus", "bibtex", "web-of-science", "pajek", "reproducibilidad", "co-citacion"]
 citations:
   - text: "Aria, M. & Cuccurullo, C. (2017). bibliometrix: An R-tool for comprehensive science mapping analysis. Journal of Informetrics, 11(4), 959–975."
