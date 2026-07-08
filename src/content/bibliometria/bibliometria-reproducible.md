@@ -78,6 +78,8 @@ Con una sola orden, CorpusBiblioExtractor toma un corpus y recorre las **42 secc
 
 El recorrido se planea como el **producto cartesiano** de las secciones por los selectores de *Main Configuration* (campo, método, n-gramas…): en lugar de elegir a mano qué análisis correr, los corre **todos**.
 
+**Explora un ejemplo del resultado 👉 [una corrida completa en el navegador](https://migueldiazmacedo.com/demo-corpus-extractor/).**
+
 ## Cómo sabe qué correr: leo el fuente, no mantengo una lista
 
 En lugar de codificar a mano qué análisis y qué opciones existen, CorpusBiblioExtractor **parsea el árbol de sintaxis (AST)** del propio `ui.R` de la biblioshiny instalada (`system.file("biblioshiny", package = "bibliometrix")`) y deriva de ahí el menú completo: las 42 secciones, los selectores de *Main Configuration* (campo, método, n-gramas…), sus condicionales y qué resultados produce cada vista.
