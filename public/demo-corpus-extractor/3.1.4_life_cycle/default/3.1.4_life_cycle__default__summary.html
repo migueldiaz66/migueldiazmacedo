@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:white;}</style>
+<script src="lib/jquery-3.7.1/jquery.min.js"></script>
+<link href="lib/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
+<link href="lib/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="lib/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet" />
+<link href="lib/bootstrap-3.4.1/accessibility/css/bootstrap-accessibility.min.css" rel="stylesheet" />
+<script src="lib/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script src="lib/bootstrap-3.4.1/accessibility/js/bootstrap-accessibility.min.js"></script>
+  <style>.has-feedback .form-control { padding-right: 0px;}</style>
+  <style>[disabled], .disabled,
+       a.shiny-download-link[disabled], a.shiny-download-link.disabled,
+       a.bttn[disabled], a.bttn.disabled,
+       button.bttn[disabled], button.bttn.disabled {
+        pointer-events: none !important;
+        opacity: 0.35 !important;
+        cursor: not-allowed !important;
+      }</style>
+  <script>$(document).on('click', 'a[disabled], a.disabled', function(e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        return false;
+      });</script>
+  <style>
+  .fade-in {
+    animation: fadeInAnim 0.8s ease-in-out;
+  }
+
+  @keyframes fadeInAnim {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+  }
+</style>
+  <script>
+    Shiny.addCustomMessageHandler('copy_to_clipboard_js', function(message) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        // Metodo moderno (Clipboard API)
+        navigator.clipboard.writeText(message).then(function() {
+          alert('Content sent to clipboard!');
+        }, function(err) {
+          console.error('Error: ', err);
+        });
+      } else {
+        // Fallback per browser vecchi o connessioni non HTTPS
+        const el = document.createElement('textarea');
+        el.value = message;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        alert('Content sent to clipboard (fallback)!');
+      }
+    });
+  </script>
+  <style>
+    #refMatch_htmlTable tbody tr:hover {
+      background-color: #e9ecef;
+      cursor: pointer;
+    }
+  </style>
+  <style>
+    /* Manual merge buttons styling */
+    #refMatch_toggleSelection,
+    #refMatch_clearSelection,
+    #refMatch_confirmMerge {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    /* Status inline box */
+    #refMatch_selectionStatusInline {
+      transition: background-color 0.3s ease;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      #refMatch_toggleSelection,
+      #refMatch_clearSelection,
+      #refMatch_confirmMerge {
+        font-size: 12px;
+        padding: 6px 10px;
+      }
+    }
+  </style>
+  <style>
+    /* Loading indicator animation */
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+    
+    #refMatch_loadingIndicator .box {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    #refMatch_loadingIndicator h4 {
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+  </style>
+  <style>
+      .author-link {
+        color: #337ab7;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      .author-link:hover {
+        color: #23527c;
+        font-weight: bold;
+      }</style>
+  <style>.fa-cloud-arrow-down {font-size: 20px}</style>
+  <style>.fa-download {font-size: 20px}</style>
+  <style>.fa-envelope {color:#FF0000; font-size: 20px}</style>
+  <style>.fa-envelope-open {font-size: 20px}</style>
+  <style>.fa-cube {font-size: 20px}</style>
+  <style>.fa-question {font-size: 20px}</style>
+  <style>.fa-comment-dollar {font-size: 20px}</style>
+  <style>.fa-bars {font-size: 20px}</style>
+  <style>.sidebar-toggle {font-size: 15px}</style>
+  <script>var dimension = [0, 0];
+              $(document).on("shiny:connected", function(e) {
+                  dimension[0] = window.innerWidth;
+                  dimension[1] = window.innerHeight;
+                  Shiny.onInputChange("dimension", dimension);
+              });
+              $(window).resize(function(e) {
+                  dimension[0] = window.innerWidth;
+                  dimension[1] = window.innerHeight;
+                  Shiny.onInputChange("dimension", dimension);
+              });
+              $(document).ready(function(){
+                  $("a[data-toggle=tab]").on("show.bs.tab", function(e){
+                    Shiny.setInputValue("activeTab", $(this).attr("data-value"));
+                   });
+            });
+      </script>
+</head>
+<body>
+<div class="container-fluid">
+  <style>
+      .lifecycle-tabs .nav-tabs {
+        border-bottom: 2px solid #dee2e6;
+      }
+      .lifecycle-tabs .nav-tabs .nav-link {
+        color: #495057;
+        font-weight: 500;
+        padding: 12px 20px;
+        border: none;
+        border-bottom: 3px solid transparent;
+        transition: all 0.3s ease;
+      }
+      .lifecycle-tabs .nav-tabs .nav-link:hover {
+        color: #1f77b4;
+        border-bottom-color: #1f77b4;
+        background: transparent;
+      }
+      .lifecycle-tabs .nav-tabs .nav-link.active {
+        color: #1f77b4;
+        background: transparent;
+        border-bottom-color: #1f77b4;
+      }
+      .lifecycle-plot-container {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+      }
+    </style>
+  <style>
+      .lifecycle-summary {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        color: #333;
+      }
+      .lifecycle-card {
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border-left: 4px solid #1f77b4;
+      }
+      .lifecycle-card.success {
+        border-left-color: #2ca02c;
+      }
+      .lifecycle-card.warning {
+        border-left-color: #ff7f0e;
+      }
+      .lifecycle-card.info {
+        border-left-color: #9467bd;
+      }
+      .lifecycle-header {
+        font-size: 18px;
+        font-weight: 600;
+        color: #1f77b4;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+      }
+      .lifecycle-header.success {
+        color: #2ca02c;
+      }
+      .lifecycle-header.warning {
+        color: #ff7f0e;
+      }
+      .lifecycle-header.info {
+        color: #9467bd;
+      }
+      .lifecycle-header i {
+        margin-right: 10px;
+        font-size: 20px;
+      }
+      .lifecycle-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 15px;
+      }
+      .lifecycle-metric {
+        background: #f8f9fa;
+        padding: 12px;
+        border-radius: 6px;
+        text-align: center;
+      }
+      .lifecycle-metric-label {
+        font-size: 12px;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 5px;
+      }
+      .lifecycle-metric-value {
+        font-size: 24px;
+        font-weight: 700;
+        color: #1f77b4;
+      }
+      .lifecycle-metric-unit {
+        font-size: 14px;
+        color: #999;
+        margin-left: 3px;
+      }
+      .lifecycle-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+      }
+      .lifecycle-row:last-child {
+        border-bottom: none;
+      }
+      .lifecycle-row-label {
+        font-weight: 500;
+        color: #555;
+      }
+      .lifecycle-row-value {
+        font-weight: 600;
+        color: #1f77b4;
+        font-size: 16px;
+      }
+      .lifecycle-badge {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 600;
+        margin-left: 8px;
+      }
+      .lifecycle-badge.excellent {
+        background: #d4edda;
+        color: #155724;
+      }
+      .lifecycle-badge.good {
+        background: #d1ecf1;
+        color: #0c5460;
+      }
+      .lifecycle-badge.moderate {
+        background: #fff3cd;
+        color: #856404;
+      }
+      .lifecycle-progress {
+        background: #e9ecef;
+        border-radius: 10px;
+        height: 20px;
+        margin-top: 10px;
+        overflow: hidden;
+      }
+      .lifecycle-progress-bar {
+        background: linear-gradient(90deg, #1f77b4, #2ca02c);
+        height: 100%;
+        transition: width 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .lifecycle-info-box {
+        background: #e7f3ff;
+        border-left: 3px solid #1f77b4;
+        padding: 12px;
+        border-radius: 4px;
+        margin-top: 15px;
+      }
+      .lifecycle-info-box.warning {
+        background: #fff4e6;
+        border-left-color: #ff7f0e;
+      }
+    </style>
+  <script>
+    Shiny.addCustomMessageHandler('button_id', function(value) {
+    Shiny.setInputValue('button_id', value);
+    });
+  </script>
+  <script>
+    Shiny.addCustomMessageHandler('selected_author', function(value) {
+    Shiny.setInputValue('selected_author', value);
+    });
+  </script>
+  <style>body{background:#fff;padding:20px;}</style>
+  <div class="lifecycle-summary">
+    <div class="lifecycle-card">
+      <div class="lifecycle-header">
+        <i class="fas fa-chart-line" role="presentation" aria-label="chart-line icon"></i>
+        Model Overview
+      </div>
+      <div class="lifecycle-grid">
+        <div class="lifecycle-metric">
+          <div class="lifecycle-metric-label">Saturation (K)</div>
+          <div class="lifecycle-metric-value">
+            758
+            <span class="lifecycle-metric-unit">pubs</span>
+          </div>
+        </div>
+        <div class="lifecycle-metric">
+          <div class="lifecycle-metric-label">Peak Year (tₘ)</div>
+          <div class="lifecycle-metric-value">2022</div>
+        </div>
+        <div class="lifecycle-metric">
+          <div class="lifecycle-metric-label">Peak Annual</div>
+          <div class="lifecycle-metric-value">
+            28
+            <span class="lifecycle-metric-unit">pubs/year</span>
+          </div>
+        </div>
+        <div class="lifecycle-metric">
+          <div class="lifecycle-metric-label">Growth Duration (Δₜ)</div>
+          <div class="lifecycle-metric-value">
+            30
+            <span class="lifecycle-metric-unit">years</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lifecycle-card success">
+      <div class="lifecycle-header success">
+        <i class="far fa-circle-check" role="presentation" aria-label="circle-check icon"></i>
+        Model Fit Quality
+        <span class="lifecycle-badge good">Good</span>
+      </div>
+      <div class="lifecycle-grid">
+        <div class="lifecycle-metric">
+          <div class="lifecycle-metric-label">R²</div>
+          <div class="lifecycle-metric-value">0.814</div>
+        </div>
+        <div class="lifecycle-metric">
+          <div class="lifecycle-metric-label">RMSE</div>
+          <div class="lifecycle-metric-value">4.17</div>
+        </div>
+        <div class="lifecycle-metric">
+          <div class="lifecycle-metric-label">AIC</div>
+          <div class="lifecycle-metric-value">80.2</div>
+        </div>
+        <div class="lifecycle-metric">
+          <div class="lifecycle-metric-label">BIC</div>
+          <div class="lifecycle-metric-value">84.0</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="lifecycle-card info">
+          <div class="lifecycle-header info">
+            <i class="fas fa-circle-info" role="presentation" aria-label="circle-info icon"></i>
+            Current Status
+          </div>
+          <div>
+            <div class="lifecycle-row">
+              <div class="lifecycle-row-label">Last Observed Year:</div>
+              <div class="lifecycle-row-value">2026</div>
+            </div>
+            <div class="lifecycle-row">
+              <div class="lifecycle-row-label">Annual Publications:</div>
+              <div class="lifecycle-row-value">21</div>
+            </div>
+            <div class="lifecycle-row">
+              <div class="lifecycle-row-label">Cumulative Total:</div>
+              <div class="lifecycle-row-value">457</div>
+            </div>
+            <div class="lifecycle-row">
+              <div class="lifecycle-row-label">Progress to Saturation:</div>
+              <div class="lifecycle-row-value">60.3%</div>
+            </div>
+          </div>
+          <div class="lifecycle-progress">
+            <div class="lifecycle-progress-bar" style="width: 60.3%;">60.3%</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="lifecycle-card warning">
+          <div class="lifecycle-header warning">
+            <i class="fas fa-flag-checkered" role="presentation" aria-label="flag-checkered icon"></i>
+            Milestone Years
+          </div>
+          <div>
+            <div class="lifecycle-row">
+              <div class="lifecycle-row-label">10% of K:</div>
+              <div class="lifecycle-row-value">2007.2</div>
+            </div>
+            <div class="lifecycle-row">
+              <div class="lifecycle-row-label">50% of K (Midpoint):</div>
+              <div class="lifecycle-row-value">2022.2</div>
+            </div>
+            <div class="lifecycle-row">
+              <div class="lifecycle-row-label">90% of K:</div>
+              <div class="lifecycle-row-value">
+                2037.2
+                <span style="font-size: 12px; color: #666; margin-left: 8px;">(+11 years)</span>
+              </div>
+            </div>
+            <div class="lifecycle-row">
+              <div class="lifecycle-row-label">99% of K:</div>
+              <div class="lifecycle-row-value">
+                2053.6
+                <span style="font-size: 12px; color: #666; margin-left: 8px;">(+28 years)</span>
+              </div>
+            </div>
+          </div>
+          <div class="lifecycle-info-box warning">
+            <i class="fas fa-triangle-exclamation" role="presentation" aria-label="triangle-exclamation icon"></i>
+             The topic is in the 
+            <strong>maturity phase</strong>
+             (50-90% of saturation). Growth is slowing.
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="lifecycle-card">
+          <div class="lifecycle-header">
+            <i class="fas fa-rocket" role="presentation" aria-label="rocket icon"></i>
+            Forecast
+          </div>
+          <div>
+            <div class="lifecycle-row">
+              <div class="lifecycle-row-label">Forecast Period:</div>
+              <div class="lifecycle-row-value">2027 - 2074</div>
+            </div>
+            <div class="lifecycle-row">
+              <div class="lifecycle-row-label">Projection for 2031:</div>
+              <div class="lifecycle-row-value">
+                594 cumulative
+                <span style="font-size: 12px; color: #666; margin-left: 8px;">(19 annual)</span>
+              </div>
+            </div>
+            <div class="lifecycle-row">
+              <div class="lifecycle-row-label">Projection for 2036:</div>
+              <div class="lifecycle-row-value">
+                669 cumulative
+                <span style="font-size: 12px; color: #666; margin-left: 8px;">(11 annual)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="2400" viewBox="0 0 1240 2400"><foreignObject x="0" y="0" width="1240" height="2400"><div xmlns="http://www.w3.org/1999/xhtml" style="width:1240px;font-family:Segoe UI,Tahoma,sans-serif;"><style>*{box-sizing:border-box}.row{display:flex;flex-wrap:wrap;margin:0 -15px}[class*="col-sm-"]{padding:0 15px}.col-sm-3{flex:0 0 25%;max-width:25%}.col-sm-4{flex:0 0 33.3333%;max-width:33.3333%}.col-sm-6{flex:0 0 50%;max-width:50%}.col-sm-8{flex:0 0 66.6667%;max-width:66.6667%}</style><div class="local-author-bio-card" style="width: 100%; background: white; &#10;                   border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); &#10;                   padding: 25px; margin: 15px 0; font-family: &#39;Segoe UI&#39;, Tahoma, sans-serif;">
+  <div class="author-header" style="border-bottom: 2px solid #ecf0f1; padding-bottom: 20px;">
+    <h2 style="margin: 0 0 10px 0; color: #2C3E50; font-weight: 600;">Søren Friis</h2>
+    <p style="margin: 0 0 10px 0; color: #7F8C8D; font-style: italic;">📊 Local Collection Profile</p>
+  </div>
+  <div style="margin: 20px 0;">
+    <h4 style="margin-bottom: 15px; color: #2C3E50;">Local Bibliometric Indicators</h4>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="metric-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); &#10;                        color: white; padding: 15px; border-radius: 8px; text-align: center;">
+          <h4 style="margin: 0; font-size: 24px;">14</h4>
+          <p style="margin: 5px 0 0 0; font-size: 12px; opacity: 0.9;">Publications</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="metric-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); &#10;                        color: white; padding: 15px; border-radius: 8px; text-align: center;">
+          <h4 style="margin: 0; font-size: 24px;">356</h4>
+          <p style="margin: 5px 0 0 0; font-size: 12px; opacity: 0.9;">Total Citations</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="metric-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); &#10;                        color: white; padding: 15px; border-radius: 8px; text-align: center;">
+          <h4 style="margin: 0; font-size: 24px;">11</h4>
+          <p style="margin: 5px 0 0 0; font-size: 12px; opacity: 0.9;">H-Index (Local)</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="metric-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); &#10;                        color: white; padding: 15px; border-radius: 8px; text-align: center;">
+          <h4 style="margin: 0; font-size: 24px;">2.9</h4>
+          <p style="margin: 5px 0 0 0; font-size: 12px; opacity: 0.9;">Cit./Year</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin: 15px 0; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+    <div class="row">
+      <div class="col-sm-4">
+        <strong>Years Active: </strong>
+        <span style="color: #2980b9;">23</span>
+      </div>
+      <div class="col-sm-4">
+        <strong>Avg Cit./Work: </strong>
+        <span style="color: #27ae60;">25.4</span>
+      </div>
+      <div class="col-sm-4">
+        <strong>Recent Activity (5yr): </strong>
+        <span style="color: #e74c3c;">4</span>
+      </div>
+    </div>
+  </div>
+  <h4 style="margin-top: 20px; color: #2C3E50;">Publication Trends (Last 10 Years)</h4>
+  <div style="height: 200px; background: #f8f9fa; border-radius: 8px; padding: 15px;">
+    <div style="display: flex; align-items: end; height: 170px; gap: 3px;">
+      <div style="background: linear-gradient(to top, #3498db, #2980b9); &#10;                                     height: 2%; &#10;                                     width: 9%; &#10;                                     border-radius: 3px 3px 0 0;&#10;                                     position: relative;">
+        <div style="position: absolute; bottom: -20px; font-size: 10px; &#10;                                 width: 100%; text-align: center; color: #666;">2016</div>
+        <div style="position: absolute; top: -15px; font-size: 9px; &#10;                                 width: 100%; text-align: center; color: #333; font-weight: bold;">0</div>
+      </div>
+      <div style="background: linear-gradient(to top, #3498db, #2980b9); &#10;                                     height: 2%; &#10;                                     width: 9%; &#10;                                     border-radius: 3px 3px 0 0;&#10;                                     position: relative;">
+        <div style="position: absolute; bottom: -20px; font-size: 10px; &#10;                                 width: 100%; text-align: center; color: #666;">2017</div>
+        <div style="position: absolute; top: -15px; font-size: 9px; &#10;                                 width: 100%; text-align: center; color: #333; font-weight: bold;">0</div>
+      </div>
+      <div style="background: linear-gradient(to top, #3498db, #2980b9); &#10;                                     height: 50%; &#10;                                     width: 9%; &#10;                                     border-radius: 3px 3px 0 0;&#10;                                     position: relative;">
+        <div style="position: absolute; bottom: -20px; font-size: 10px; &#10;                                 width: 100%; text-align: center; color: #666;">2018</div>
+        <div style="position: absolute; top: -15px; font-size: 9px; &#10;                                 width: 100%; text-align: center; color: #333; font-weight: bold;">1</div>
+      </div>
+      <div style="background: linear-gradient(to top, #3498db, #2980b9); &#10;                                     height: 50%; &#10;                                     width: 9%; &#10;                                     border-radius: 3px 3px 0 0;&#10;                                     position: relative;">
+        <div style="position: absolute; bottom: -20px; font-size: 10px; &#10;                                 width: 100%; text-align: center; color: #666;">2019</div>
+        <div style="position: absolute; top: -15px; font-size: 9px; &#10;                                 width: 100%; text-align: center; color: #333; font-weight: bold;">1</div>
+      </div>
+      <div style="background: linear-gradient(to top, #3498db, #2980b9); &#10;                                     height: 50%; &#10;                                     width: 9%; &#10;                                     border-radius: 3px 3px 0 0;&#10;                                     position: relative;">
+        <div style="position: absolute; bottom: -20px; font-size: 10px; &#10;                                 width: 100%; text-align: center; color: #666;">2020</div>
+        <div style="position: absolute; top: -15px; font-size: 9px; &#10;                                 width: 100%; text-align: center; color: #333; font-weight: bold;">1</div>
+      </div>
+      <div style="background: linear-gradient(to top, #3498db, #2980b9); &#10;                                     height: 50%; &#10;                                     width: 9%; &#10;                                     border-radius: 3px 3px 0 0;&#10;                                     position: relative;">
+        <div style="position: absolute; bottom: -20px; font-size: 10px; &#10;                                 width: 100%; text-align: center; color: #666;">2021</div>
+        <div style="position: absolute; top: -15px; font-size: 9px; &#10;                                 width: 100%; text-align: center; color: #333; font-weight: bold;">1</div>
+      </div>
+      <div style="background: linear-gradient(to top, #3498db, #2980b9); &#10;                                     height: 100%; &#10;                                     width: 9%; &#10;                                     border-radius: 3px 3px 0 0;&#10;                                     position: relative;">
+        <div style="position: absolute; bottom: -20px; font-size: 10px; &#10;                                 width: 100%; text-align: center; color: #666;">2022</div>
+        <div style="position: absolute; top: -15px; font-size: 9px; &#10;                                 width: 100%; text-align: center; color: #333; font-weight: bold;">2</div>
+      </div>
+      <div style="background: linear-gradient(to top, #3498db, #2980b9); &#10;                                     height: 2%; &#10;                                     width: 9%; &#10;                                     border-radius: 3px 3px 0 0;&#10;                                     position: relative;">
+        <div style="position: absolute; bottom: -20px; font-size: 10px; &#10;                                 width: 100%; text-align: center; color: #666;">2023</div>
+        <div style="position: absolute; top: -15px; font-size: 9px; &#10;                                 width: 100%; text-align: center; color: #333; font-weight: bold;">0</div>
+      </div>
+      <div style="background: linear-gradient(to top, #3498db, #2980b9); &#10;                                     height: 50%; &#10;                                     width: 9%; &#10;                                     border-radius: 3px 3px 0 0;&#10;                                     position: relative;">
+        <div style="position: absolute; bottom: -20px; font-size: 10px; &#10;                                 width: 100%; text-align: center; color: #666;">2024</div>
+        <div style="position: absolute; top: -15px; font-size: 9px; &#10;                                 width: 100%; text-align: center; color: #333; font-weight: bold;">1</div>
+      </div>
+      <div style="background: linear-gradient(to top, #3498db, #2980b9); &#10;                                     height: 50%; &#10;                                     width: 9%; &#10;                                     border-radius: 3px 3px 0 0;&#10;                                     position: relative;">
+        <div style="position: absolute; bottom: -20px; font-size: 10px; &#10;                                 width: 100%; text-align: center; color: #666;">2025</div>
+        <div style="position: absolute; top: -15px; font-size: 9px; &#10;                                 width: 100%; text-align: center; color: #333; font-weight: bold;">1</div>
+      </div>
+    </div>
+  </div>
+  <h4 style="margin-top: 20px; color: #2C3E50;">Main Keywords</h4>
+  <div class="keywords-container" style="text-align: center;">
+    <span class="keyword-badge" style="display: inline-block; background: #3498db; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 12.3px;">Qpatch (3)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #e74c3c; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">Automated (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #2ecc71; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">Apc (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #f39c12; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">Acquired Long Qt Syndrome (alqts) (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #9b59b6; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 11.1px;">Patch Clamp (2)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #1abc9c; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 11.1px;">Herg (2)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #34495e; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">Cardiac Electrophysiology (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #e67e22; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 11.1px;">Safety Pharmacology (2)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #3498db; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 11.1px;">Channels (2)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #e74c3c; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">Acetylcholine (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #2ecc71; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">) (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #f39c12; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 16.9px;">Automated Patch Clamp (7)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #9b59b6; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">Binding Mechanism (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #1abc9c; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 12.3px;">Na (3)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #34495e; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 18px;">Ion Channels (8)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #e67e22; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 11.1px;">Drug Discovery (2)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #3498db; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">Alpha7 Nicotinic Acetylcholine Receptor (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #e74c3c; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">5 (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #2ecc71; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">1 (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #f39c12; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">7 (1)</span>
+  </div>
+  <h4 style="margin-top: 20px; color: #2C3E50;">Publications (14 total)</h4>
+  <div class="works-container" style="max-height: 400px; overflow-y: auto; background: #f8f9fa; &#10;                   border-radius: 8px; padding: 15px; border: 1px solid #e9ecef;">
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">Lysosomal Ion Channels and Transporters: Recent Findings, Therapeutic Potential, and Technical Approaches</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">Bioelectricity</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2025)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 5</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.1089/bioe.2025.0010" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.1089/bioe.2025.0010</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">Experimentally Validated Modeling of Dynamic Drug-Herg Channel Interactions Reproducing the Binding Mechanisms and Its Importance in Action Potential Duration.</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">Computer Methods and Programs in Biomedicine</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2024)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 3</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.1016/j.cmpb.2024.108293" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.1016/j.cmpb.2024.108293</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">There Is No F in Apc: Using Physiological Fluoride-Free Solutions for High Throughput Automated Patch Clamp Experiments</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">Frontiers in Molecular Neuroscience</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2022)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 12</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.3389/fnmol.2022.982316" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.3389/fnmol.2022.982316</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">The Suitability of High Throughput Automated Patch Clamp for Physiological Applications</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">Journal of Physiology-London</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2022)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 32</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.1113/JP282107" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.1113/JP282107</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">High-Throughput Characterization of Photocrosslinker-Bearing Ion Channel Variants to Map Residues Critical for Function and Pharmacology</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">Plos Biology</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2021)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 14</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.1371/journal.pbio.3001321" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.1371/journal.pbio.3001321</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">Reliable Identification of Cardiac Liability in Drug Discovery Using Automated Patch Clamp: Benchmarking Best Practices and Calibration Standards for Improved Proarrhythmic Assessment</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">Journal of Pharmacological and Toxicological Methods</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2020)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 14</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.1016/j.vascn.2020.106884" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.1016/j.vascn.2020.106884</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">Compounds Commonly Used in Equine Medicine Inhibits the Voltage-Gated Potassium Channel Kv11.1</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">Research in Veterinary Science</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2019)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 6</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.1016/j.rvsc.2019.01.009" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.1016/j.rvsc.2019.01.009</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">An Update on the Advancing High-Throughput Screening Techniques for Patch Clamp-Based Ion Channel Screens: Implications for Drug Discovery</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">Expert Opinion on Drug Discovery</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2018)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 38</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.1080/17460441.2018.1428555" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.1080/17460441.2018.1428555</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">Ion Channel Recordings on an Injection-Molded Polymer Chip</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">Lab on a Chip</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2013)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 14</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.1039/c3lc50760b" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.1039/c3lc50760b</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">Characterization of Compounds on Nicotinic Acetylcholine Receptor Alpha7 Channels Using Higher Throughput Electrophysiology</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">Journal of Neuroscience Methods</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2009)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 25</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.1016/j.jneumeth.2008.10.007" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.1016/j.jneumeth.2008.10.007</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">Qpatch: the Missing Link between Hts and Ion Channel Drug Discovery</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">Combinatorial Chemistry \&amp; High Throughput Screening</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2009)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 50</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.2174/138620709787047948" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.2174/138620709787047948</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">Automated Patch-Clamp Technique:: Increased Throughput in Functional Characterization and in Pharmacological Screening of Small-Conductance Ca2+ Release-Activated Ca2+ Channels</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">Journal of Biomolecular Screening</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2008)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 12</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.1177/1087057108320274" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.1177/1087057108320274</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">Characterization of Potassium Channel Modulators with Qpatch™ Automated Patch-Clamp Technology:: System Characteristics and Performance</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">Assay and Drug Development Technologies</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2003)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 77</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.1089/154065803770381048" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.1089/154065803770381048</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">Upscaling and Automation of Electrophysiology: toward High Throughput Screening in Ion Channel Drug Discovery</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">Receptors \&amp; Channels</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2003)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 54</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.1080/10606820308258" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.1080/10606820308258</a>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid #ecf0f1; &#10;                 font-size: 11px; color: #95A5A6; text-align: center;">Local collection data analyzed on 2026-07-07 18:58</div>
+</div></div></foreignObject></svg>

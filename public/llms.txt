@@ -22,6 +22,7 @@ Blog técnico de oficio: cómo los sistemas registran, validan y controlan las o
 ## Recursos
 
 - [Glosario de facturación electrónica y CFDI](https://migueldiazmacedo.com/glosario/): definiciones de los términos clave (CFDI, PAC, CSD, UUID, timbrado, complemento, addenda, CTC, REP, PPD…), con enlaces al grafo de conocimiento.
+- [Demo — CorpusBiblioExtractor sobre un corpus de Patch Clamp Automatizado](https://migueldiazmacedo.com/demo-corpus-extractor/): salida completa y navegable generada por la herramienta —las 42 secciones de biblioshiny (producción anual, fuentes, autores, redes de coautoría y co-citación, mapa temático, análisis factorial…) sobre un corpus de Web of Science, con figuras, tablas y redes interactivas.
 
 ## Optional
 

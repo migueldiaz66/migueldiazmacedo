@@ -1,0 +1,253 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="2400" viewBox="0 0 1240 2400"><foreignObject x="0" y="0" width="1240" height="2400"><div xmlns="http://www.w3.org/1999/xhtml" style="width:1240px;font-family:Segoe UI,Tahoma,sans-serif;"><style>*{box-sizing:border-box}.row{display:flex;flex-wrap:wrap;margin:0 -15px}[class*="col-sm-"]{padding:0 15px}.col-sm-3{flex:0 0 25%;max-width:25%}.col-sm-4{flex:0 0 33.3333%;max-width:33.3333%}.col-sm-6{flex:0 0 50%;max-width:50%}.col-sm-8{flex:0 0 66.6667%;max-width:66.6667%}</style><div class="local-author-bio-card" style="width: 100%; background: white; &#10;                   border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); &#10;                   padding: 25px; margin: 15px 0; font-family: &#39;Segoe UI&#39;, Tahoma, sans-serif;">
+  <div class="author-header" style="border-bottom: 2px solid #ecf0f1; padding-bottom: 20px;">
+    <h2 style="margin: 0 0 10px 0; color: #2C3E50; font-weight: 600;">Michel De Waard</h2>
+    <p style="margin: 0 0 10px 0; color: #7F8C8D; font-style: italic;">📊 Local Collection Profile</p>
+  </div>
+  <div style="margin: 20px 0;">
+    <h4 style="margin-bottom: 15px; color: #2C3E50;">Local Bibliometric Indicators</h4>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="metric-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); &#10;                        color: white; padding: 15px; border-radius: 8px; text-align: center;">
+          <h4 style="margin: 0; font-size: 24px;">10</h4>
+          <p style="margin: 5px 0 0 0; font-size: 12px; opacity: 0.9;">Publications</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="metric-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); &#10;                        color: white; padding: 15px; border-radius: 8px; text-align: center;">
+          <h4 style="margin: 0; font-size: 24px;">82</h4>
+          <p style="margin: 5px 0 0 0; font-size: 12px; opacity: 0.9;">Total Citations</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="metric-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); &#10;                        color: white; padding: 15px; border-radius: 8px; text-align: center;">
+          <h4 style="margin: 0; font-size: 24px;">7</h4>
+          <p style="margin: 5px 0 0 0; font-size: 12px; opacity: 0.9;">H-Index (Local)</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="metric-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); &#10;                        color: white; padding: 15px; border-radius: 8px; text-align: center;">
+          <h4 style="margin: 0; font-size: 24px;">1.7</h4>
+          <p style="margin: 5px 0 0 0; font-size: 12px; opacity: 0.9;">Cit./Year</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin: 15px 0; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+    <div class="row">
+      <div class="col-sm-4">
+        <strong>Years Active: </strong>
+        <span style="color: #2980b9;">8</span>
+      </div>
+      <div class="col-sm-4">
+        <strong>Avg Cit./Work: </strong>
+        <span style="color: #27ae60;">8.2</span>
+      </div>
+      <div class="col-sm-4">
+        <strong>Recent Activity (5yr): </strong>
+        <span style="color: #e74c3c;">4</span>
+      </div>
+    </div>
+  </div>
+  <h4 style="margin-top: 20px; color: #2C3E50;">Publication Trends (Last 10 Years)</h4>
+  <div style="height: 200px; background: #f8f9fa; border-radius: 8px; padding: 15px;">
+    <div style="display: flex; align-items: end; height: 170px; gap: 3px;">
+      <div style="background: linear-gradient(to top, #3498db, #2980b9); &#10;                                     height: 2%; &#10;                                     width: 9%; &#10;                                     border-radius: 3px 3px 0 0;&#10;                                     position: relative;">
+        <div style="position: absolute; bottom: -20px; font-size: 10px; &#10;                                 width: 100%; text-align: center; color: #666;">2017</div>
+        <div style="position: absolute; top: -15px; font-size: 9px; &#10;                                 width: 100%; text-align: center; color: #333; font-weight: bold;">0</div>
+      </div>
+      <div style="background: linear-gradient(to top, #3498db, #2980b9); &#10;                                     height: 2%; &#10;                                     width: 9%; &#10;                                     border-radius: 3px 3px 0 0;&#10;                                     position: relative;">
+        <div style="position: absolute; bottom: -20px; font-size: 10px; &#10;                                 width: 100%; text-align: center; color: #666;">2018</div>
+        <div style="position: absolute; top: -15px; font-size: 9px; &#10;                                 width: 100%; text-align: center; color: #333; font-weight: bold;">0</div>
+      </div>
+      <div style="background: linear-gradient(to top, #3498db, #2980b9); &#10;                                     height: 25%; &#10;                                     width: 9%; &#10;                                     border-radius: 3px 3px 0 0;&#10;                                     position: relative;">
+        <div style="position: absolute; bottom: -20px; font-size: 10px; &#10;                                 width: 100%; text-align: center; color: #666;">2019</div>
+        <div style="position: absolute; top: -15px; font-size: 9px; &#10;                                 width: 100%; text-align: center; color: #333; font-weight: bold;">1</div>
+      </div>
+      <div style="background: linear-gradient(to top, #3498db, #2980b9); &#10;                                     height: 25%; &#10;                                     width: 9%; &#10;                                     border-radius: 3px 3px 0 0;&#10;                                     position: relative;">
+        <div style="position: absolute; bottom: -20px; font-size: 10px; &#10;                                 width: 100%; text-align: center; color: #666;">2020</div>
+        <div style="position: absolute; top: -15px; font-size: 9px; &#10;                                 width: 100%; text-align: center; color: #333; font-weight: bold;">1</div>
+      </div>
+      <div style="background: linear-gradient(to top, #3498db, #2980b9); &#10;                                     height: 100%; &#10;                                     width: 9%; &#10;                                     border-radius: 3px 3px 0 0;&#10;                                     position: relative;">
+        <div style="position: absolute; bottom: -20px; font-size: 10px; &#10;                                 width: 100%; text-align: center; color: #666;">2021</div>
+        <div style="position: absolute; top: -15px; font-size: 9px; &#10;                                 width: 100%; text-align: center; color: #333; font-weight: bold;">4</div>
+      </div>
+      <div style="background: linear-gradient(to top, #3498db, #2980b9); &#10;                                     height: 25%; &#10;                                     width: 9%; &#10;                                     border-radius: 3px 3px 0 0;&#10;                                     position: relative;">
+        <div style="position: absolute; bottom: -20px; font-size: 10px; &#10;                                 width: 100%; text-align: center; color: #666;">2022</div>
+        <div style="position: absolute; top: -15px; font-size: 9px; &#10;                                 width: 100%; text-align: center; color: #333; font-weight: bold;">1</div>
+      </div>
+      <div style="background: linear-gradient(to top, #3498db, #2980b9); &#10;                                     height: 25%; &#10;                                     width: 9%; &#10;                                     border-radius: 3px 3px 0 0;&#10;                                     position: relative;">
+        <div style="position: absolute; bottom: -20px; font-size: 10px; &#10;                                 width: 100%; text-align: center; color: #666;">2023</div>
+        <div style="position: absolute; top: -15px; font-size: 9px; &#10;                                 width: 100%; text-align: center; color: #333; font-weight: bold;">1</div>
+      </div>
+      <div style="background: linear-gradient(to top, #3498db, #2980b9); &#10;                                     height: 2%; &#10;                                     width: 9%; &#10;                                     border-radius: 3px 3px 0 0;&#10;                                     position: relative;">
+        <div style="position: absolute; bottom: -20px; font-size: 10px; &#10;                                 width: 100%; text-align: center; color: #666;">2024</div>
+        <div style="position: absolute; top: -15px; font-size: 9px; &#10;                                 width: 100%; text-align: center; color: #333; font-weight: bold;">0</div>
+      </div>
+      <div style="background: linear-gradient(to top, #3498db, #2980b9); &#10;                                     height: 25%; &#10;                                     width: 9%; &#10;                                     border-radius: 3px 3px 0 0;&#10;                                     position: relative;">
+        <div style="position: absolute; bottom: -20px; font-size: 10px; &#10;                                 width: 100%; text-align: center; color: #666;">2025</div>
+        <div style="position: absolute; top: -15px; font-size: 9px; &#10;                                 width: 100%; text-align: center; color: #333; font-weight: bold;">1</div>
+      </div>
+      <div style="background: linear-gradient(to top, #3498db, #2980b9); &#10;                                     height: 25%; &#10;                                     width: 9%; &#10;                                     border-radius: 3px 3px 0 0;&#10;                                     position: relative;">
+        <div style="position: absolute; bottom: -20px; font-size: 10px; &#10;                                 width: 100%; text-align: center; color: #666;">2026</div>
+        <div style="position: absolute; top: -15px; font-size: 9px; &#10;                                 width: 100%; text-align: center; color: #333; font-weight: bold;">1</div>
+      </div>
+    </div>
+  </div>
+  <h4 style="margin-top: 20px; color: #2C3E50;">Main Keywords</h4>
+  <div class="keywords-container" style="text-align: center;">
+    <span class="keyword-badge" style="display: inline-block; background: #3498db; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">6 and Na(v)1 (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #e74c3c; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">Cell Line (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #2ecc71; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">Biotinylated Analogue (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #f39c12; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">Bekm-1 (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #9b59b6; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">Arrhythmia (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #1abc9c; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">Alpha-Bungarotoxin (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #34495e; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">Cellular Assay (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #e67e22; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">Arrhythmias (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #3498db; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">7 (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #e74c3c; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">Automated Patch\&amp;\#8208 (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #2ecc71; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">Automated (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #f39c12; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 18px;">Na(v)1 (2)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #9b59b6; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">Cells (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #1abc9c; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 18px;">Peptide Synthesis (2)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #34495e; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 18px;">Na (2)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #e67e22; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">7 Channel Subtypes (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #3498db; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">Biophysics (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #e74c3c; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">Automated Patch-Clamp (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #2ecc71; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">Automated High-Thoughput Patch-Clamp (1)</span>
+    <span class="keyword-badge" style="display: inline-block; background: #f39c12; opacity: 0.8; color: white; padding: 5px 12px; margin: 3px; &#10;                            border-radius: 15px; font-weight: 500;&#10;                            font-size: 10px;">Automated Patch Clamp (1)</span>
+  </div>
+  <h4 style="margin-top: 20px; color: #2C3E50;">Publications (10 total)</h4>
+  <div class="works-container" style="max-height: 400px; overflow-y: auto; background: #f8f9fa; &#10;                   border-radius: 8px; padding: 15px; border: 1px solid #e9ecef;">
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">Sparc: a Structural Pathogenicity Algorithm for Risk Classification of Herg Variants</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">Europace</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2026)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 0</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.1093/europace/euaf327" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.1093/europace/euaf327</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">The Venom of Cyriopagopus Schmidti Spider Contains a Natural Huwentoxin-Iv Analogue with Unexpected Improved Analgesic Potential</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">Frontiers in Pharmacology</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2025)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 1</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.3389/fphar.2025.1566312" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.3389/fphar.2025.1566312</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">Structure-Function Relationship of New Peptides Activating Human Nav1.1</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">Biomedicine \&amp; Pharmacotherapy</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2023)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 4</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.1016/j.biopha.2023.115173" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.1016/j.biopha.2023.115173</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">Chemical Synthesis of a Functional Fluorescent-Tagged Α-Bungarotoxin</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">Toxins</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2022)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 8</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.3390/toxins14020079" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.3390/toxins14020079</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">Synthetic Analogues of Huwentoxin-Iv Spider Peptide with Altered Human Nav1.7/nav1.6 Selectivity Ratios</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">Frontiers in Cell and Developmental Biology</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2021)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 7</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.3389/fcell.2021.798588" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.3389/fcell.2021.798588</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">A Standardised Herg Phenotyping Pipeline to Evaluate Kcnh2 Genetic Variant Pathogenicity</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">Clinical and Translational Medicine</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2021)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 11</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.1002/ctm2.609" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.1002/ctm2.609</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">Fluorescent and Tagged-Protoxin Ii Peptides: Potent Markers of the Nav1.7 Channel Pain Target</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">British Journal of Pharmacology</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2021)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 11</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.1111/bph.15453" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.1111/bph.15453</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">Computer Modeling of Whole-Cell Voltage-Clamp Analyses to Delineate Guidelines for Good Practice of Manual and Automated Patch-Clamp</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">Scientific Reports</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2021)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 18</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.1038/s41598-021-82077-8" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.1038/s41598-021-82077-8</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">Functional Impact of Bekm-1, a High-Affinity Herg Blocker, on Cardiomyocytes Derived from Human-Induced Pluripotent Stem Cells</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">International Journal of Molecular Sciences</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2020)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 8</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.3390/ijms21197167" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.3390/ijms21197167</a>
+      </div>
+    </div>
+    <div class="work-item" style="border-bottom: 1px solid #ecf0f1; padding: 12px 0; margin: 0;">
+      <div style="margin-bottom: 8px;">
+        <h6 style="margin: 0 0 5px 0; color: #2c3e50; font-weight: 600; line-height: 1.3;">From Identification to Functional Characterization of Cyriotoxin-1a, an Antinociceptive Toxin from the Spider Cyriopagopus Schioedtei</h6>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span style="color: #7f8c8d; font-style: italic; font-size: 13px; margin-right: 15px;">British Journal of Pharmacology</span>
+        <span style="color: #95a5a6; font-size: 13px; margin-right: 15px;">(2019)</span>
+        <span style="color: #e74c3c; font-weight: 500; font-size: 12px;">Citations: 14</span>
+      </div>
+      <div style="margin-top: 5px;">
+        <a href="https://doi.org/10.1111/bph.14628" target="_blank" style="color: #3498db; text-decoration: none; font-size: 11px;">DOI: 10.1111/bph.14628</a>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid #ecf0f1; &#10;                 font-size: 11px; color: #95A5A6; text-align: center;">Local collection data analyzed on 2026-07-07 18:59</div>
+</div></div></foreignObject></svg>
