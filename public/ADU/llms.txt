@@ -1,0 +1,55 @@
+# [XADU]
+
+> Turnkey ADUs in California. Choose one of 3 ready designs and we handle permits, construction with trusted contractors and help with financing. English and Spanish.
+
+Status: proof of concept. The company name, designs, images, prices and contact details on this site are placeholders and do not represent a real offer.
+
+[XADU] offers a turnkey service for accessory dwelling units (ADUs) in California: the homeowner chooses one of 3 ready designs (Studio, One, Two) and the team handles the feasibility check, the city permits, construction with trusted licensed contractors, and help finding financing. Service in English and Spanish.
+
+## Pages
+
+- [Home (English)](https://migueldiazmacedo.com/ADU/): Turnkey ADUs in California. Choose one of 3 ready designs and we handle permits, construction with trusted contractors and help with financing. English and Spanish.
+- [Inicio (español)](https://migueldiazmacedo.com/ADU/es/): ADU llave en mano en California. Elija uno de nuestros 3 diseños listos y nosotros nos encargamos de los permisos, la construcción con contratistas de confianza y la ayuda con el financiamiento. En español y en inglés.
+- [Free ADU check](https://migueldiazmacedo.com/ADU/check/): See if your property can have an ADU. Free and with no commitment. Permits, construction and financing help, from idea to keys.
+- [Revisión gratuita de ADU](https://migueldiazmacedo.com/ADU/es/revision/): Averigüe si su propiedad puede tener un ADU. Gratis y sin compromiso. Permisos, construcción y ayuda con el financiamiento, desde la idea hasta las llaves.
+
+## How it works
+
+1. Tell us about your home
+2. Find out if your property can have an ADU
+3. Choose your design
+4. Get your proposal and sign
+5. Arrange your financing
+6. We handle the permits
+7. Construction
+8. Final inspection and your keys
+
+## Designs
+
+- [XADU] Studio: About [400 to 500] sq ft · Studio · 1 bathroom.
+- [XADU] One: About [550 to 700] sq ft · 1 bedroom · 1 bathroom.
+- [XADU] Two: About [750 to 850] sq ft · 2 bedrooms · [1 to 2] bathrooms.
+
+## Frequently asked questions
+
+- **What is an ADU?** An ADU, or accessory dwelling unit, is a second, independent home on a property that already has a house. It has its own entrance, kitchen and bathroom. It can be a new building in your backyard or a converted garage.
+- **Can my property have an ADU?** Most single-family properties in California can have one. California law has made ADUs much easier to approve. The answer for your home depends on your lot, the available space and your city's rules. Contact us and we'll help you find out, with no cost and no commitment.
+- **Do I need a permit?** Yes. Every ADU needs a permit from your city. We prepare and submit the application for you and follow it until it's approved.
+- **How long does the city take to approve it?** State law requires cities to review ADU applications using clear standards, without public hearings, and to decide within 60 days of a complete application. Your full project timeline, from design to keys, depends on your property and your city. We'll give you a realistic timeline in your proposal. [Typical timeline]
+- **How much does an ADU cost?** It depends on the design, the size and your property. Our designs start at [price]. After we review your property, you receive a proposal with the price and the scope of the work.
+- **How can I pay for it?** Many homeowners pay with savings, a home equity line of credit, a cash-out refinance or a renovation loan. We help you find the path that fits your situation. [What Cla's financing access involves]
+- **Can I rent my ADU?** Yes. Many owners build an ADU to earn monthly rental income. Under state law, ADU rentals must be for terms longer than 30 days, so short-term vacation rentals aren't allowed.
+- **Do I have to live on the property?** For a regular ADU, state law doesn't require the owner to live on the property. There's an exception for small junior ADUs that share a bathroom with the main house.
+- **Can I sell the ADU separately from my house?** Not by default. The ADU and the main house are usually sold together. Some cities allow separate sale under their own local rules.
+- **Do I need to add parking?** Often not. Cities can require at most one parking space per ADU, and none in many cases, for example near public transit or when you convert a garage.
+- **Are there city fees?** Yes, there are permit fees. ADUs of 750 sq ft or less don't pay impact fees under state law. Larger units pay fees in proportion to their size. School districts may charge fees on units over 500 sq ft.
+- **Who builds my ADU?** Licensed contractors from our trusted network build your ADU, with city inspections along the way. We coordinate everything, so you have one point of contact.
+- **Can I convert my garage?** In many cases, yes. A garage conversion uses an existing structure, and cities can't require you to replace the lost parking.
+- **Do you speak Spanish?** Yes. We serve our clients fully in English and Spanish. Hablamos español.
+- **What does the first step cost?** Nothing. The first conversation and the first check of your property are free and with no commitment.
+
+Rules summarized from California state sources (HCD ADU Handbook, CSLB) as of October 2026. This is general information, not legal advice. Rules can vary by city and change over time.
+
+## Optional
+
+- [Sitemap](https://migueldiazmacedo.com/ADU/sitemap-index.xml)
