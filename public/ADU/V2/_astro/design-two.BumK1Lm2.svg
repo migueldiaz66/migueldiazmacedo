@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6e7d4"/><stop offset="1" stop-color="#fbf8f3"/></linearGradient>
+    <linearGradient id="lawn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9c9a3"/><stop offset="1" stop-color="#9fb388"/></linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <circle cx="656" cy="120" r="54" fill="#f2c79a" opacity="0.8"/>
+  <path d="M0 360 C 200 312, 440 396, 800 336 L 800 432 L 0 432 Z" fill="#d9c9ae" opacity="0.6"/>
+  <g opacity="0.55">
+    <rect x="32" y="228" width="240" height="204" fill="#e7ddcc"/>
+    <polygon points="16,228 152,132 288,228" fill="#c9b79a"/>
+  </g>
+  <rect x="0" y="432" width="800" height="168" fill="url(#lawn)"/>
+  <rect x="164" y="426" width="600" height="18" rx="6" fill="#e7ddcc"/>
+  <rect x="214" y="222" width="500" height="210" fill="#f4eee4"/>
+  <rect x="489" y="222" width="225" height="210" fill="#b98b66" opacity="0.9"/>
+  <polygon points="194,222 734,222 734,200 194,200" fill="#163e42"/>
+  <rect x="305" y="281" width="68" height="88" rx="4" fill="#bcd6d8" stroke="#ffffff" stroke-width="5"/><rect x="430" y="281" width="68" height="88" rx="4" fill="#bcd6d8" stroke="#ffffff" stroke-width="5"/><rect x="555" y="281" width="68" height="88" rx="4" fill="#bcd6d8" stroke="#ffffff" stroke-width="5"/>
+  <rect x="274" y="302" width="56" height="130" rx="3" fill="#c4683f"/>
+  <ellipse cx="144" cy="402" rx="48" ry="40" fill="#7f9a6b"/>
+  <ellipse cx="794" cy="392" rx="62" ry="52" fill="#6e8a5d"/>
+  <path d="M302 444 L 234 600 L 374 600 Z" fill="#e7ddcc" opacity="0.8"/>
+  <text x="400" y="578" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#1d4e53" opacity="0.75">[XADU] Two · design concept placeholder</text>
+</svg>
