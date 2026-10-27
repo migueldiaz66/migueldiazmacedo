@@ -1,0 +1,152 @@
+---
+import Base from '../../layouts/Base.astro';
+import { breadcrumbLd, collectionPageLd } from '../../config/schema';
+import { ACERCA_ACCENT } from '../../config/topics';
+
+// La sección "Acerca de" funciona como las demás: un índice con tarjetas y una
+// página por entrada. No es una colección de contenido porque son dos páginas
+// fijas, no artículos con fecha.
+const pages = [
+  {
+    path: '/acerca/perfil/',
+    kicker: 'Perfil',
+    cover: '/covers/acerca-perfil.png',
+    coverAlt: 'Portada: Miguel Díaz Macedo, de código a arquitectura y operación.',
+    title: 'Miguel Díaz Macedo',
+    description:
+      'Casi 30 años en tecnología de información, del código a la dirección. Hoy, ingeniería de cumplimiento fiscal en SOVOS para México y Latinoamérica. Formación de biólogo por la UNAM y el método de trabajo que trae de ahí.',
+  },
+  {
+    path: '/acerca/seo/',
+    kicker: 'SEO',
+    cover: '/covers/acerca-seo.png',
+    coverAlt: 'Portada: técnicas de SEO, de rastreo a estructura y cita.',
+    title: 'Técnicas de SEO implementadas en este sitio',
+    description:
+      'Las técnicas de posicionamiento aplicadas a cada página: rastreo, metadatos, datos estructurados, contenido para modelos de lenguaje, rendimiento y medición. Qué entrega el sitio, no cómo está construido.',
+  },
+];
+
+const description =
+  'Quién escribe este blog y con qué técnicas de SEO está publicado: perfil profesional y la especificación de posicionamiento que lleva cada página.';
+
+const ld = [
+  collectionPageLd({
+    name: 'Acerca de',
+    description,
+    path: '/acerca/',
+    items: pages.map((p) => ({ name: p.title, path: p.path })),
+  }),
+  breadcrumbLd([
+    { name: 'Inicio', path: '/' },
+    { name: 'Acerca de', path: '/acerca/' },
+  ]),
+];
+---
+<Base
+  title="Acerca de — migueldiazmacedo"
+  description={description}
+  path="/acerca/"
+  accent={ACERCA_ACCENT}
+>
+  {ld.map((node) => (
+    <script type="application/ld+json" set:html={JSON.stringify(node)} />
+  ))}
+
+  <section class="wrap intro">
+    <p class="eyebrow">Acerca de</p>
+    <h1>Quién escribe y cómo está publicado</h1>
+    <p class="prose lede muted">
+      Dos fichas: la trayectoria de quien firma los artículos y las técnicas de
+      SEO con las que se publica cada uno.
+    </p>
+  </section>
+
+  <section class="wrap">
+    <ul class="card-grid">
+      {pages.map((p) => (
+        <li class="card">
+          <a href={p.path} class="card-link">
+            <img
+              class="cover-img"
+              src={p.cover}
+              alt={p.coverAlt}
+              width="1200"
+              height="630"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="card-body">
+              <span class="card-title">{p.title}</span>
+              <span class="card-desc muted">{p.description}</span>
+              <span class="card-cta mono small">Leer ficha →</span>
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <style>
+    .intro { padding: 3.5rem 0 2rem; }
+    .lede { font-size: var(--step-1); line-height: 1.45; }
+
+    .card-grid {
+      list-style: none;
+      margin: 0 0 4rem;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.6rem;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: color-mix(in srgb, var(--paper) 60%, white);
+      overflow: hidden;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px -16px color-mix(in srgb, var(--accent) 55%, transparent);
+      border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+    }
+
+    .card-link {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      height: 100%;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .cover-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1200 / 630;
+      object-fit: cover;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .card-body {
+      display: grid;
+      align-content: start;
+      gap: 0.55rem;
+      padding: 1.1rem 1.2rem 1.3rem;
+    }
+    .card-title {
+      font-size: var(--step-1);
+      font-weight: 650;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .card-desc { font-size: var(--step--1); line-height: 1.5; }
+    .card-cta { color: var(--accent); margin-top: 0.3rem; }
+
+    @media (max-width: 540px) {
+      .card-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+    }
+  </style>
+</Base>

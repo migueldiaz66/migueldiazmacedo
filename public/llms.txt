@@ -19,7 +19,8 @@ Blog técnico de oficio: cómo los sistemas registran, validan y controlan las o
 
 ## Autor
 
-- [Acerca de Miguel Díaz Macedo](https://migueldiazmacedo.com/acerca/): trayectoria, credenciales y método de trabajo (rigor de fuente primaria, sin conflicto de interés).
+- [Miguel Díaz Macedo](https://migueldiazmacedo.com/acerca/perfil/): trayectoria, credenciales y método de trabajo (rigor de fuente primaria, sin conflicto de interés).
+- [Técnicas de SEO implementadas en este sitio](https://migueldiazmacedo.com/acerca/seo/): las técnicas de posicionamiento que lleva cada página —rastreo e indexación, metadatos, datos estructurados, optimización para modelos de lenguaje, rendimiento y medición—.
 
 ## Recursos
 

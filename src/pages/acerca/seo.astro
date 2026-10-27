@@ -1,0 +1,135 @@
+---
+import Base from '../../layouts/Base.astro';
+import { breadcrumbLd } from '../../config/schema';
+import { ACERCA_ACCENT } from '../../config/topics';
+
+// Ficha de las técnicas de SEO que lleva cada página del sitio: qué entrega,
+// no cómo está construido.
+const tecnicas = [
+  {
+    group: 'Rastreo e indexación',
+    items: [
+      'URL canónica declarada en cada página.',
+      'Mapa del sitio con la fecha de última modificación de cada dirección, declarado en robots.txt.',
+      'Aviso inmediato por IndexNow a los buscadores que lo admiten, en cada publicación o corrección.',
+      'Página de error propia: una dirección inexistente responde 404 y no devuelve contenido.',
+      'Los borradores quedan fuera del índice y fuera del mapa del sitio.',
+    ],
+  },
+  {
+    group: 'Metadatos por página',
+    items: [
+      'Título breve para el buscador, independiente del título visible.',
+      'Descripción escrita para esa página, no heredada del sitio.',
+      'Imagen social propia por artículo, con su texto alternativo y sus medidas.',
+      'Open Graph y Twitter Card completos.',
+      'Idioma, localización e icono del sitio declarados.',
+    ],
+  },
+  {
+    group: 'Datos estructurados',
+    items: [
+      'Cada artículo se declara como artículo técnico, con fecha, sección, etiquetas, idioma, autor y editor.',
+      'Un solo autor para todo el sitio, con identificador estable, cargo, organización, formación y perfiles verificados.',
+      'Las entidades de cada tema, enlazadas con Wikidata y Wikipedia.',
+      'Todas las referencias del artículo, con su dirección.',
+      'Las preguntas frecuentes, una por una.',
+      'El glosario, con cada término definido y enlazable por separado.',
+      'Migas de navegación en cada artículo.',
+      'El índice de cada sección, con la lista ordenada de sus artículos.',
+    ],
+  },
+  {
+    group: 'Optimización para modelos de lenguaje',
+    items: [
+      'Un archivo llms.txt que resume el sitio, cada sección y cada artículo.',
+      'Definiciones que se entienden sin leer el artículo completo.',
+      'Preguntas y respuestas que se sostienen solas.',
+      'Referencias a fuentes primarias u oficiales, verificadas una por una antes de publicar.',
+    ],
+  },
+  {
+    group: 'Rendimiento y accesibilidad',
+    items: [
+      'Sitio estático servido desde una red de distribución, sin marco de trabajo en el navegador.',
+      'Imágenes con medidas declaradas, carga diferida y formato moderno.',
+      'Tipografías con preconexión y sustitución inmediata.',
+      'Un solo encabezado de primer nivel por página y jerarquía sin saltos.',
+      'Texto alternativo en todas las imágenes y pie visible en las figuras.',
+      'Enlace para saltar al contenido, desde el teclado.',
+    ],
+  },
+  {
+    group: 'Medición',
+    items: [
+      'Propiedad verificada en Google Search Console y en Bing Webmaster Tools.',
+      'Analítica de tráfico y de comportamiento en todas las páginas.',
+    ],
+  },
+];
+
+const description =
+  'Las técnicas de SEO que lleva cada página de este sitio: rastreo e indexación, metadatos, datos estructurados, optimización para modelos de lenguaje, rendimiento y medición.';
+
+const breadcrumb = breadcrumbLd([
+  { name: 'Inicio', path: '/' },
+  { name: 'Acerca de', path: '/acerca/' },
+  { name: 'Técnicas de SEO', path: '/acerca/seo/' },
+]);
+---
+<Base
+  title="Técnicas de SEO implementadas en este sitio"
+  description={description}
+  path="/acerca/seo/"
+  accent={ACERCA_ACCENT}
+  image="/covers/acerca-seo.png"
+  imageAlt="Portada: técnicas de SEO, de rastreo a estructura y cita."
+>
+  <article class="wrap prose about">
+    <p class="eyebrow">
+      <a href="/acerca/" style="color:inherit;text-decoration:none">Acerca de</a>
+    </p>
+    <h1>Técnicas de SEO implementadas en este sitio</h1>
+    <p class="lede muted">
+      Lo que cada página entrega a los buscadores y a los modelos de lenguaje.
+      Todos los artículos llevan lo mismo.
+    </p>
+
+    <div class="chain" aria-hidden="true" style="margin:1.8rem 0 2.6rem;max-width:340px">
+      <span class="node"></span><span class="seg"></span>
+      <span class="node hollow"></span><span class="seg"></span>
+      <span class="node"></span>
+    </div>
+
+    {tecnicas.map((block) => (
+      <section class="spec">
+        <h2>{block.group}</h2>
+        <ul>
+          {block.items.map((item) => <li>{item}</li>)}
+        </ul>
+      </section>
+    ))}
+
+    <hr class="divider" />
+    <p class="small muted"><a href="/acerca/">← Volver a Acerca de</a></p>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+
+  <style>
+    .about { padding-top: 3.5rem; padding-bottom: 2rem; }
+    .about .lede { font-size: var(--step-1); line-height: 1.45; margin: 0.2em 0 1em; }
+
+    .spec { margin-top: 2.4rem; }
+    .spec h2 {
+      font-size: var(--step-1);
+      margin: 0 0 0.6em;
+      padding-top: 0.4em;
+      border-top: 1px solid var(--line);
+    }
+    .spec ul { margin: 0; padding-left: 1.3em; }
+    .spec li { margin: 0.5em 0; line-height: 1.55; }
+
+    .divider { border: 0; border-top: 1px solid var(--line); margin: 3em 0 2em; }
+  </style>
+</Base>

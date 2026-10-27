@@ -33,14 +33,14 @@ const topics = publishedTopics();
 const site = 'https://migueldiazmacedo.com';
 const canonical = site + path;
 const author = 'Miguel Díaz Macedo';
-// Lightweight reference to the full Person entity defined on /acerca/.
+// Lightweight reference to the full Person entity defined on /acerca/perfil/.
 // El `@id` es el que permite a un buscador o a un LLM fundir los tres nodos
-// (portada, artículo y /acerca/) en una sola entidad; vive en /acerca/.
+// (portada, artículo y perfil) en una sola entidad; vive en /acerca/perfil/.
 const authorRef = {
   '@type': 'Person',
-  '@id': site + '/acerca/#miguel',
+  '@id': site + '/acerca/perfil/#miguel',
   name: author,
-  url: site + '/acerca/',
+  url: site + '/acerca/perfil/',
 };
 const ogTitle = title.replace(/ — migueldiazmacedo$/, '');
 // og:image: la portada propia de la página o, si no tiene, la imagen de marca.

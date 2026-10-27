@@ -1,5 +1,7 @@
 ---
-import Base from '../layouts/Base.astro';
+import Base from '../../layouts/Base.astro';
+import { breadcrumbLd } from '../../config/schema';
+import { ACERCA_ACCENT } from '../../config/topics';
 
 const site = 'https://migueldiazmacedo.com';
 
@@ -10,9 +12,9 @@ const personLd = {
   '@type': 'Person',
   // Identificador estable de la entidad: los nodos `author` y `publisher` de
   // cada artículo apuntan aquí con el mismo `@id`.
-  '@id': site + '/acerca/#miguel',
+  '@id': site + '/acerca/perfil/#miguel',
   name: 'Miguel Díaz Macedo',
-  url: site + '/acerca/',
+  url: site + '/acerca/perfil/',
   email: 'miguel.diazmacedo@gmail.com',
   jobTitle: 'Software Development Manager, Tax Compliance Technology',
   worksFor: { '@type': 'Organization', name: 'SOVOS' },
@@ -37,14 +39,25 @@ const personLd = {
     'https://github.com/migueldiaz66',
   ],
 };
+
+const breadcrumb = breadcrumbLd([
+  { name: 'Inicio', path: '/' },
+  { name: 'Acerca de', path: '/acerca/' },
+  { name: 'Miguel Díaz Macedo', path: '/acerca/perfil/' },
+]);
 ---
 <Base
-  title="Acerca de — migueldiazmacedo"
+  title="Miguel Díaz Macedo — migueldiazmacedo"
   description="Miguel Díaz Macedo: líder de ingeniería de tecnología de cumplimiento fiscal en SOVOS para México y Latinoamérica. Casi 30 años en TI y formación de biólogo por la UNAM."
-  path="/acerca/"
+  path="/acerca/perfil/"
+  accent={ACERCA_ACCENT}
+  image="/covers/acerca-perfil.png"
+  imageAlt="Portada: Miguel Díaz Macedo, de código a arquitectura y operación."
 >
   <article class="wrap prose about">
-    <p class="eyebrow">Acerca de</p>
+    <p class="eyebrow">
+      <a href="/acerca/" style="color:inherit;text-decoration:none">Acerca de</a>
+    </p>
     <h1>Miguel Díaz Macedo</h1>
     <p class="lede muted">
       Lidero la ingeniería de tecnología de cumplimiento fiscal en SOVOS para
@@ -95,14 +108,19 @@ const personLd = {
       · <a href="https://www.linkedin.com/in/jes%C3%BAs-d%C3%ADaz-5b3835343/" rel="me">LinkedIn</a>
       · <a href="https://github.com/migueldiaz66" rel="me">GitHub</a>
     </p>
+
+    <hr class="divider" />
+    <p class="small muted"><a href="/acerca/">← Volver a Acerca de</a></p>
   </article>
 
   <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
 
   <style>
-    .about { padding-top: 3.5rem; }
+    .about { padding-top: 3.5rem; padding-bottom: 2rem; }
     .about .lede { font-size: var(--step-1); line-height: 1.45; margin: 0.2em 0 1em; }
     .about p { margin: 1.15em 0; }
     .contact { margin-top: 2.5rem; }
+    .divider { border: 0; border-top: 1px solid var(--line); margin: 2.5em 0; }
   </style>
 </Base>

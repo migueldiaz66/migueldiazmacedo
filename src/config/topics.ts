@@ -57,5 +57,9 @@ export const TOPICS: Topic[] = [
   },
 ];
 
+// "Acerca de" no es un tema (no tiene colección ni artículos), pero sí es una
+// sección con su propio color, así que su acento vive aquí con los demás.
+export const ACERCA_ACCENT = '#2f5d7a';
+
 export const publishedTopics = () => TOPICS.filter((t) => t.published);
 export const topicBySlug = (slug: string) => TOPICS.find((t) => t.slug === slug);
