@@ -8,6 +8,9 @@ const site = 'https://migueldiazmacedo.com';
 const personLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
+  // Identificador estable de la entidad: los nodos `author` y `publisher` de
+  // cada artículo apuntan aquí con el mismo `@id`.
+  '@id': site + '/acerca/#miguel',
   name: 'Miguel Díaz Macedo',
   url: site + '/acerca/',
   email: 'miguel.diazmacedo@gmail.com',
@@ -23,6 +26,9 @@ const personLd = {
     'Control continuo de transacciones (CTC)',
     'Cumplimiento fiscal',
     'Arquitectura de software',
+    'Bibliometría',
+    'Generación aumentada por recuperación (RAG)',
+    'Grandes modelos de lenguaje (LLM)',
   ],
   description:
     'Líder de ingeniería de tecnología de cumplimiento fiscal en SOVOS para México y Latinoamérica. Casi 30 años en TI y formación de biólogo por la UNAM.',

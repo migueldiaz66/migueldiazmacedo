@@ -80,7 +80,10 @@ Definir a detalle la técnica no es el objeto de este artículo. El trabajo de L
 
 Un RAG tiene dos fases. La primera ocurre una sola vez: se da de alta una fuente de información que extenderá el conocimiento disponible para el LLM más allá de su corpus de entrenamiento. Un RAG puede tener múltiples fuentes y en múltiples formatos; en este caso, simplificado al extremo, se usa una sola fuente de información y en el formato más simple que existe: un documento de texto (*corpus*). Para un documento de texto, este se corta en pasajes (*troceado*), cada pasaje se convierte en un vector (*vectorización*) y los vectores se guardan en una base de datos especializada en vectores (*almacén de vectores*; sobre cómo se representa un texto como vector y cómo se busca entre millones de ellos de forma eficiente, véanse [\[2\]](#ref-2) y [\[13\]](#ref-13)). La segunda ocurre en cada pregunta: la pregunta se transforma en un vector del mismo tipo y se buscan en la base de datos los vectores más cercanos a él (*recuperación*). Cada vector encontrado tiene guardado el pasaje de texto del que salió, y son esos pasajes los que se recuperan y se entregan al modelo junto con la pregunta (*prompt aumentado*) para que redacte la respuesta (*generación*).
 
-![Los seis componentes del montaje: a la izquierda el alta del documento, que ocurre una vez; a la derecha la consulta, que ocurre en cada pregunta.](/img/rag-minimo-local/pipeline.svg)
+<figure>
+  <img src="/img/rag-minimo-local/pipeline.svg" width="1000" height="440" loading="lazy" decoding="async" alt="Diagrama de dos filas. Arriba: documento, troceado, vectorización y almacén. Abajo: pregunta, recuperación, prompt y generación, hasta la respuesta." />
+  <figcaption>Las dos fases del montaje: el alta del documento ocurre una sola vez; la consulta, en cada pregunta.</figcaption>
+</figure>
 
 Seis componentes, cada uno con una sola responsabilidad:
 
@@ -143,9 +146,15 @@ En **modo RAG** se recuperan primero los cuatro pasajes más cercanos a la pregu
 
 En **modo agente** el modelo además decide. Puede buscar más pasajes si los que tiene no le alcanzan, o señalar una etapa del diagrama que la página dibuja al lado del chat. Es la diferencia entre un flujo fijo y uno donde el modelo elige el siguiente paso.
 
-![En modo RAG, la respuesta aparece con los cuatro pasajes del artículo de los que se construyó.](/img/rag-minimo-local/respuesta-rag.png)
+<figure>
+  <img src="/img/rag-minimo-local/respuesta-rag.png" width="1400" height="900" loading="lazy" decoding="async" alt="Captura de la página: la respuesta del modelo y, debajo, los cuatro pasajes recuperados con su sección y sus líneas." />
+  <figcaption>Modo RAG: la respuesta llega con los cuatro pasajes de los que salió.</figcaption>
+</figure>
 
-![En modo agente, el modelo buscó en el artículo y además iluminó la etapa del diagrama por la que se le preguntó.](/img/rag-minimo-local/agente.png)
+<figure>
+  <img src="/img/rag-minimo-local/agente.png" width="1400" height="900" loading="lazy" decoding="async" alt="Captura de la página: la respuesta del agente junto al diagrama del montaje, con una etapa resaltada." />
+  <figcaption>Modo agente: el modelo buscó en el documento y resaltó la etapa del diagrama por la que se le preguntó.</figcaption>
+</figure>
 
 ## Lo que este montaje no resuelve
 
@@ -163,7 +172,7 @@ Para no instalar nada, el repositorio trae un botón que levanta todo en GitHub 
 
 ## Lo que sigue
 
-La aplicación que me interesa de verdad no es un RAG sobre Wikipedia. Es uno sobre el Anexo 20, el Código Fiscal de la Federación y la Resolución Miscelánea Fiscal: documentos largos, versionados y llenos de catálogos, donde una respuesta que suena bien pero no puede señalar la regla exacta de la que salió no sirve de nada. Ese problema tiene todo lo que este montaje deja fuera —muchos documentos, versiones que conviven, terminología que hay que respetar al pie de la letra— y es el siguiente experimento de esta línea.
+La aplicación que me interesa de verdad no es un RAG sobre Wikipedia. Es uno sobre [el Anexo 20](/fiscal/cfdi-evolucion/), el Código Fiscal de la Federación y la Resolución Miscelánea Fiscal: documentos largos, versionados y llenos de catálogos, donde una respuesta que suena bien pero no puede señalar la regla exacta de la que salió no sirve de nada. Ese problema tiene todo lo que este montaje deja fuera —muchos documentos, versiones que conviven, terminología que hay que respetar al pie de la letra— y es el siguiente experimento de esta línea.
 
 ## Notas
 

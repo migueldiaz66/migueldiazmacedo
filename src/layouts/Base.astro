@@ -12,6 +12,8 @@ export interface Props {
   type?: 'website' | 'article';
   /* optional social/share image (path under /public or absolute URL) */
   image?: string;
+  /* alt text for that image (og:image:alt) */
+  imageAlt?: string;
   /* article dates, used for og:article meta and structured data */
   pubDate?: Date;
   updatedDate?: Date;
@@ -26,16 +28,25 @@ export interface Props {
   citation?: { '@type': string; name: string; url?: string | string[] }[];
 }
 
-const { title, description, accent, path = '', type = 'website', image, pubDate, updatedDate, noindex = false, about, keywords, articleSection, citation } = Astro.props;
+const { title, description, accent, path = '', type = 'website', image, imageAlt, pubDate, updatedDate, noindex = false, about, keywords, articleSection, citation } = Astro.props;
 const topics = publishedTopics();
 const site = 'https://migueldiazmacedo.com';
 const canonical = site + path;
 const author = 'Miguel Díaz Macedo';
 // Lightweight reference to the full Person entity defined on /acerca/.
-const authorRef = { '@type': 'Person', name: author, url: site + '/acerca/' };
+// El `@id` es el que permite a un buscador o a un LLM fundir los tres nodos
+// (portada, artículo y /acerca/) en una sola entidad; vive en /acerca/.
+const authorRef = {
+  '@type': 'Person',
+  '@id': site + '/acerca/#miguel',
+  name: author,
+  url: site + '/acerca/',
+};
 const ogTitle = title.replace(/ — migueldiazmacedo$/, '');
 // og:image: la portada propia de la página o, si no tiene, la imagen de marca.
 const ogImage = new URL(image ?? '/og-default.png', site).href;
+// Alt de la imagen social; todas las portadas se generan a 1200x630.
+const ogImageAlt = imageAlt ?? `Portada: ${ogTitle}`;
 
 const jsonLd = type === 'article'
   ? {
@@ -91,6 +102,9 @@ const jsonLd = type === 'article'
       })(window, document, "clarity", "script", "xcpnp74rwa");
     </script>
 
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -104,6 +118,9 @@ const jsonLd = type === 'article'
     <meta property="og:site_name" content="migueldiazmacedo" />
     <meta property="og:locale" content="es_MX" />
     {ogImage && <meta property="og:image" content={ogImage} />}
+    {ogImage && <meta property="og:image:alt" content={ogImageAlt} />}
+    {ogImage && <meta property="og:image:width" content="1200" />}
+    {ogImage && <meta property="og:image:height" content="630" />}
     {type === 'article' && pubDate && (
       <meta property="article:published_time" content={pubDate.toISOString()} />
     )}
@@ -114,6 +131,7 @@ const jsonLd = type === 'article'
     <meta name="twitter:title" content={ogTitle} />
     <meta name="twitter:description" content={description} />
     {ogImage && <meta name="twitter:image" content={ogImage} />}
+    {ogImage && <meta name="twitter:image:alt" content={ogImageAlt} />}
 
     <!-- Structured data -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
@@ -126,7 +144,9 @@ const jsonLd = type === 'article'
       rel="stylesheet"
     />
 
-    {accent && <style set:html={`:root{--accent:${accent}}`} />}
+    {/* El acento del tema tiene que ganarle al valor por defecto de global.css,
+        que el bundle carga después de este bloque: de ahí la doble :root. */}
+    {accent && <style set:html={`:root:root{--accent:${accent}}`} />}
   </head>
   <body>
     <a class="skip" href="#main">Saltar al contenido</a>

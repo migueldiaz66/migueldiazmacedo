@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import { publishedTopics } from '../config/topics';
+
+// Cloudflare Pages sirve este archivo con estado 404 para cualquier ruta que
+// no exista. Sin él, una URL mal escrita devolvía 200 con la portada, que los
+// buscadores clasifican como "soft 404".
+const topics = publishedTopics();
+---
+<Base
+  title="Página no encontrada — migueldiazmacedo"
+  description="La dirección solicitada no corresponde a ninguna página de este sitio."
+  path="/404/"
+  noindex={true}
+>
+  <section class="wrap prose nf">
+    <p class="eyebrow">Error 404</p>
+    <h1>Esta página no existe</h1>
+    <p class="lede muted">
+      La dirección no corresponde a ninguna página del sitio. El enlace puede
+      estar mal escrito o el contenido haber cambiado de lugar.
+    </p>
+
+    <ul class="links">
+      {topics.map((t) => (
+        <li><a href={`/${t.slug}/`}>{t.label}</a> — {t.blurb}</li>
+      ))}
+      <li><a href="/glosario/">Glosario</a> — definiciones de los términos del sitio.</li>
+      <li><a href="/">Portada</a></li>
+    </ul>
+  </section>
+
+  <style>
+    .nf { padding: 4rem 0 5rem; }
+    .lede { font-size: var(--step-1); line-height: 1.45; }
+    .links { list-style: none; padding: 0; margin: 2rem 0 0; }
+    .links li {
+      border-top: 1px solid var(--line);
+      padding: 0.9em 0;
+      font-size: var(--step--1);
+      color: var(--muted);
+    }
+  </style>
+</Base>
