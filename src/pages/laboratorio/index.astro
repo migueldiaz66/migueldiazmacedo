@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 import { topicBySlug } from '../../config/topics';
+import { breadcrumbLd, collectionPageLd } from '../../config/schema';
 
 const topic = topicBySlug('laboratorio')!;
 const entries = (await getCollection('laboratorio', (e) => !e.data.draft))
@@ -14,13 +15,35 @@ const fmt = (d: Date) =>
 // etiquetas, cae al nombre del tema. Nunca un texto fijo.
 const kicker = (e: (typeof entries)[number]) =>
   (e.data.tags[0] ?? topic.label).toUpperCase();
+
+const description =
+  'Pruebas de concepto de software documentadas de principio a fin: qué se monta, cómo se mide, cuánto cuesta en una máquina modesta y en qué deja de servir. Generación aumentada por recuperación (RAG), modelos locales y arquitectura.';
+
+// Datos estructurados del índice: la lista de artículos que la página muestra
+// y las migas hasta la portada.
+const ld = [
+  collectionPageLd({
+    name: topic.title,
+    description,
+    path: '/laboratorio/',
+    items: entries.map((e) => ({ name: e.data.title, path: `/laboratorio/${e.slug}/` })),
+  }),
+  breadcrumbLd([
+    { name: 'Inicio', path: '/' },
+    { name: topic.label, path: '/laboratorio/' },
+  ]),
+];
 ---
 <Base
   title={`${topic.title} — migueldiazmacedo`}
-  description="Pruebas de concepto de software documentadas de principio a fin: qué se monta, cómo se mide, cuánto cuesta en una máquina modesta y en qué deja de servir. Generación aumentada por recuperación (RAG), modelos locales y arquitectura."
+  description={description}
   accent={topic.accent}
   path="/laboratorio/"
 >
+  {ld.map((node) => (
+    <script type="application/ld+json" set:html={JSON.stringify(node)} />
+  ))}
+
   <section class="wrap intro">
     <p class="eyebrow">{topic.label}</p>
     <h1>{topic.title}</h1>

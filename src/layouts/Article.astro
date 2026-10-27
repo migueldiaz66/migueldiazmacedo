@@ -3,6 +3,7 @@ import Base from './Base.astro';
 import { topicBySlug } from '../config/topics';
 import { resolveEntities } from '../config/entities';
 import { glossaryByKeys } from '../config/glossary';
+import { breadcrumbLd } from '../config/schema';
 
 export interface Props {
   title: string;
@@ -27,6 +28,12 @@ const { title, description, pubDate, updatedDate, topicSlug, path, image, imageA
 const canonical = 'https://migueldiazmacedo.com' + path;
 const topic = topicBySlug(topicSlug);
 const accent = topic?.accent;
+// Migas: portada -> tema -> artículo, el mismo camino que muestra la página.
+const breadcrumb = breadcrumbLd([
+  { name: 'Inicio', path: '/' },
+  { name: topic?.label ?? topicSlug, path: `/${topicSlug}/` },
+  { name: title, path },
+]);
 const about = resolveEntities(entities);
 const keywords = tags && tags.length ? tags.join(', ') : undefined;
 // Glosario contextual del artículo (subconjunto del catálogo), orden alfabético.
@@ -167,6 +174,8 @@ const fmt = (d: Date) =>
         })}
       />
     )}
+
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
 
     <hr class="divider" />
     <p class="small muted">

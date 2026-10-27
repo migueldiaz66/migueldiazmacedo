@@ -147,12 +147,12 @@ En **modo RAG** se recuperan primero los cuatro pasajes más cercanos a la pregu
 En **modo agente** el modelo además decide. Puede buscar más pasajes si los que tiene no le alcanzan, o señalar una etapa del diagrama que la página dibuja al lado del chat. Es la diferencia entre un flujo fijo y uno donde el modelo elige el siguiente paso.
 
 <figure>
-  <img src="/img/rag-minimo-local/respuesta-rag.png" width="1400" height="900" loading="lazy" decoding="async" alt="Captura de la página: la respuesta del modelo y, debajo, los cuatro pasajes recuperados con su sección y sus líneas." />
+  <img src="/img/rag-minimo-local/respuesta-rag.webp" width="1400" height="900" loading="lazy" decoding="async" alt="Captura de la página: la respuesta del modelo y, debajo, los cuatro pasajes recuperados con su sección y sus líneas." />
   <figcaption>Modo RAG: la respuesta llega con los cuatro pasajes de los que salió.</figcaption>
 </figure>
 
 <figure>
-  <img src="/img/rag-minimo-local/agente.png" width="1400" height="900" loading="lazy" decoding="async" alt="Captura de la página: la respuesta del agente junto al diagrama del montaje, con una etapa resaltada." />
+  <img src="/img/rag-minimo-local/agente.webp" width="1400" height="900" loading="lazy" decoding="async" alt="Captura de la página: la respuesta del agente junto al diagrama del montaje, con una etapa resaltada." />
   <figcaption>Modo agente: el modelo buscó en el documento y resaltó la etapa del diagrama por la que se le preguntó.</figcaption>
 </figure>
 
