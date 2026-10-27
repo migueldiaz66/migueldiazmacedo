@@ -50,7 +50,7 @@ export const TOPICS: Topic[] = [
   {
     slug: 'laboratorio',
     label: 'Laboratorio',
-    title: 'Laboratorio: pruebas de concepto medidas',
+    title: 'Laboratorio: pruebas de concepto',
     blurb: 'Sistemas que construyo para entender cómo funcionan: el montaje, las mediciones y los límites.',
     published: true,
     accent: '#a8432f',
