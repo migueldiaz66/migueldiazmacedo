@@ -47,6 +47,14 @@ export const TOPICS: Topic[] = [
     published: true,
     accent: '#6a3d9a',
   },
+  {
+    slug: 'laboratorio',
+    label: 'Laboratorio',
+    title: 'Laboratorio: pruebas de concepto medidas',
+    blurb: 'Sistemas que construyo para entender cómo funcionan: el montaje, las mediciones y los límites.',
+    published: true,
+    accent: '#a8432f',
+  },
 ];
 
 export const publishedTopics = () => TOPICS.filter((t) => t.published);

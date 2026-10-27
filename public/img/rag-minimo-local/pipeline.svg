@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" role="img" aria-labelledby="t d">
+  <title id="t">Los seis componentes de un RAG mínimo</title>
+  <desc id="d">Arriba, el alta del documento, que ocurre una sola vez: el documento se trocea en pasajes, los pasajes se vectorizan y los vectores se guardan en el almacén. Abajo, la consulta, que ocurre en cada pregunta: la pregunta se vectoriza igual, se recuperan del almacén los cuatro pasajes más cercanos, se arma con ellos un prompt aumentado y el modelo genera la respuesta.</desc>
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#5c635f"/>
+    </marker>
+    <style>
+      .bx { fill: #faf9f5; stroke: #d8d4c7; stroke-width: 1.5; }
+      .bx-acc { fill: #faf9f5; stroke: #a8432f; stroke-width: 1.8; }
+      .bt { font-family: Inter, system-ui, sans-serif; font-weight: 650; font-size: 17px; fill: #1a1f1d; }
+      .bs { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11.5px; fill: #5c635f; }
+      .band { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px; fill: #a8432f; letter-spacing: 0.16em; }
+      .ln { stroke: #5c635f; stroke-width: 1.5; fill: none; }
+      .ln-d { stroke: #a8432f; stroke-width: 1.5; fill: none; stroke-dasharray: 5 4; }
+    </style>
+  </defs>
+
+  <text class="band" x="10" y="30">ALTA DEL DOCUMENTO · UNA SOLA VEZ</text>
+
+  <rect class="bx" x="10" y="48" width="180" height="86" rx="6"/>
+  <text class="bt" x="28" y="84">Documento</text>
+  <text class="bs" x="28" y="106">un archivo, 10 KB</text>
+
+  <rect class="bx" x="210" y="48" width="180" height="86" rx="6"/>
+  <text class="bt" x="228" y="84">Troceado</text>
+  <text class="bs" x="228" y="106">pasajes de ~500</text>
+  <text class="bs" x="228" y="121">caracteres</text>
+
+  <rect class="bx" x="410" y="48" width="180" height="86" rx="6"/>
+  <text class="bt" x="428" y="84">Vectorización</text>
+  <text class="bs" x="428" y="106">nomic-embed-text</text>
+  <text class="bs" x="428" y="121">768 números</text>
+
+  <rect class="bx-acc" x="610" y="48" width="180" height="86" rx="6"/>
+  <text class="bt" x="628" y="84">Almacén</text>
+  <text class="bs" x="628" y="106">Qdrant · distancia</text>
+  <text class="bs" x="628" y="121">coseno</text>
+
+  <line class="ln" x1="190" y1="91" x2="206" y2="91" marker-end="url(#a)"/>
+  <line class="ln" x1="390" y1="91" x2="406" y2="91" marker-end="url(#a)"/>
+  <line class="ln" x1="590" y1="91" x2="606" y2="91" marker-end="url(#a)"/>
+
+  <path class="ln-d" d="M 700 134 L 700 250 L 300 250 L 300 326" marker-end="url(#a)"/>
+  <text class="bs" x="712" y="200">los vectores quedan</text>
+  <text class="bs" x="712" y="215">disponibles para</text>
+  <text class="bs" x="712" y="230">cualquier pregunta</text>
+
+  <text class="band" x="10" y="310">CONSULTA · EN CADA PREGUNTA</text>
+
+  <rect class="bx" x="10" y="328" width="180" height="86" rx="6"/>
+  <text class="bt" x="28" y="364">Pregunta</text>
+  <text class="bs" x="28" y="386">vectorizada igual</text>
+  <text class="bs" x="28" y="401">que los pasajes</text>
+
+  <rect class="bx" x="210" y="328" width="180" height="86" rx="6"/>
+  <text class="bt" x="228" y="364">Recuperación</text>
+  <text class="bs" x="228" y="386">los 4 pasajes</text>
+  <text class="bs" x="228" y="401">más cercanos</text>
+
+  <rect class="bx" x="410" y="328" width="180" height="86" rx="6"/>
+  <text class="bt" x="428" y="364">Prompt</text>
+  <text class="bs" x="428" y="386">los pasajes y</text>
+  <text class="bs" x="428" y="401">la pregunta</text>
+
+  <rect class="bx" x="610" y="328" width="180" height="86" rx="6"/>
+  <text class="bt" x="628" y="364">Generación</text>
+  <text class="bs" x="628" y="386">qwen3:1.7b, por</text>
+  <text class="bs" x="628" y="401">Ollama</text>
+
+  <rect class="bx-acc" x="810" y="328" width="180" height="86" rx="6"/>
+  <text class="bt" x="828" y="364">Respuesta</text>
+  <text class="bs" x="828" y="386">con sus fuentes:</text>
+  <text class="bs" x="828" y="401">sección y líneas</text>
+
+  <line class="ln" x1="190" y1="371" x2="206" y2="371" marker-end="url(#a)"/>
+  <line class="ln" x1="390" y1="371" x2="406" y2="371" marker-end="url(#a)"/>
+  <line class="ln" x1="590" y1="371" x2="606" y2="371" marker-end="url(#a)"/>
+  <line class="ln" x1="790" y1="371" x2="806" y2="371" marker-end="url(#a)"/>
+</svg>

@@ -251,6 +251,153 @@ export const GLOSSARY: GlossaryTerm[] = [
       'Relación entre dos documentos (o autores) citados juntos por un tercero: cuanto más se les cita en conjunto, más cercanos se consideran. Es una de las bases del science mapping.',
     sameAs: ['https://en.wikipedia.org/wiki/Co-citation'],
   },
+  // --- Línea "Laboratorio" ---
+  {
+    key: 'rag',
+    abbr: 'RAG',
+    name: 'Generación aumentada por recuperación',
+    definition:
+      'Técnica que, antes de que un modelo de lenguaje responda, busca en un conjunto de documentos los fragmentos pertinentes y se los entrega junto con la pregunta. El modelo deja de responder de memoria y responde a partir de un texto que se puede verificar.',
+    sameAs: [
+      'https://www.wikidata.org/wiki/Q121362277',
+      'https://es.wikipedia.org/wiki/Generaci%C3%B3n_aumentada_por_recuperaci%C3%B3n',
+    ],
+  },
+  {
+    key: 'llm',
+    abbr: 'LLM',
+    name: 'Gran modelo de lenguaje',
+    definition:
+      'Modelo entrenado sobre grandes volúmenes de texto para predecir la continuación de una secuencia. Solo conoce lo que vio durante su entrenamiento, y esa limitación es la que la generación aumentada por recuperación viene a cubrir.',
+    sameAs: [
+      'https://www.wikidata.org/wiki/Q115305900',
+      'https://es.wikipedia.org/wiki/Modelo_de_lenguaje_de_gran_tama%C3%B1o',
+    ],
+  },
+  {
+    key: 'embedding',
+    name: 'Embedding (vector semántico)',
+    definition:
+      'Lista de números que representa el significado de un texto, de modo que dos textos sobre el mismo asunto quedan cerca en ese espacio aunque no compartan palabras. Es lo que permite buscar por sentido y no por coincidencia literal.',
+    sameAs: [
+      'https://www.wikidata.org/wiki/Q18395344',
+      'https://en.wikipedia.org/wiki/Word_embedding',
+    ],
+  },
+  {
+    key: 'corpus-rag',
+    name: 'Corpus (en generación aumentada por recuperación)',
+    definition:
+      'Conjunto de documentos del que un sistema de recuperación saca sus respuestas. No es el corpus de entrenamiento del modelo: este se da de alta después, se puede cambiar o ampliar, y delimita exactamente lo que el sistema está en condiciones de contestar.',
+  },
+  {
+    key: 'chunking',
+    name: 'Troceado (chunking)',
+    definition:
+      'Corte de un documento en fragmentos manejables antes de vectorizarlos. El tamaño y el punto de corte deciden la calidad de la recuperación: un fragmento que mezcla varios temas produce un vector que no se parece del todo a ninguno.',
+  },
+  {
+    key: 'pasaje',
+    name: 'Pasaje',
+    definition:
+      'Cada uno de los fragmentos en que se corta un documento. Es la unidad que se vectoriza, se almacena, se recupera y se cita como fuente de una respuesta.',
+  },
+  {
+    key: 'base-vectorial',
+    name: 'Base de datos vectorial',
+    definition:
+      'Base de datos especializada en guardar vectores y encontrar los más cercanos a uno dado. Usa índices para no comparar la consulta contra todos los vectores guardados.',
+    sameAs: [
+      'https://www.wikidata.org/wiki/Q118396004',
+      'https://en.wikipedia.org/wiki/Vector_database',
+    ],
+  },
+  {
+    key: 'similitud-coseno',
+    name: 'Similitud coseno',
+    definition:
+      'Medida de parecido entre dos vectores por el ángulo que forman, con independencia de su magnitud. Es la métrica habitual para decidir qué pasaje se acerca más a una pregunta.',
+    sameAs: [
+      'https://www.wikidata.org/wiki/Q1784941',
+      'https://es.wikipedia.org/wiki/Similitud_coseno',
+    ],
+  },
+  {
+    key: 'recuperacion',
+    name: 'Recuperación (retrieval)',
+    definition:
+      'Paso que convierte la pregunta en un vector y trae del almacén los pasajes más cercanos. Es la "R" de RAG y, medido, suele ser la parte barata del proceso.',
+  },
+  {
+    key: 'vectorizacion-pregunta',
+    name: 'Vectorización de la pregunta',
+    definition:
+      'Conversión de la pregunta en un vector con el mismo modelo que vectorizó los pasajes. Solo así ambos quedan en el mismo espacio y la distancia entre ellos significa algo: con modelos distintos, la búsqueda por cercanía no mide nada.',
+  },
+  {
+    key: 'prompt-aumentado',
+    name: 'Prompt aumentado',
+    definition:
+      'Texto que finalmente recibe el modelo: los pasajes recuperados, la pregunta y la instrucción de responder solo con lo que está en ellos. Es donde la recuperación se vuelve contexto.',
+  },
+  {
+    key: 'temperatura',
+    name: 'Temperatura',
+    definition:
+      'Parámetro que gradúa cuánto azar introduce el modelo al elegir cada palabra. En cero toma siempre la opción más probable, de modo que la misma pregunta sobre los mismos pasajes devuelve la misma respuesta y el resultado se puede repetir.',
+  },
+  {
+    key: 'modo-de-razonamiento',
+    name: 'Modo de razonamiento',
+    definition:
+      'Comportamiento de ciertos modelos que, antes de contestar, generan una cadena de pasos intermedios. Ayuda en tareas que exigen deducción y multiplica el tiempo de respuesta; aquí está apagado porque la tarea es redactar a partir de pasajes ya recuperados.',
+  },
+  {
+    key: 'ventana-de-contexto',
+    name: 'Ventana de contexto',
+    definition:
+      'Cantidad máxima de texto que un modelo puede tener presente de una vez, contando el prompt y la respuesta. Limita cuántos pasajes se le pueden entregar y encarece el procesamiento cuando crece.',
+  },
+  {
+    key: 'agente-llm',
+    name: 'Agente (de modelo de lenguaje)',
+    definition:
+      'Montaje en el que el modelo no solo responde sino que decide qué hacer: buscar más información, ejecutar una herramienta o actuar sobre la interfaz. Más flexible que un flujo fijo y menos predecible.',
+  },
+  {
+    key: 'llamada-a-herramientas',
+    name: 'Llamada a herramientas (tool calling)',
+    definition:
+      'Capacidad de un modelo para pedir la ejecución de una función declarada, con sus argumentos, en lugar de contestar con texto. Los modelos pequeños la manejan bien solo cuando las opciones son pocas.',
+  },
+  {
+    key: 'ollama',
+    name: 'Ollama',
+    definition:
+      'Programa que descarga y ejecuta modelos de lenguaje en la propia máquina y los expone en una interfaz de programación local. Permite montar un sistema completo sin servicio en la nube ni llave de acceso.',
+  },
+  {
+    key: 'qdrant',
+    name: 'Qdrant',
+    definition:
+      'Base de datos vectorial de código abierto, con búsqueda por similitud y filtros, que se levanta en un contenedor. Es el almacén de vectores de este montaje.',
+  },
+  {
+    key: 'alucinacion',
+    name: 'Alucinación',
+    definition:
+      'Respuesta inventada que un modelo presenta con la misma seguridad que una correcta. La generación aumentada por recuperación no la elimina: la reduce y, al exigir que cada respuesta cite sus pasajes, la vuelve detectable.',
+    sameAs: [
+      'https://www.wikidata.org/wiki/Q116197048',
+      'https://es.wikipedia.org/wiki/Alucinaci%C3%B3n_(inteligencia_artificial)',
+    ],
+  },
+  {
+    key: 'recall-at-k',
+    name: 'Cobertura en los primeros k (recall@k)',
+    definition:
+      'Proporción de preguntas en las que el pasaje correcto aparece entre los k primeros resultados de la búsqueda. Es la medida básica para decidir si la recuperación sirve, separada de la calidad de la redacción final.',
+  },
 ];
 
 // Subconjunto por claves, en el orden del catálogo (filtra claves desconocidas).

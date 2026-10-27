@@ -44,6 +44,34 @@ export const ENTITIES: Record<string, Entity> = {
     name: 'Web of Science',
     sameAs: ['https://es.wikipedia.org/wiki/Web_of_Science'],
   },
+  rag: {
+    name: 'Generación aumentada por recuperación (RAG)',
+    sameAs: [
+      'https://www.wikidata.org/wiki/Q121362277',
+      'https://es.wikipedia.org/wiki/Generaci%C3%B3n_aumentada_por_recuperaci%C3%B3n',
+    ],
+  },
+  llm: {
+    name: 'Gran modelo de lenguaje (LLM)',
+    sameAs: [
+      'https://www.wikidata.org/wiki/Q115305900',
+      'https://es.wikipedia.org/wiki/Modelo_de_lenguaje_de_gran_tama%C3%B1o',
+    ],
+  },
+  'base-vectorial': {
+    name: 'Base de datos vectorial',
+    sameAs: [
+      'https://www.wikidata.org/wiki/Q118396004',
+      'https://en.wikipedia.org/wiki/Vector_database',
+    ],
+  },
+  embedding: {
+    name: 'Embedding (vector semántico)',
+    sameAs: [
+      'https://www.wikidata.org/wiki/Q18395344',
+      'https://en.wikipedia.org/wiki/Word_embedding',
+    ],
+  },
 };
 
 // Resolve frontmatter keys into schema.org `about` nodes; unknown keys drop.
