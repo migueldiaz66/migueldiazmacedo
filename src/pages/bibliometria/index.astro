@@ -39,7 +39,6 @@ const ld = [
   description={description}
   accent={topic.accent}
   path="/bibliometria/"
-  noindex={true}
 >
   {ld.map((node) => (
     <script type="application/ld+json" set:html={JSON.stringify(node)} />
