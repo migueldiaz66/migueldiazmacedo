@@ -7,8 +7,7 @@ const site = 'https://migueldiazmacedo.com';
 
 // Full author entity. The blog articles reference this profile by URL,
 // so search engines and AI can resolve "who wrote this" with credentials.
-const personLd = {
-  '@context': 'https://schema.org',
+const person = {
   '@type': 'Person',
   // Identificador estable de la entidad: los nodos `author` y `publisher` de
   // cada artículo apuntan aquí con el mismo `@id`.
@@ -38,6 +37,18 @@ const personLd = {
     'https://www.linkedin.com/in/jes%C3%BAs-d%C3%ADaz-5b3835343/',
     'https://github.com/migueldiaz66',
   ],
+};
+
+// La página del autor se declara como ProfilePage y la persona cuelga de ella.
+const profileLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': site + '/acerca/perfil/',
+  url: site + '/acerca/perfil/',
+  name: 'Miguel Díaz Macedo',
+  inLanguage: 'es',
+  isPartOf: { '@type': 'WebSite', name: 'migueldiazmacedo', url: site },
+  mainEntity: person,
 };
 
 const breadcrumb = breadcrumbLd([
@@ -113,7 +124,7 @@ const breadcrumb = breadcrumbLd([
     <p class="small muted"><a href="/acerca/">← Volver a Acerca de</a></p>
   </article>
 
-  <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(profileLd)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
 
   <style>

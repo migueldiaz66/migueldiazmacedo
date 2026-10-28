@@ -80,7 +80,8 @@ const fmt = (d: Date) =>
     <h1>{title}</h1>
     <p class="lede muted">{description}</p>
     <p class="meta small mono muted">
-      {fmt(pubDate)}{updatedDate ? ` · act. ${fmt(updatedDate)}` : ''}
+      <a class="byline" href="/acerca/perfil/" rel="author">Miguel Díaz Macedo</a>
+      · {fmt(pubDate)}{updatedDate ? ` · act. ${fmt(updatedDate)}` : ''}
     </p>
 
     <div class="chain" aria-hidden="true" style="margin:1.8rem 0 2.6rem;max-width:340px">
@@ -191,6 +192,8 @@ const fmt = (d: Date) =>
       margin: 0.2em 0 1em;
     }
     .meta { margin: 0; }
+    .byline { color: inherit; text-decoration-color: var(--line); }
+    .byline:hover { color: var(--accent); }
 
     /* reading body */
     .body :global(p) { margin: 1.15em 0; }

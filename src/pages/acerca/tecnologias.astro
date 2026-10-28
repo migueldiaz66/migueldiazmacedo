@@ -7,6 +7,32 @@ import { STACK } from '../../config/tech';
 const description =
   'Con qué está hecho este sitio y qué hace cada pieza: Astro, Markdown, TypeScript, CSS sin marco de trabajo, Cloudflare Pages, GitHub, Google Fonts y Claude Code.';
 
+// La pila, como lista ordenada: cada herramienta con el papel que cumple.
+const pageLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://migueldiazmacedo.com/acerca/tecnologias/',
+  url: 'https://migueldiazmacedo.com/acerca/tecnologias/',
+  name: 'Con qué está hecho este sitio',
+  description,
+  inLanguage: 'es',
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'migueldiazmacedo',
+    url: 'https://migueldiazmacedo.com',
+  },
+  mainEntity: {
+    '@type': 'ItemList',
+    name: 'Pila técnica de migueldiazmacedo.com',
+    numberOfItems: STACK.length,
+    itemListElement: STACK.map((t, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: { '@type': 'Thing', name: t.name, description: t.role },
+    })),
+  },
+};
+
 const breadcrumb = breadcrumbLd([
   { name: 'Inicio', path: '/' },
   { name: 'Acerca de', path: '/acerca/' },
@@ -61,6 +87,7 @@ const breadcrumb = breadcrumbLd([
     <p class="small muted"><a href="/acerca/">← Volver a Acerca de</a></p>
   </article>
 
+  <script type="application/ld+json" set:html={JSON.stringify(pageLd)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
 
   <style>
