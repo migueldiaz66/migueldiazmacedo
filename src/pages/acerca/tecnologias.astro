@@ -1,0 +1,96 @@
+---
+import Base from '../../layouts/Base.astro';
+import { breadcrumbLd } from '../../config/schema';
+import { ACERCA_ACCENT } from '../../config/topics';
+import { STACK } from '../../config/tech';
+
+const description =
+  'Con qué está hecho este sitio y qué hace cada pieza: Astro, Markdown, TypeScript, CSS sin marco de trabajo, Cloudflare Pages, GitHub, Google Fonts y Claude Code.';
+
+const breadcrumb = breadcrumbLd([
+  { name: 'Inicio', path: '/' },
+  { name: 'Acerca de', path: '/acerca/' },
+  { name: 'Tecnologías', path: '/acerca/tecnologias/' },
+]);
+---
+<Base
+  title="Con qué está hecho este sitio — migueldiazmacedo"
+  description={description}
+  path="/acerca/tecnologias/"
+  accent={ACERCA_ACCENT}
+  image="/covers/acerca-tecnologias.png"
+  imageAlt="Portada: con qué está hecho este sitio, de Markdown a HTML y a la red de distribución."
+>
+  <article class="wrap prose about">
+    <p class="eyebrow">
+      <a href="/acerca/" style="color:inherit;text-decoration:none">Acerca de</a>
+    </p>
+    <h1>Con qué está hecho este sitio</h1>
+    <p class="lede muted">
+      Cada herramienta y la parte que le toca. El sitio se compila entero antes
+      de publicarse: lo que llega al navegador es HTML y una hoja de estilos.
+    </p>
+
+    <div class="chain" aria-hidden="true" style="margin:1.8rem 0 2.6rem;max-width:340px">
+      <span class="node"></span><span class="seg"></span>
+      <span class="node hollow"></span><span class="seg"></span>
+      <span class="node"></span>
+    </div>
+
+    <ul class="stack">
+      {STACK.map((t) => (
+        <li class="tech">
+          <svg class="logo" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d={t.icon} />
+          </svg>
+          <div>
+            <p class="tech-name">{t.name}</p>
+            <p class="tech-role muted">{t.role}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+
+    <p class="small muted note">
+      Las técnicas de posicionamiento que lleva cada página están en la ficha de
+      <a href="/acerca/seo/">técnicas de SEO</a>. Los logotipos pertenecen a sus
+      titulares y se usan solo para identificar cada herramienta.
+    </p>
+
+    <hr class="divider" />
+    <p class="small muted"><a href="/acerca/">← Volver a Acerca de</a></p>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+
+  <style>
+    .about { padding-top: 3.5rem; padding-bottom: 2rem; }
+    .about .lede { font-size: var(--step-1); line-height: 1.45; margin: 0.2em 0 1em; }
+
+    .stack { list-style: none; margin: 2rem 0 0; padding: 0; }
+    .tech {
+      display: grid;
+      grid-template-columns: 1.9rem 1fr;
+      gap: 1rem;
+      align-items: start;
+      border-top: 1px solid var(--line);
+      padding: 1.1em 0;
+    }
+    .tech:first-child { border-top: 0; }
+    .logo {
+      width: 1.6rem;
+      height: 1.6rem;
+      margin-top: 0.15rem;
+      color: var(--accent);
+    }
+    .tech-name { margin: 0; font-weight: 650; }
+    .tech-role {
+      margin: 0.25em 0 0;
+      font-size: var(--step--1);
+      line-height: 1.55;
+    }
+
+    .note { margin-top: 2.5rem; }
+    .divider { border: 0; border-top: 1px solid var(--line); margin: 2.5em 0; }
+  </style>
+</Base>

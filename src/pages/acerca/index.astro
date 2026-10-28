@@ -17,6 +17,15 @@ const pages = [
       'Casi 30 años en tecnología de información, del código a la dirección. Hoy, ingeniería de cumplimiento fiscal en SOVOS para México y Latinoamérica. Formación de biólogo por la UNAM y el método de trabajo que trae de ahí.',
   },
   {
+    path: '/acerca/tecnologias/',
+    kicker: 'Tecnologías',
+    cover: '/covers/acerca-tecnologias.png',
+    coverAlt: 'Portada: con qué está hecho el sitio, de Markdown a HTML y a la red de distribución.',
+    title: 'Con qué está hecho este sitio',
+    description:
+      'Las herramientas detrás del blog y la parte que le toca a cada una: Astro, Markdown, TypeScript, CSS sin marco de trabajo, Cloudflare Pages, GitHub, Google Fonts y Claude Code.',
+  },
+  {
     path: '/acerca/seo/',
     kicker: 'SEO',
     cover: '/covers/acerca-seo.png',
@@ -28,7 +37,7 @@ const pages = [
 ];
 
 const description =
-  'Quién escribe este blog y con qué técnicas de SEO está publicado: perfil profesional y la especificación de posicionamiento que lleva cada página.';
+  'Quién escribe este blog, con qué herramientas está hecho y qué técnicas de SEO lleva cada página.';
 
 const ld = [
   collectionPageLd({
@@ -57,8 +66,9 @@ const ld = [
     <p class="eyebrow">Acerca de</p>
     <h1>Quién escribe y cómo está publicado</h1>
     <p class="prose lede muted">
-      Dos fichas: la trayectoria de quien firma los artículos y las técnicas de
-      SEO con las que se publica cada uno.
+      Tres fichas: la trayectoria de quien firma los artículos, las herramientas
+      con las que está hecho el sitio y las técnicas de SEO con las que se
+      publica cada uno.
     </p>
   </section>
 
@@ -96,7 +106,7 @@ const ld = [
       margin: 0 0 4rem;
       padding: 0;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
       gap: 1.6rem;
     }
 
