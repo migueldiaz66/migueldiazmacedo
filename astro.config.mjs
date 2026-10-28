@@ -35,10 +35,11 @@ const articleDates = () => {
 };
 
 // Las páginas que no son artículos no tienen fecha propia, así que la suya es
-// la del último commit que tocó sus fuentes. En un clon superficial —que es lo
-// que algunos servicios de compilación hacen— todos los archivos comparten la
-// fecha del último commit, y entonces no se declara nada: un `lastmod` falso
-// es peor que ninguno.
+// la del último commit que tocó sus fuentes, o la del archivo en disco si está
+// modificado sin confirmar. Cloudflare Pages compila sobre un clon superficial,
+// donde todos los archivos comparten la fecha del último commit: ahí ese cálculo
+// mentiría, así que la compilación local deja las fechas escritas en
+// PAGE_DATES_FILE y la remota se limita a leerlas.
 const gitUsable = (() => {
   try {
     const shallow = execFileSync('git', ['rev-parse', '--is-shallow-repository'], {
@@ -51,20 +52,27 @@ const gitUsable = (() => {
   }
 })();
 
-const lastCommit = (files) => {
+const fileDate = (files) => {
   if (!gitUsable) return null;
   let newest = null;
   for (const file of files) {
     try {
-      const out = execFileSync('git', ['log', '-1', '--format=%cI', '--', file], {
+      // Sin confirmar todavía: vale la fecha del archivo en disco.
+      const pending = execFileSync('git', ['status', '--porcelain', '--', file], {
         encoding: 'utf8',
         stdio: ['ignore', 'pipe', 'ignore'],
       }).trim();
-      if (!out) continue;
-      const date = new Date(out);
+      const raw = pending
+        ? fs.statSync(file).mtime.toISOString()
+        : execFileSync('git', ['log', '-1', '--format=%cI', '--', file], {
+            encoding: 'utf8',
+            stdio: ['ignore', 'pipe', 'ignore'],
+          }).trim();
+      if (!raw) continue;
+      const date = new Date(raw);
       if (!Number.isNaN(date.valueOf()) && !(newest >= date)) newest = date;
     } catch {
-      /* el archivo no está versionado todavía: esa página se queda sin lastmod */
+      /* el archivo no existe o no está versionado: esa página se queda sin fecha */
     }
   }
   return newest;
@@ -78,11 +86,38 @@ const PAGE_SOURCES = {
   '/glosario/': ['src/pages/glosario.astro', 'src/config/glossary.ts'],
 };
 
+// Fechas de esas páginas, calculadas aquí cuando se puede y leídas del archivo
+// cuando no. El archivo se versiona: es el que viaja a la compilación remota.
+const PAGE_DATES_FILE = 'src/config/page-dates.json';
+
+const readPageDates = () => {
+  try {
+    return JSON.parse(fs.readFileSync(PAGE_DATES_FILE, 'utf8'));
+  } catch {
+    return {};
+  }
+};
+
+const pageDates = (() => {
+  if (!gitUsable) return readPageDates();
+  const fresh = {};
+  for (const [route, files] of Object.entries(PAGE_SOURCES)) {
+    const date = fileDate(files);
+    if (date) fresh[route] = date.toISOString();
+  }
+  if (!Object.keys(fresh).length) return readPageDates();
+  const json = JSON.stringify(fresh, null, 2) + '\n';
+  if (json !== (() => { try { return fs.readFileSync(PAGE_DATES_FILE, 'utf8'); } catch { return ''; } })()) {
+    fs.writeFileSync(PAGE_DATES_FILE, json);
+  }
+  return fresh;
+})();
+
 const lastmod = articleDates();
-for (const [route, files] of Object.entries(PAGE_SOURCES)) {
+for (const [route, iso] of Object.entries(pageDates)) {
   if (lastmod.has(route)) continue;
-  const date = lastCommit(files);
-  if (date) lastmod.set(route, date);
+  const date = new Date(iso);
+  if (!Number.isNaN(date.valueOf())) lastmod.set(route, date);
 }
 
 // https://astro.build
