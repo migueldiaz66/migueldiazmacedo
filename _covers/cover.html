@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;650&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{ --paper:#f3f1ea; --ink:#1a1f1d; --muted:#5c635f; --line:#d8d4c7; --seal:#0b6b5e; }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html,body{ width:100%; height:100%; }
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:"Inter",system-ui,sans-serif;
+    display:flex; flex-direction:column; justify-content:center;
+    padding:6.5vw 6vw; gap:4vw; overflow:hidden;
+  }
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace; font-weight:500; color:var(--seal);
+    text-transform:uppercase; letter-spacing:0.2em; font-size:1.5vw;
+    display:flex; align-items:center; gap:1ch;
+  }
+  .eyebrow::before{ content:""; width:0.9vw; height:0.9vw; border-radius:50%; background:var(--seal); }
+  h1{
+    font-weight:650; font-size:5.2vw; line-height:1.08; letter-spacing:-0.02em;
+    max-width:88%;
+  }
+  h1 .hl{ color:var(--seal); }
+
+  .timeline{ position:relative; display:flex; justify-content:space-between; padding:0 1vw; margin-top:1vw; }
+  .timeline::before{
+    content:""; position:absolute; left:2vw; right:2vw; top:0.85vw; height:0.3vw;
+    background: repeating-linear-gradient(90deg, var(--seal) 0 1.3vw, transparent 1.3vw 2.4vw);
+    opacity:0.6;
+  }
+  .node{ position:relative; display:flex; flex-direction:column; align-items:center; z-index:1; }
+  .dot{ width:1.9vw; height:1.9vw; border-radius:50%; background:var(--seal); }
+  .dot.hollow{ background:var(--paper); box-shadow: inset 0 0 0 0.4vw var(--seal); }
+  .year{ font-family:"IBM Plex Mono",monospace; font-weight:500; font-size:2.6vw; margin-top:1.1vw; }
+  .label{ color:var(--muted); font-size:1.5vw; margin-top:0.35vw; white-space:nowrap; }
+
+  .foot{ font-family:"IBM Plex Mono",monospace; color:var(--muted); font-size:1.4vw; }
+</style></head>
+<body>
+  <div class="eyebrow">Fiscal · CTC</div>
+  <h1>CFDI: 20 años de <span class="hl">control fiscal en tiempo real</span> en México</h1>
+  <div class="timeline">
+    <div class="node"><span class="dot"></span><span class="year">2004</span><span class="label">CFD</span></div>
+    <div class="node"><span class="dot hollow"></span><span class="year">2011</span><span class="label">CFDI · PAC</span></div>
+    <div class="node"><span class="dot"></span><span class="year">2017</span><span class="label">CFDI 3.3</span></div>
+    <div class="node"><span class="dot hollow"></span><span class="year">2023</span><span class="label">CFDI 4.0</span></div>
+  </div>
+  <div class="foot">migueldiazmacedo.com</div>
+</body></html>

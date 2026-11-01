@@ -8,3 +8,7 @@ node_modules/
 # env
 .env
 .env.production
+# salidas de Chrome headless sobre las plantillas de _covers/
+_covers/*.png
+# documento de traspaso, local
+CLAUDE_CONTEXT.md

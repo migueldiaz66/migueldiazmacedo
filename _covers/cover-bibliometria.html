@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;650&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{ --paper:#f3f1ea; --ink:#1a1f1d; --muted:#5c635f; --line:#d8d4c7; --seal:#6a3d9a; }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html,body{ width:100%; height:100%; }
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:"Inter",system-ui,sans-serif;
+    display:flex; flex-direction:column; justify-content:center;
+    padding:6.5vw 6vw; gap:3.6vw; overflow:hidden;
+  }
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace; font-weight:500; color:var(--seal);
+    text-transform:uppercase; letter-spacing:0.2em; font-size:1.5vw;
+    display:flex; align-items:center; gap:1ch;
+  }
+  .eyebrow::before{ content:""; width:0.9vw; height:0.9vw; border-radius:50%; background:var(--seal); }
+  h1{
+    font-weight:650; font-size:5.6vw; line-height:1.05; letter-spacing:-0.02em;
+    max-width:94%;
+  }
+  h1 .hl{ color:var(--seal); }
+  .sub{ font-size:2vw; color:var(--muted); margin-top:-1.6vw; }
+
+  .chain{ display:flex; align-items:flex-start; margin-top:1.4vw; }
+  .node{ display:flex; flex-direction:column; align-items:center; gap:0.9vw; }
+  .dot{ width:1.9vw; height:1.9vw; border-radius:50%; background:var(--seal); }
+  .dot.hollow{ background:var(--paper); box-shadow: inset 0 0 0 0.4vw var(--seal); }
+  .nlabel{ font-family:"IBM Plex Mono",monospace; font-size:1.6vw; color:var(--muted); white-space:nowrap; }
+  .seg{
+    flex:1; height:0.3vw; margin:0.8vw 1.1vw 0;
+    background: repeating-linear-gradient(90deg, var(--seal) 0 1.3vw, transparent 1.3vw 2.4vw);
+    opacity:0.6;
+  }
+  .foot{ font-family:"IBM Plex Mono",monospace; color:var(--muted); font-size:1.5vw; }
+</style></head>
+<body>
+  <div class="eyebrow">Bibliometría</div>
+  <h1>Bibliometría <span class="hl">reproducible</span></h1>
+  <div class="sub">Automatizar el science mapping en una sola corrida.</div>
+  <div class="chain">
+    <div class="node"><span class="dot"></span><span class="nlabel">corpus</span></div>
+    <span class="seg"></span>
+    <div class="node"><span class="dot hollow"></span><span class="nlabel">red</span></div>
+    <span class="seg"></span>
+    <div class="node"><span class="dot"></span><span class="nlabel">mapa</span></div>
+  </div>
+  <div class="foot">migueldiazmacedo.com</div>
+</body></html>
