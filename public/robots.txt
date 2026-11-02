@@ -1,3 +1,12 @@
 User-agent: *
 Allow: /
+
+# Prueba de concepto, con noindex en cada pagina: no hay que rastrearla.
+Disallow: /ADU/
+
+# Archivos de datos del demo de bibliometria: no son paginas.
+Disallow: /*.xlsx$
+Disallow: /*.map$
+Disallow: /*.scss$
+
 Sitemap: https://migueldiazmacedo.com/sitemap-index.xml

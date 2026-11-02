@@ -7,7 +7,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "indexnow": "node scripts/indexnow.cjs",
+    "copia-linkedin": "node scripts/gen-copia-linkedin.cjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",
