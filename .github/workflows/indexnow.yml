@@ -1,0 +1,45 @@
+  name: IndexNow
+
+  # Avisa a los buscadores de las URLs del sitemap cuando el sitio publicado ya
+  # trae el commit empujado. Sustituye a Crawler Hints de Cloudflare, que anunciaba
+  # los 2600 archivos que sirve el dominio en vez de las 14 paginas del sitio.
+  #
+  # Cloudflare Pages no crea deployments en GitHub en este repositorio, asi que no
+  # hay evento al que engancharse: el flujo espera consultando /build.txt, el sello
+  # que cada compilacion deja con su commit.
+
+  on:
+    push:
+      branches: [main]
+    workflow_dispatch:
+
+  concurrency:
+    group: indexnow
+    cancel-in-progress: true
+
+  jobs:
+    avisar:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+
+        - uses: actions/setup-node@v4
+          with:
+            node-version: '24'
+
+        - name: Esperar a que Cloudflare Pages publique este commit
+          run: |
+            for i in $(seq 1 60); do
+              sello=$(curl -sf https://migueldiazmacedo.com/build.txt | head -1 || true)
+              echo "intento $i — publicado: ${sello:-(sin respuesta)} / esperado: $GITHUB_SHA"
+              if [ "$sello" = "$GITHUB_SHA" ]; then
+                echo "el despliegue ya esta en linea"
+                exit 0
+              fi
+              sleep 20
+            done
+            echo "::error::el commit no aparecio publicado en 20 minutos"
+            exit 1
+
+        - name: Avisar a IndexNow
+          run: node scripts/indexnow.cjs
