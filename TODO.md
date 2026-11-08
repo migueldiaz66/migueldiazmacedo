@@ -68,18 +68,29 @@ Son mejoras editoriales sobre un artículo ya publicado; ninguna es un error.
 ## 4. Enlaces entrantes
 
 El único error que Bing reporta en todo el sitio: «Your site lacks inbound links from
-high-quality domains», severidad moderada, sin páginas señaladas. Lo hace Miguel, fuera
-del repositorio.
+high-quality domains», severidad moderada, sin páginas señaladas.
 
+Hecho el 7 de noviembre de 2026, en los dos repositorios: `.zenodo.json` con la licencia,
+las palabras clave y los `related_identifiers` hacia el artículo y el demo; badge del DOI
+de concepto en cada README; la línea del *write-up* en `remix3-local-rag-agent`, que antes
+no devolvía el enlace que el artículo le da; y las dos URL del blog en el README de
+`CorpusBiblioExtractor` sin el `www.` que respondía 301. Los dos repositorios ya están
+depositados en Zenodo con DOI (`10.5281/zenodo.24047222` y `10.5281/zenodo.24047252`, los
+de concepto).
+
+Lo que falta vive en la web, no en el código:
+
+- **Zenodo, los dos registros publicados.** Su descripción no trae el enlace al artículo:
+  Zenodo la arma con la de GitHub, no con el README. Botón *Edit* en cada registro, o un
+  release nuevo para que tome el `.zenodo.json` que ya está en `main`.
 - Perfil de GitHub → campo *Website*: `https://migueldiazmacedo.com` (hoy vacío).
-- Repo `remix3-local-rag-agent` → *Website* con la URL del artículo del RAG, y la línea
-  de README que enlaza a él. Hoy el artículo enlaza al repo y el repo no devuelve nada.
-- Repo `CorpusBiblioExtractor` → *Website* con la URL del artículo de bibliometría. El
-  README ya enlaza, pero con `www.`, que responde 301.
+- Repo `remix3-local-rag-agent` → *Website* con la URL del artículo del RAG (hoy vacío).
+- Repo `CorpusBiblioExtractor` → *Website* con la URL del artículo de bibliometría (hoy
+  vacío).
 - Perfil de LinkedIn → campo de sitio web.
-- Depositar CorpusBiblioExtractor en **Zenodo** con DOI y `related_identifiers` hacia el
-  artículo y el demo. Es el único de la lista en un dominio académico; los de GitHub
-  llevan `rel="nofollow"`.
+
+Los enlaces de GitHub llevan `rel="nofollow"`, comprobado; los de Zenodo son los que
+cuentan como dominio de calidad.
 
 ---
 
