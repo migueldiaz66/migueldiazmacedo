@@ -8,5 +8,7 @@ Disallow: /ADU/
 Disallow: /*.xlsx$
 Disallow: /*.map$
 Disallow: /*.scss$
+Disallow: /*.net$
+Disallow: /demo-corpus-extractor/*.txt$
 
 Sitemap: https://migueldiazmacedo.com/sitemap-index.xml
