@@ -3,6 +3,7 @@ title: "CFDI: cómo México convirtió la factura en un proceso de control en ti
 seoTitle: "CFDI: evolución del control fiscal en México (2004–2023)"
 description: "Entre 2004 y 2023, México llevó la factura en papel hacia una transacción electrónica que el SAT valida antes de que tenga efectos. Reconstrucción histórica de cómo se construyó ese modelo, esquema por esquema, con fundamento en el DOF."
 pubDate: 2026-06-24T21:00:00-06:00
+updatedDate: 2026-11-07T21:00:00-06:00
 cover: /covers/cfdi-evolucion.png
 coverAlt: "Línea de tiempo de la evolución del CFDI en México: 2004 (CFD), 2011 (CFDI con PAC), 2017 (CFDI 3.3) y 2023 (CFDI 4.0)."
 lang: es
@@ -42,12 +43,22 @@ citations:
     urls: ['https://www.sat.gob.mx/minisitio/Factura/emite_complementosdefactura.htm']
 citationsNote: 'Los enlaces al DOF de [2], [3], [4], [6], [9], [10] y [11] están verificados.'
 faq:
-  - q: "¿Cuándo nació el CFDI?"
+  - q: "¿Desde cuándo existe el CFDI en México?"
     a: "El CFDI (Comprobante Fiscal Digital por Internet) entró en vigor el 1 de enero de 2011. Su base legal es la reforma al Código Fiscal de la Federación publicada en el DOF el 7 de diciembre de 2009, que obliga a que un proveedor autorizado de certificación (PAC) valide y selle cada comprobante antes de que tenga efectos fiscales. No nació en 2004 ni en 2005: eso fue el CFD, su antecesor."
+  - q: "¿Cómo se hacían las facturas en México antes del CFDI?"
+    a: "Antes de 2004 el comprobante se imprimía en establecimientos autorizados por la Secretaría de Hacienda, con folios controlados y conservación obligatoria de cinco años. La autoridad verificaba después, mediante revisión documental, sin visibilidad sobre la operación en el momento de ocurrir. En 2011 el SAT abrió además el CBB (Código de Barras Bidimensional), una factura impresa con un código bidimensional para contribuyentes con ingresos anuales de hasta cuatro millones de pesos; era papel con un dispositivo de seguridad, no factura electrónica."
+  - q: "¿Hasta qué año se pudieron usar las facturas impresas en México?"
+    a: "2012 fue el último ejercicio en que se permitieron las facturas impresas. Entre 2012 y 2014 el SAT retiró sucesivamente el comprobante de impresor autorizado, el CFD y el CBB. A partir de 2014 el CFDI quedó como esquema obligatorio para la generalidad de los contribuyentes, con una facilidad de migración para los de menores ingresos hasta el 31 de marzo de 2014."
+  - q: "¿Por qué México sustituyó el comprobante impreso por la factura electrónica?"
+    a: "El esquema en papel facilitaba la emisión de comprobantes apócrifos y la deducción de operaciones inexistentes, y el SAT identificó ese problema como la motivación del cambio de modelo. El control llegaba después de la operación. Cada etapa posterior cerró una carencia de la anterior: el papel no daba trazabilidad y el CFD no daba certificación inmediata."
   - q: "¿Existió el CFDI 1.0 o el CFDI 2.0?"
     a: "No. Las versiones tempranas 1.0, 2.0 y 2.2 pertenecen al CFD, el esquema anterior. El CFDI inició en la versión 3.0 hacia 2010-2011 y siguió con 3.2, 3.3 (2017) y 4.0 (2022). Muchas cronologías de divulgación confunden ambos sistemas; la única fuente confiable de la versión y su vigencia es el Anexo 20 publicado en el DOF para cada periodo."
+  - q: "¿Cuántas versiones del CFDI ha habido y cuál precedió a cada una?"
+    a: "Este texto usa la secuencia CFD (1.0, 2.0, 2.2) seguida de CFDI (3.0, 3.2, 3.3, 4.0), por ser la más consistente con los Anexos 20 publicados en el DOF. El CFDI tiene cuatro versiones: la anterior a la 4.0 (2022) fue la 3.3 (2017), la anterior a la 3.3 fue la 3.2, y la anterior a la 3.2 fue la 3.0, de 2010-2011. Las cronologías de divulgación mezclan ambos sistemas; la fuente que fija versión y vigencia es el Anexo 20 del periodo."
   - q: "¿Cuál es la diferencia entre CFD y CFDI?"
     a: "En el CFD (2004-2010) el contribuyente sellaba el comprobante con su propio certificado y lo reportaba al SAT después, en un reporte mensual. En el CFDI (desde 2011) un tercero autorizado (PAC) valida y sella cada comprobante en el momento de emitirlo, antes de que tenga efectos. El cambio de fondo es cuándo ocurre el control: pasa de posterior a en tiempo real."
+  - q: "¿Desde cuándo existe el folio fiscal (UUID)?"
+    a: "El folio fiscal único (UUID) existe desde que el CFDI entró en vigor, el 1 de enero de 2011. Lo asigna el PAC al timbrar el comprobante, junto con el sello digital del SAT, conforme al artículo 29 del Código Fiscal de la Federación."
   - q: "¿Cuándo fue obligatorio el CFDI 4.0?"
     a: "El CFDI 4.0 entró en vigor de forma opcional el 1 de enero de 2022 y fue obligatorio de manera general a partir del 1 de abril de 2023, tras varias prórrogas del periodo de convivencia con la versión 3.3. La obligatoriedad final se confirma en la RMF 2023, publicada en el DOF el 27 de diciembre de 2022."
   - q: "¿Qué cambió con el CFDI 4.0?"
