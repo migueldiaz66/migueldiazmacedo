@@ -10,6 +10,13 @@ const ROOT = 'D:/code/migueldiazmacedo';
 const SRC = path.join(ROOT, 'src/content/laboratorio/rag-minimo-local.md');
 const OUT = path.join(ROOT, 'src/content/laboratorio/rag-minimo-local-linkedin-es.md');
 const SITE = 'https://migueldiazmacedo.com';
+// La URL del articulo en el sitio: la coleccion y el nombre del archivo, que es
+// como Astro arma la ruta. La copia debe declarar de donde sale.
+const ARTICULO =
+  SITE +
+  '/' +
+  path.relative(path.join(ROOT, 'src/content'), SRC).replace(/\\/g, '/').replace(/\.md$/, '') +
+  '/';
 
 // --- articulo: frontmatter + cuerpo ---------------------------------------
 const raw = fs.readFileSync(SRC, 'utf8');
@@ -109,6 +116,8 @@ tags: ${JSON.stringify(fm.tags ?? [])}
 
 Miguel Díaz Macedo · ${fecha}
 
+Publicado originalmente en ${ARTICULO}
+
 ${body}
 
 ## Referencias
@@ -122,6 +131,8 @@ ${gloss}
 ## Preguntas frecuentes
 
 ${faq}
+
+Este texto es copia del artículo publicado en el blog. El original, con las anclas de las referencias, el glosario enlazado y las imágenes en su lugar: ${ARTICULO}
 `;
 
 fs.writeFileSync(OUT, out, 'utf8');

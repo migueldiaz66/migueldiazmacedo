@@ -15,8 +15,8 @@ const latest = await Promise.all(
 );
 ---
 <Base
-  title="Miguel Díaz Macedo — cumplimiento fiscal y control en tiempo real"
-  description="Escritos de Miguel Díaz Macedo: cumplimiento fiscal y control continuo de transacciones, y —próximamente— otros temas."
+  title="Miguel Díaz Macedo — cumplimiento fiscal, bibliometría y laboratorio"
+  description="Notas técnicas de Miguel Díaz Macedo: facturación electrónica y control continuo de transacciones en México, bibliometría reproducible y pruebas de concepto medidas de principio a fin."
   path="/"
 >
   <section class="hero wrap">
@@ -28,9 +28,9 @@ const latest = await Promise.all(
     </h1>
     <p class="hero-sub prose">
       Casi tres décadas construyendo software, hoy en cumplimiento fiscal.
-      Empiezo por el tema que conozco de cerca —la facturación electrónica y
-      el control continuo de transacciones en México— y con el tiempo sumaré
-      otros oficios e intereses.
+      Escribo de tres oficios: la facturación electrónica y el control continuo
+      de transacciones en México, la bibliometría reproducible y las pruebas de
+      concepto que mido de principio a fin.
     </p>
 
     <div class="chain-labelled" aria-hidden="true">
@@ -54,10 +54,14 @@ const latest = await Promise.all(
               <span class="topic-blurb muted">{topic.blurb}</span>
               <span class="topic-meta small mono muted">
                 {count} {count === 1 ? 'artículo' : 'artículos'}
-                {recent ? ` · último: ${recent.data.title}` : ''}
               </span>
             </span>
           </a>
+          {recent && (
+            <p class="topic-latest small mono muted">
+              último: <a href={`/${topic.slug}/${recent.slug}/`}>{recent.data.title}</a>
+            </p>
+          )}
         </li>
       ))}
     </ul>
@@ -98,7 +102,7 @@ const latest = await Promise.all(
       grid-template-columns: auto 1fr;
       gap: 1.1rem;
       align-items: start;
-      padding: 1.5rem 0.3rem;
+      padding: 1.5rem 0.3rem 0.9rem;
       text-decoration: none;
       color: var(--ink);
       transition: background 0.18s ease, padding-left 0.18s ease;
@@ -117,5 +121,15 @@ const latest = await Promise.all(
     .topic-title { font-size: var(--step-1); font-weight: 650; letter-spacing: -0.01em; }
     .topic-blurb { font-size: var(--step-0); }
     .topic-meta { margin-top: 0.2rem; }
+    .topic-latest {
+      margin: 0 0 1.4rem;
+      padding-left: calc(0.3rem + 12px + 1.1rem);
+    }
+    .topic-latest a {
+      color: var(--ink);
+      text-decoration-color: var(--accent);
+      text-underline-offset: 0.22em;
+    }
+    .topic-latest a:hover { color: var(--accent); }
   </style>
 </Base>

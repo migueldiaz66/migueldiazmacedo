@@ -13,6 +13,8 @@ tags: ["RAG","modelos de lenguaje","Ollama","Qdrant","prueba de concepto"]
 
 Miguel Díaz Macedo · 26 de octubre de 2026, 21:00
 
+Publicado originalmente en https://migueldiazmacedo.com/laboratorio/rag-minimo-local/
+
 Un gran modelo de lenguaje (LLM, *large language model*) \[b\] responde a partir de su corpus de entrenamiento y de nada más. Si el documento consultado no está en ese corpus, el modelo responde que no lo conoce o alucina: genera una respuesta falsa.
 
 La generación aumentada por recuperación (RAG, *retrieval-augmented generation*) extiende lo que el modelo puede responder más allá de su corpus de entrenamiento y reduce la alucinación: antes de responder, el sistema busca los fragmentos pertinentes en un conjunto de documentos y los entrega al modelo junto con la pregunta. La propusieron Lewis y colaboradores en 2020 [\[1\]](https://arxiv.org/abs/2005.11401).
@@ -275,3 +277,5 @@ Sí: basta apuntar la variable CORPUS_PATH a otro archivo y volver a correr la i
 ### ¿Sirve esto para documentos fiscales como el Anexo 20?
 
 Es la aplicación natural y el siguiente paso de esta línea. Las reglas fiscales son documentos largos, versionados y llenos de catálogos, donde lo que importa no es que la respuesta suene bien sino que pueda señalar la regla exacta de la que salió. Un montaje como este, donde cada respuesta trae su pasaje, es el punto de partida correcto para esa clase de problema.
+
+Este texto es copia del artículo publicado en el blog. El original, con las anclas de las referencias, el glosario enlazado y las imágenes en su lugar: https://migueldiazmacedo.com/laboratorio/rag-minimo-local/

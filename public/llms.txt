@@ -1,8 +1,8 @@
 # Miguel Díaz Macedo
 
-> Notas técnicas sobre facturación electrónica, CFDI y control continuo de transacciones (CTC) en México y Latinoamérica, por Miguel Díaz Macedo —líder de ingeniería de tecnología de cumplimiento fiscal en SOVOS, formación de biólogo (UNAM) y casi 30 años en TI.
+> Notas técnicas de Miguel Díaz Macedo —líder de ingeniería de tecnología de cumplimiento fiscal en SOVOS, formación de biólogo (UNAM) y casi 30 años en TI— sobre tres asuntos: facturación electrónica y control continuo de transacciones (CTC) en México y Latinoamérica, bibliometría reproducible, y pruebas de concepto de software medidas de principio a fin.
 
-Blog técnico de oficio: cómo los sistemas registran, validan y controlan las operaciones fiscales. Cada afirmación se apoya, en la medida de lo posible, en fuentes oficiales (Diario Oficial de la Federación, Código Fiscal de la Federación, Resolución Miscelánea Fiscal, Anexo 20 del SAT) o en referencias indexadas confiables. El contenido es independiente y no representa a su empleador.
+Blog técnico de oficio: cómo los sistemas registran, validan y controlan lo que ocurre. Cada afirmación se apoya, en la medida de lo posible, en fuentes oficiales (Diario Oficial de la Federación, Código Fiscal de la Federación, Resolución Miscelánea Fiscal, Anexo 20 del SAT), en literatura indexada o en mediciones propias que el artículo describe. El contenido es independiente y no representa a su empleador.
 
 ## Artículos
 
@@ -19,13 +19,14 @@ Blog técnico de oficio: cómo los sistemas registran, validan y controlan las o
 
 ## Autor
 
+- [Acerca](https://migueldiazmacedo.com/acerca/): índice de la sección —quién escribe, con qué está hecho el sitio y qué técnicas de posicionamiento lleva cada página.
 - [Miguel Díaz Macedo](https://migueldiazmacedo.com/acerca/perfil/): trayectoria, credenciales y método de trabajo (rigor de fuente primaria, sin conflicto de interés).
 - [Técnicas de SEO implementadas en este sitio](https://migueldiazmacedo.com/acerca/seo/): las técnicas de posicionamiento que lleva cada página —rastreo e indexación, metadatos, datos estructurados, optimización para modelos de lenguaje, rendimiento y medición—.
 - [Con qué está hecho este sitio](https://migueldiazmacedo.com/acerca/tecnologias/): la pila técnica y la parte que le toca a cada herramienta —Astro, Markdown, TypeScript, CSS sin marco de trabajo, Cloudflare Pages, GitHub, Google Fonts y Claude Code—.
 
 ## Recursos
 
-- [Glosario de facturación electrónica y CFDI](https://migueldiazmacedo.com/glosario/): definiciones de los términos clave (CFDI, PAC, CSD, UUID, timbrado, complemento, addenda, CTC, REP, PPD…), con enlaces al grafo de conocimiento.
+- [Glosario de facturación electrónica, CFDI, bibliometría y RAG](https://migueldiazmacedo.com/glosario/): definiciones de los términos de las tres líneas —CFDI, PAC, CSD, UUID, timbrado, complemento, CTC; corpus, co-citación, science mapping; RAG, embedding, troceado, base de datos vectorial—, con enlaces al grafo de conocimiento.
 - [Demo — CorpusBiblioExtractor sobre un corpus de Patch Clamp Automatizado](https://migueldiazmacedo.com/demo-corpus-extractor/): salida completa y navegable generada por la herramienta —las 42 secciones de biblioshiny (producción anual, fuentes, autores, redes de coautoría y co-citación, mapa temático, análisis factorial…) sobre un corpus de Web of Science, con figuras, tablas y redes interactivas.
 
 ## Optional
