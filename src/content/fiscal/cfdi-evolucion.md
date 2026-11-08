@@ -9,7 +9,7 @@ coverAlt: "Línea de tiempo de la evolución del CFDI en México: 2004 (CFD), 20
 lang: es
 tags: ["CFDI", "facturación electrónica", "SAT", "CTC", "México"]
 entities: ["cfdi", "sat", "factura-electronica"]
-glossary: ["cfd", "cfdi", "sat", "pac", "csd", "e-firma", "sello-digital", "timbrado", "uuid", "anexo-20", "rmf", "dof", "complemento", "rep", "ctc", "factura-electronica"]
+glossary: ["cbb", "cfd", "cfdi", "sat", "pac", "csd", "e-firma", "sello-digital", "timbrado", "uuid", "anexo-20", "rmf", "dof", "complemento", "rep", "ctc", "factura-electronica"]
 citations:
   - text: 'Trayectoria general de la facturación electrónica en México (cronología de versiones y obligatoriedad). Síntesis de fuentes secundarias del sector; cada hito específico se verifica contra el DOF en las referencias siguientes.'
     urls: []

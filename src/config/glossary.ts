@@ -39,6 +39,13 @@ export const GLOSSARY: GlossaryTerm[] = [
       'Antecesor del CFDI (2004–2010): el contribuyente sellaba el comprobante con su propio certificado y lo reportaba al SAT después, en un reporte mensual; no había validación en tiempo real.',
   },
   {
+    key: 'cbb',
+    abbr: 'CBB',
+    name: 'Código de barras bidimensional',
+    definition:
+      'Esquema que el SAT abrió en 2011 para contribuyentes con ingresos anuales de hasta cuatro millones de pesos: una factura impresa con un código bidimensional y un rango de folios que la autoridad asignaba, imprimible por medios propios. Era papel con un dispositivo de seguridad, no factura electrónica: no daba autenticidad, integridad ni no repudio. Se retiró entre 2012 y 2014, junto con los demás esquemas distintos del CFDI.',
+  },
+  {
     key: 'sat',
     abbr: 'SAT',
     name: 'Servicio de Administración Tributaria',
@@ -59,6 +66,13 @@ export const GLOSSARY: GlossaryTerm[] = [
     name: 'Certificado de Sello Digital',
     definition:
       'Certificado con el que el emisor sella sus comprobantes. Es distinto de la e.firma: la e.firma identifica al contribuyente, el CSD se usa exclusivamente para sellar CFDI.',
+  },
+  {
+    key: 'cesd',
+    abbr: 'CESD',
+    name: 'Certificado especial de sello digital',
+    definition:
+      'Certificado que el SAT entrega a un proveedor autorizado para que expida CFDI en nombre de terceros, como el proveedor de certificación de expedición a través del adquirente o el de certificación y generación para el sector primario. Es distinto del CSD, que el propio emisor usa para sellar sus comprobantes.',
   },
   {
     key: 'e-firma',
