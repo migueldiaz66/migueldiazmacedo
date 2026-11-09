@@ -3,6 +3,7 @@ title: "Un RAG sin nube ni llave de API: anatomía de un montaje mínimo"
 seoTitle: "RAG local sin API: anatomía de un montaje mínimo"
 description: "Los seis componentes de un sistema de generación aumentada por recuperación sobre un corpus de 10 KB: función de cada uno, tiempos medidos por etapa y limitaciones observadas."
 pubDate: 2026-10-26T21:00:00-06:00
+updatedDate: 2026-11-08T21:00:00-06:00
 cover: /covers/rag-minimo-local.png
 coverAlt: "Los componentes de un RAG mínimo: del documento a los pasajes, de los pasajes a los vectores y de los vectores a la respuesta."
 draft: false
@@ -10,6 +11,10 @@ lang: es
 tags: ["RAG", "modelos de lenguaje", "Ollama", "Qdrant", "prueba de concepto"]
 entities: ["rag", "llm", "base-vectorial", "embedding"]
 glossary: ["rag", "llm", "corpus-rag", "embedding", "chunking", "pasaje", "base-vectorial", "similitud-coseno", "recuperacion", "vectorizacion-pregunta", "prompt-aumentado", "temperatura", "modo-de-razonamiento", "ventana-de-contexto", "agente-llm", "llamada-a-herramientas", "ollama", "qdrant", "alucinacion", "recall-at-k"]
+software:
+  name: "remix3-local-rag-agent"
+  doi: "10.5281/zenodo.24047252"
+  repo: "https://github.com/migueldiaz66/remix3-local-rag-agent"
 citations:
   - text: 'Lewis, P., Perez, E., Piktus, A. et al. (2020). "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks". Advances in Neural Information Processing Systems 33. El trabajo que define la técnica y acuña el nombre.'
     urls: ['https://arxiv.org/abs/2005.11401']

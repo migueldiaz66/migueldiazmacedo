@@ -3,6 +3,7 @@ title: "Bibliometría reproducible: automatizar el análisis de science mapping 
 seoTitle: "Bibliometría reproducible con R y bibliometrix"
 description: "Automatiza el science mapping de biblioshiny sobre un corpus de Web of Science: de días de exportar a mano a ~13 minutos, determinista y reproducible."
 pubDate: 2026-06-30T21:00:00-06:00
+updatedDate: 2026-11-08T21:00:00-06:00
 draft: false
 lang: es
 tags: ["Bibliometría", "Reproducibilidad", "R", "Science mapping", "bibliometrix", "biblioshiny", "Web of Science", "CorpusBiblioExtractor"]
@@ -10,6 +11,10 @@ cover: /covers/bibliometria-reproducible.png
 coverAlt: "Portada del artículo: 'Bibliometría reproducible', con el motivo corpus → red → mapa en violeta sobre fondo papel."
 entities: ["bibliometria", "cienciometria", "r-lenguaje", "web-of-science"]
 glossary: ["bibliometria", "science-mapping", "bibliometrix", "biblioshiny", "corpus", "bibtex", "web-of-science", "pajek", "reproducibilidad", "co-citacion"]
+software:
+  name: "CorpusBiblioExtractor"
+  doi: "10.5281/zenodo.24047222"
+  repo: "https://github.com/migueldiaz66/CorpusBiblioExtractor"
 citations:
   - text: "Aria, M. & Cuccurullo, C. (2017). bibliometrix: An R-tool for comprehensive science mapping analysis. Journal of Informetrics, 11(4), 959–975."
     urls: ["https://doi.org/10.1016/j.joi.2017.08.007"]

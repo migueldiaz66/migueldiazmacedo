@@ -22,9 +22,10 @@ export interface Props {
   citations?: { text: string; urls: string[] }[];
   citationsNote?: string;
   glossary?: string[];
+  software?: { name: string; doi: string; repo?: string };
 }
 
-const { title, description, pubDate, updatedDate, topicSlug, path, image, imageAlt, seoTitle, faq, noindex, entities, tags, citations, citationsNote, glossary } = Astro.props;
+const { title, description, pubDate, updatedDate, topicSlug, path, image, imageAlt, seoTitle, faq, noindex, entities, tags, citations, citationsNote, glossary, software } = Astro.props;
 const canonical = 'https://migueldiazmacedo.com' + path;
 const topic = topicBySlug(topicSlug);
 const accent = topic?.accent;
@@ -35,6 +36,15 @@ const breadcrumb = breadcrumbLd([
   { name: title, path },
 ]);
 const about = resolveEntities(entities);
+// El software que documenta el articulo: nodo propio con su DOI como identificador.
+const softwareLd = software && {
+  '@type': 'SoftwareSourceCode',
+  name: software.name,
+  identifier: 'https://doi.org/' + software.doi,
+  sameAs: ['https://doi.org/' + software.doi],
+  ...(software.repo ? { codeRepository: software.repo } : {}),
+  author: { '@type': 'Person', '@id': 'https://migueldiazmacedo.com/acerca/perfil/#miguel' },
+};
 const keywords = tags && tags.length ? tags.join(', ') : undefined;
 // Glosario contextual del artículo (subconjunto del catálogo), orden alfabético.
 const glossaryTerms = glossaryByKeys(glossary ?? []).sort((a, b) =>
@@ -68,7 +78,7 @@ const fmt = (d: Date) =>
   image={image}
   imageAlt={imageAlt}
   noindex={noindex}
-  about={about}
+  about={softwareLd ? [...about, softwareLd] : about}
   keywords={keywords}
   articleSection={topic?.label}
   citation={citation}
@@ -82,6 +92,14 @@ const fmt = (d: Date) =>
     <p class="meta small mono muted">
       <a class="byline" href="/acerca/perfil/" rel="author">Miguel Díaz Macedo</a>
       · {fmt(pubDate)}{updatedDate ? ` · act. ${fmt(updatedDate)}` : ''}
+      {software && (
+        <>
+          {' · '}
+          <a href={`https://doi.org/${software.doi}`} rel="noopener">
+            DOI {software.doi}
+          </a>
+        </>
+      )}
     </p>
 
     <div class="chain" aria-hidden="true" style="margin:1.8rem 0 2.6rem;max-width:340px">

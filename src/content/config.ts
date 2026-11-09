@@ -32,6 +32,11 @@ const articleSchema = z.object({
     .array(z.object({ text: z.string(), urls: z.array(z.string()).default([]) }))
     .default([]),
   citationsNote: z.string().optional(),
+  // software que el articulo documenta, con su DOI de concepto en Zenodo:
+  // sale en la linea de autoria y como SoftwareSourceCode en el JSON-LD.
+  software: z
+    .object({ name: z.string(), doi: z.string(), repo: z.string().optional() })
+    .optional(),
 });
 
 // Each topic is its own collection. Add new topics here as they grow.
