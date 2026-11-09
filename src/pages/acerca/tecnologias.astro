@@ -66,8 +66,8 @@ const breadcrumb = breadcrumbLd([
     <ul class="stack">
       {STACK.map((t) => (
         <li class="tech">
-          <svg class="logo" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d={t.icon} />
+          <svg class="logo" viewBox={t.viewBox ?? "0 0 24 24"} fill="currentColor" aria-hidden="true">
+            <path d={t.icon} transform={t.transform} />
           </svg>
           <div>
             <p class="tech-name">{t.name}</p>
