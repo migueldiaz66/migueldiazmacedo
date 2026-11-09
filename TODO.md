@@ -62,39 +62,9 @@ Son mejoras editoriales sobre un artículo ya publicado; ninguna es un error.
 - Está sin mostrar el **prompt literal** que arma el montaje, extraído del
   repositorio.
 
-
 ---
 
-## 4. Enlaces entrantes
-
-El único error que Bing reporta en todo el sitio: «Your site lacks inbound links from
-high-quality domains», severidad moderada, sin páginas señaladas.
-
-Hecho el 7 de noviembre de 2026, en los dos repositorios: `.zenodo.json` con la licencia,
-las palabras clave y los `related_identifiers` hacia el artículo y el demo; badge del DOI
-de concepto en cada README; la línea del *write-up* en `remix3-local-rag-agent`, que antes
-no devolvía el enlace que el artículo le da; y las dos URL del blog en el README de
-`CorpusBiblioExtractor` sin el `www.` que respondía 301. Los dos repositorios ya están
-depositados en Zenodo con DOI (`10.5281/zenodo.24047222` y `10.5281/zenodo.24047252`, los
-de concepto).
-
-Lo que falta vive en la web, no en el código:
-
-- **Zenodo, los dos registros publicados.** Su descripción no trae el enlace al artículo:
-  Zenodo la arma con la de GitHub, no con el README. Botón *Edit* en cada registro, o un
-  release nuevo para que tome el `.zenodo.json` que ya está en `main`.
-- Perfil de GitHub → campo *Website*: `https://migueldiazmacedo.com` (hoy vacío).
-- Repo `remix3-local-rag-agent` → *Website* con la URL del artículo del RAG (hoy vacío).
-- Repo `CorpusBiblioExtractor` → *Website* con la URL del artículo de bibliometría (hoy
-  vacío).
-- Perfil de LinkedIn → campo de sitio web.
-
-Los enlaces de GitHub llevan `rel="nofollow"`, comprobado; los de Zenodo son los que
-cuentan como dominio de calidad.
-
----
-
-## 5. Datos que faltan de Bing y de GA4
+## 4. Datos que faltan de Bing y de GA4
 
 - **Bing → Search Performance → Pages.** Qué URL recibe cada impresión, y quién se lleva
   las 10 de la consulta de marca `migueldiazmacedo.com`, hoy en posición media 5.40.
@@ -108,9 +78,16 @@ cuentan como dominio de calidad.
 
 ---
 
-## 6. Publicar el artículo del RAG en LinkedIn
+## 5. El artículo de LinkedIn, sin el enlace al original
 
-La copia está en `src/content/laboratorio/rag-minimo-local-linkedin-es.md`, ya con las dos
-líneas que declaran el original. Las cuatro imágenes, en `_linkedin/img/`: `pipeline.png`,
-`respuesta-rag.png`, `agente.png` y `codespaces.png`. El editor de artículos está en
-`https://www.linkedin.com/article/new/`, desde el escritorio.
+El artículo se publicó en LinkedIn hace días, con la copia anterior. Las dos líneas que
+declaran el original —`Publicado originalmente en …` bajo la autoría, y la del cierre—
+se agregaron al generador después, así que la versión publicada no las lleva.
+
+Abrir el artículo en LinkedIn, comprobar si contiene
+`https://migueldiazmacedo.com/laboratorio/rag-minimo-local/` y, si no, editarlo para
+agregarlo. Sin esa línea son 4 000 palabras del artículo en un dominio más fuerte que el
+propio, sin una referencia a la página que se quiere posicionar.
+
+La copia al día está en `src/content/laboratorio/rag-minimo-local-linkedin-es.md`; se
+regenera con `npm run copia-linkedin`.
